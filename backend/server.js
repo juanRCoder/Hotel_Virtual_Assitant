@@ -23,9 +23,8 @@ app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../dist/index.html"));
 });
 
-
-connectDB();
-
 app.listen(PORT, () => {
   console.log(`Express server run: http://localhost:${PORT}`);
 });
+
+connectDB();
