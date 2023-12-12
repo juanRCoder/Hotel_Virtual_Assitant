@@ -8,3 +8,5 @@ mongoose.connection.once('open', function() {
 }).on('error', function(error) {
     console.log("Connection error: ", error);
 });
+
+export default mongoose.connection;
