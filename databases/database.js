@@ -1,14 +1,15 @@
 import mongoose from 'mongoose';
 
 //Connect to MondoDB
-mongoose.connect('mongodb://127.0.0.1/testaroo');
+const url = 'mongodb://127.0.0.1/testaroo';
 
-const connection = mongoose.connection;
+async function connectDB() {
+    try {
+        console.log("connection has been made...");
+        await mongoose.connect(url)
+    } catch (err) {
+        console.log("Connection error: ", err)
+    }
+}
 
-connection.once('open', function() {
-    console.log("connection has been made...");
-}).on('error', function(error) {
-    console.log("Connection error: ", error);
-});
-
-export default connection;
+export default connectDB;
