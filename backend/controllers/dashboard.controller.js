@@ -1,12 +1,12 @@
-// import RegistroModel from "../../databases/models/"
+import Cliente from "../../databases/Schema/clienteSchema.js";
 
 export const postRegistro = async (req, res) => {
   try {
     const { nombre, apellido, codigo } = req.body;
 
-    const Registrado = await RegistroModel.findOne({
-      nombre,
-      apellido,
+    const Registrado = await Cliente.findOne({
+      nombres,
+      apellidos,
       codigo,
     });
 

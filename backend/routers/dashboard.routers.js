@@ -1,5 +1,5 @@
 import express from "express";
-import { postRegistro } from "../controllers/dashboard.controller";
+import { postRegistro } from "../controllers/dashboard.controller.js";
 
 const dashboardRouter = express.Router();
 
