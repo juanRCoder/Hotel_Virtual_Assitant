@@ -7,7 +7,7 @@ function Main() {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setNombreCompleto((prev) => ({ ...prev, [name]: value }));
-  };
+  };  
 
   const handleSubmit = async () => {
     try {
