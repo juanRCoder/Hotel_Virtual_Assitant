@@ -4,7 +4,7 @@ import React from 'react';
 function Main() {
   return (
     <>
-      <div className="flex justify-center items-center pt-60">
+      <div className="flex justify-center items-center pt-20">
         <img
           className="bg-slate-100 w-80 h-70 rounded-3xl"
           src={frontdesk}
