@@ -1,7 +1,31 @@
 import frontdesk from '../../assets/images/frontdesk.png';
-import React from 'react';
+import React, { useState } from 'react';
+
 
 function Main() {
+  const [nombres, setNombre] = useState("");
+  const [apellidos, setApellido] = useState("");
+  const [codigo, setCodigo] = useState("");
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch("/enviarRegistro", {  
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombres, apellidos, codigo }),
+      });
+
+      if (response.ok) {
+        console.log("Datos enviados correctamente");
+      
+      } else {
+        console.error("Error al enviar los datos");
+      }
+    } catch (error) {
+      console.error("Error al procesar la solicitud:", error);
+    }
+  };
+
   return (
     <>
       <div className="flex justify-center items-center pt-20">
@@ -23,9 +47,11 @@ function Main() {
             </label>
             <input
               className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
+              id="nombres"
               type="text"
+              value={nombres}
               placeholder="Username"
+              onChange={handleSubmit}
             />
           </div>
           <div className="mb-6">
@@ -37,20 +63,24 @@ function Main() {
             </label>
             <input
               className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
-              type="password"
+              id="apellidos"
+              type="lastname"
+              value={apellidos}
+              onChange={handleSubmit}
               placeholder="Lastname"
             />
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="code"
+              htmlFor="codigo"
             >
               Code
-            </label>
+            </label>  
             <input
               className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="code"
+              id="codigo"
               type="text"
+              value={codigo}
+              onChange={handleSubmit}
               placeholder="Type your code here, please!!"
             />
             <p className="text-red-500 text-xs italic">
