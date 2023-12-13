@@ -1,10 +1,13 @@
 import mongoose from 'mongoose';
 
 const reservaSchema = new mongoose.Schema({
-    id_cliente: Number,
+    id_cliente: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Cliente'
+    },
     id_mesa: Number,
     cantidad: Number,
-    fecha: String,
+    fecha: Date,
     horario: String,
 })
 

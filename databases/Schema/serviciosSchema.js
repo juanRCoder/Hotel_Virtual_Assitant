@@ -1,10 +1,13 @@
 import mongoose from 'mongoose';
 
 const serviciosSchema = new mongoose.Schema({
-    id_cliente: Number,
+    id_cliente: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Cliente'
+    },
     nombreServicio: String,
     descripcion: String,
-    fecha: String,
+    fecha: Date,
     horario: String,
 })
 
