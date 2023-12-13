@@ -1,6 +1,7 @@
 import express from "express";
 import { fileURLToPath } from "url";
 import { dashboardRouter } from "./routers/dashboard.routers.js";
+import { servicioRouter } from "./routers/servicios.router.js";
 import bodyParser from "body-parser";
 import connectDB from "../databases/database.js";
 import path from "path";
@@ -16,7 +17,9 @@ app.use(bodyParser.json());
 // Servir archivos estaticos de la carpeta dist/
 app.use(express.static(path.resolve(__dirname, "../dist")));
 
+//RUTAS 
 app.use(dashboardRouter);
+app.use(servicioRouter);
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../dist/index.html"));
