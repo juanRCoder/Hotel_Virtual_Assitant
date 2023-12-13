@@ -13,7 +13,7 @@ function Body() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("/api/verificarDatos", {
+      const response = await fetch("/api/enviarRegistro", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(nombreCompleto),
