@@ -1,13 +1,19 @@
-import frontdesk from '../../assets/images/frontdesk.png';
 import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import frontdesk from '../../assets/images/frontdesk.png';
 
-function Main() {
-  const [nombreCompleto, setNombreCompleto] = useState("");
+const Body = () => {
+  const [nombreCompleto, setNombreCompleto] = useState({
+    nombres: '',
+    apellidos: '',
+    codigo: '',
+  });
+  const [redirectToDashboard, setRedirectToDashboard] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setNombreCompleto((prev) => ({ ...prev, [name]: value }));
-  };  
+  };
 
   const handleSubmit = async () => {
     try {
@@ -18,7 +24,14 @@ function Main() {
       });
 
       if (response.ok) {
-        console.log("Datos enviados correctamente");
+        const data = await response.json();
+
+        if (data && data.correctos) {
+          console.log("Datos correctos. Redirigiendo al dashboard.");
+          setRedirectToDashboard(true);
+        } else {
+          console.error("Datos incorrectos");
+        }
       } else {
         console.error("Error al enviar los datos");
       }
@@ -26,6 +39,10 @@ function Main() {
       console.error("Error al procesar la solicitud:", error);
     }
   };
+
+  if (redirectToDashboard) {
+    return <Navigate to="Dashboard" />;
+  }
 
   return (
     <>
@@ -109,6 +126,6 @@ function Main() {
       </div>
     </>
   );
-}
+};
 
-export default Main;
+export default Body;
