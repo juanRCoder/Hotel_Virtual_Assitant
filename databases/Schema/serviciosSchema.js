@@ -4,7 +4,8 @@ const serviciosSchema = new mongoose.Schema({
     id_cliente: Number,
     nombreServicio: String,
     descripcion: String,
-    horario: String
+    fecha: String,
+    horario: String,
 })
 
 const Servicios = mongoose.model('Servicios', serviciosSchema);
