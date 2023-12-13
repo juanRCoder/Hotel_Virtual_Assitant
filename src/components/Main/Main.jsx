@@ -1,23 +1,24 @@
 import frontdesk from '../../assets/images/frontdesk.png';
 import React, { useState } from 'react';
 
-
 function Main() {
-  const [nombres, setNombre] = useState("");
-  const [apellidos, setApellido] = useState("");
-  const [codigo, setCodigo] = useState("");
+  const [nombreCompleto, setNombreCompleto] = useState("");
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setNombreCompleto((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("/enviarRegistro", {  
+      const response = await fetch("/enviarRegistro", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nombres, apellidos, codigo }),
+        body: JSON.stringify(nombreCompleto),
       });
 
       if (response.ok) {
         console.log("Datos enviados correctamente");
-      
       } else {
         console.error("Error al enviar los datos");
       }
@@ -41,63 +42,69 @@ function Main() {
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="username"
+              htmlFor="nombres"
             >
-              Username
+              Nombres
             </label>
             <input
               className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="nombres"
               type="text"
-              value={nombres}
-              placeholder="Username"
-              onChange={handleSubmit}
+              name="nombres"
+              value={nombreCompleto.nombres || ""}
+              placeholder="Nombres"
+              onChange={handleChange}
             />
           </div>
           <div className="mb-6">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="lastname"
+              htmlFor="apellidos"
             >
-              Lastname
+              Apellidos
             </label>
             <input
               className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               id="apellidos"
-              type="lastname"
-              value={apellidos}
-              onChange={handleSubmit}
-              placeholder="Lastname"
+              type="text"
+              name="apellidos"
+              value={nombreCompleto.apellidos || ""}
+              onChange={handleChange}
+              placeholder="Apellidos"
             />
+          </div>
+          <div className="mb-6">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="codigo"
             >
-              Code
-            </label>  
+              Código
+            </label>
             <input
               className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               id="codigo"
               type="text"
-              value={codigo}
-              onChange={handleSubmit}
-              placeholder="Type your code here, please!!"
+              name="codigo"
+              value={nombreCompleto.codigo || ""}
+              onChange={handleChange}
+              placeholder="Código"
             />
             <p className="text-red-500 text-xs italic">
-              Please type your code here.
+              Por favor, ingrese su código.
             </p>
           </div>
           <div className="flex items-center justify-between pl-20">
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
+              onClick={handleSubmit}
             >
-              Sign In
+              Ingresar
             </button>
           </div>
         </form>
         <p className="text-center text-gray-500 text-xs">
-          &copy;2023 Hotel Transilvania. All rights reserved.
+          &copy;2023 Hotel Transilvania. Todos los derechos reservados.
         </p>
       </div>
     </>
