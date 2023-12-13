@@ -2,13 +2,9 @@ import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import frontdesk from '../../assets/images/frontdesk.png';
 
-const Body = () => {
-  const [nombreCompleto, setNombreCompleto] = useState({
-    nombres: '',
-    apellidos: '',
-    codigo: '',
-  });
-  const [redirectToDashboard, setRedirectToDashboard] = useState(false);
+function Body() {
+  const [nombreCompleto, setNombreCompleto] = useState("");
+  const [goToDashboard, setGoToDashboard] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -17,30 +13,23 @@ const Body = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("/enviarRegistro", {
+      const response = await fetch("/api/verificarDatos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(nombreCompleto),
       });
 
       if (response.ok) {
-        const data = await response.json();
-
-        if (data && data.correctos) {
-          console.log("Datos correctos. Redirigiendo al dashboard.");
-          setRedirectToDashboard(true);
-        } else {
-          console.error("Datos incorrectos");
-        }
+        setGoToDashboard(true);
       } else {
-        console.error("Error al enviar los datos");
+        console.error("Los datos no son correctos");
       }
     } catch (error) {
       console.error("Error al procesar la solicitud:", error);
     }
   };
 
-  if (redirectToDashboard) {
+  if (goToDashboard) {
     return <Navigate to="Dashboard" />;
   }
 
@@ -126,6 +115,6 @@ const Body = () => {
       </div>
     </>
   );
-};
+}
 
 export default Body;
