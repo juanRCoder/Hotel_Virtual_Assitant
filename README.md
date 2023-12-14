@@ -47,5 +47,11 @@ npm run dev
 
 ## Examples
 
+![Diseño de la base de datos](./src/assets/DatabaseDesign.png)
+
+![Primera parte del árbol del proyecto](./src/assets/tree_project_1.png)
+
+![Segunda parte del árbol del proyecto](./src/assets/tree_project_2.png)
+
 ## Licence
 
