@@ -1,15 +1,19 @@
+
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Login from '../pages/Login';
-import Error from '../pages/Error';
+import Layout from '../Layout/Layout';
+import NotFound from '../pages/NotFound';
+import Dashboard from '../pages/Dashboard';
 
 const Routers = () => {
   return (
-    <div>
-      <Route path="/" element={<Home />} />
+    <Routes>
+      <Route path="/" element={<Layout />} />
       <Route path="/Login" element={<Login />} />
-      <Route path="/*" element={<Error />} />
-    </div>
+      <Route path="/Dashboard" element={<Dashboard />} />
+      <Route path="/*" element={<NotFound />} />
+    </Routes>
   );
 }
 

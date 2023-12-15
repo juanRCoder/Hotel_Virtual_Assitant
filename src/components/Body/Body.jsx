@@ -1,7 +1,7 @@
 import frontdesk from '../../assets/images/frontdesk.png';
 import React, { useState } from 'react';
 
-function Main() {
+function Body() {
   const [nombreCompleto, setNombreCompleto] = useState("");
 
   const handleChange = (event) => {
@@ -28,18 +28,16 @@ function Main() {
   };
 
   return (
-    <>
-      <div className="flex justify-center items-center pt-20">
-        <img
-          className="bg-slate-100 w-80 h-70 rounded-3xl"
-          src={frontdesk}
-          alt="frontdesk"
-        />
-      </div>
-      <br />
-      <div className="w-full max-w-xs mt-5 bg-slate-800 mx-auto">
-        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <div className="mb-4">
+    <div className="flex items-center justify-center pt-10">
+      {/* <img
+        className=" w-80 h-70 rounded-3xl  brightness-75 contrast-150 mt-16"
+        src={frontdesk}
+        alt="frontdesk"
+      /> */}
+  
+      <div className="ml-6  w-1/4 ">
+        <form className="bg-neutral-100 rounded-3xl hover:shadow-2xl px-8 pt-6 pb-8 mb-4 focus:ring outline outline-stone-400 ring-indigo-500 focus:border-indigo-500">
+          <div className="mb-4 ">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="nombres"
@@ -47,7 +45,7 @@ function Main() {
               Nombres
             </label>
             <input
-              className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow-xl appearance-none border-x-2 border-y-2 border-gray-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="nombres"
               type="text"
               name="nombres"
@@ -64,7 +62,7 @@ function Main() {
               Apellidos
             </label>
             <input
-              className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border-x-2 border-y-2 border-gray-600 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               id="apellidos"
               type="text"
               name="apellidos"
@@ -75,13 +73,13 @@ function Main() {
           </div>
           <div className="mb-6">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-800 text-sm font-bold mb-2"
               htmlFor="codigo"
             >
               Código
             </label>
             <input
-              className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border-x-2 border-y-2 border-gray-600 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               id="codigo"
               type="text"
               name="codigo"
@@ -95,7 +93,7 @@ function Main() {
           </div>
           <div className="flex items-center justify-between pl-20">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-gray-500 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
               onClick={handleSubmit}
             >
@@ -103,12 +101,10 @@ function Main() {
             </button>
           </div>
         </form>
-        <p className="text-center text-gray-500 text-xs">
-          &copy;2023 Hotel Transilvania. Todos los derechos reservados.
-        </p>
       </div>
-    </>
+    </div>
   );
+  
 }
 
-export default Main;
+export default Body;

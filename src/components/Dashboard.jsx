@@ -9,7 +9,7 @@ const Dashboard = () => {
         <img className="bg-white hover:bg-slate-400 " src={logo} alt="LOGO" />
       </div>
       <div className="flex items-center justify-center flex-col">
-        <h1 className="font-mono text-6xl text-center pt-5">
+        <h1 className="font-ab text-6xl text-center pt-5">
           HOTEL OTELERO
         </h1>
         <div className="flex justify-center items-center pt-10">
