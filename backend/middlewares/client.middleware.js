@@ -8,7 +8,7 @@ export const ClientAutentication = async (req, res, next) => {
     if (client) {
       next();
     } else {
-      res.status(401).json({ message: "Acceso denegado" });
+      res.redirect("/");
     }
   } catch (e) {
     res.status(500).json({ message: e });
