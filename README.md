@@ -57,5 +57,18 @@ npm run dev
 
 ![Segunda parte del árbol del proyecto](./src/assets/tree_project_2.png)
 
+## Contact
+- [JuanRcoder](https://github.com/juanRCoder)
+   - [Juan Ramirez](https://www.linkedin.com/in/juan-ramirez-490b84271/)
+     
+- [Jharanza](https://github.com/Jharanza)
+  -  [Jhony Arana](https://www.linkedin.com/in/jhony-arana-carranza-a103b350/)
+ 
+-  [0skarmp](https://github.com/0skarmp)
+  -  [oskar Morales](https://www.linkedin.com/in/oskarmorales/)
+
+
 ## Licence
+
+-  Creacion del proyecto 11-12-2023
 
