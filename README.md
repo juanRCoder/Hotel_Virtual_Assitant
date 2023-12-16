@@ -7,7 +7,7 @@
 Asegúrate de tener las siguientes tecnologías y dependencias antes de ejecutar el proyecto:
 - [MongoDB](https://mongodb.com/try/download/community) (Asegúrate que el servidor MongoDB se encuentre en ejecución)
   
-- [Express] (https://expressjs.com/)(v.4.18.2)(simplifica y agiliza el desarrollo de aplicaciones web mediante el manejo de rutas)
+- [Express](https://expressjs.com/)(v.4.18.2)(simplifica y agiliza el desarrollo de aplicaciones web mediante el manejo de rutas)
 
 - [Reactjs](https://react.dev)(Es la base de Vite) 
   
