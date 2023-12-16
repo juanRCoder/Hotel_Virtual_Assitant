@@ -65,7 +65,8 @@ npm run dev
   -  [Jhony Arana](https://www.linkedin.com/in/jhony-arana-carranza-a103b350/)
  
 -  [0skarmp](https://github.com/0skarmp)
-  -  [oskar Morales](https://www.linkedin.com/in/oskarmorales/)
+    -  [Oskar Morales](https://www.linkedin.com/in/oskarmorales/)
+
 
 
 ## Licence
