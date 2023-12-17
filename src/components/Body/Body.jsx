@@ -1,4 +1,4 @@
-import frontdesk from '../../assets/images/frontdesk.png';
+import room from '../../assets/images/room.png';
 import React, { useState } from 'react';
 
 function Body() {
@@ -28,24 +28,40 @@ function Body() {
   };
 
   return (
-    <div className="flex items-center justify-center pt-10">
-      {/* <img
-        className=" w-80 h-70 rounded-3xl  brightness-75 contrast-150 mt-16"
-        src={frontdesk}
+    <div className="flex flex-col md:flex-row items-center justify-center mt-12">
+      {/* Imagen del frontdesk a un lado izquierdo */}
+      <img
+        className="w-full md:w-3/5 h-70 rounded-3xl hover:drop-shadow-2xlxl mb-6 md:mr-6 border border-green-600 hover:shadow-2xl"
+        src={room}
         alt="frontdesk"
-      /> */}
-  
-      <div className="ml-6  w-1/4 ">
-        <form className="bg-neutral-100 rounded-3xl hover:shadow-2xl px-8 pt-6 pb-8 mb-4 focus:ring outline outline-stone-400 ring-indigo-500 focus:border-indigo-500">
-          <div className="mb-4 ">
+      />
+
+      {/* Fondo blanco detrás del formulario */}
+      <div className="
+      bg-white
+       p-8 
+       -mt-5 
+        rounded-3xl 
+        shadow-md 
+        border border-green-600 
+        hover:shadow-2xl 
+        w-full 
+        md:w-80 
+        bg-gradient-to-br
+        from-white
+        via-lime-100
+        to-lime-200 ">
+        {/* Formulario de login */}
+        <form className="w-full">
+          <div className="mb-6">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-green-600 text-sm font-bold mb-2"
               htmlFor="nombres"
             >
               Nombres
             </label>
             <input
-              className="shadow-xl appearance-none border-x-2 border-y-2 border-gray-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow-xl appearance-none border-l-4 border-y border-r rounded-t-xl  border-green-400  w-full py-2 px-3 text-black mb-3"
               id="nombres"
               type="text"
               name="nombres"
@@ -56,13 +72,13 @@ function Body() {
           </div>
           <div className="mb-6">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-green-600 text-sm font-bold mb-2"
               htmlFor="apellidos"
             >
               Apellidos
             </label>
             <input
-              className="shadow appearance-none border-x-2 border-y-2 border-gray-600 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow-xl appearance-none border-l-4 border-y-1 border-y border-r rounded-t-xl  border-green-400 w-full py-2 px-3 text-black mb-3"
               id="apellidos"
               type="text"
               name="apellidos"
@@ -73,13 +89,13 @@ function Body() {
           </div>
           <div className="mb-6">
             <label
-              className="block text-gray-800 text-sm font-bold mb-2"
+              className="block text-green-600 text-sm font-bold mb-2"
               htmlFor="codigo"
             >
               Código
             </label>
             <input
-              className="shadow appearance-none border-x-2 border-y-2 border-gray-600 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow-xl appearance-none border-l-4 border-y-1 border-y border-r rounded-t-xl  border-green-400 w-full py-2 px-3 text-black  mb-3 "
               id="codigo"
               type="text"
               name="codigo"
@@ -87,13 +103,13 @@ function Body() {
               onChange={handleChange}
               placeholder="Código"
             />
-            <p className="text-red-500 text-xs italic">
+            <p className="text-green-900  font-mono text-sm">
               Por favor, ingrese su código.
             </p>
           </div>
-          <div className="flex items-center justify-between pl-20">
+          <div className="flex items-center justify-center shadow-xl">
             <button
-              className="bg-gray-500 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-green-300 hover:bg-green-600 text-black font-bold py-4  rounded focus:outline-none focus:shadow-outline  w-full "
               type="button"
               onClick={handleSubmit}
             >
@@ -104,7 +120,6 @@ function Body() {
       </div>
     </div>
   );
-  
 }
 
 export default Body;

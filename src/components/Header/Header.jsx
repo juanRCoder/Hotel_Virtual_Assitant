@@ -4,14 +4,13 @@ import logo from '../../assets/images/logo-removebg-preview.png';
 const Header = () => {
   return (
     <>
-      <div className=" items-center ">
-        <div className="flex flex-col  justify-center items-center">
-          <div className="w-20 h-1 mt-5 mr-auto">
-            <img className=" -mt-5  ml-4 brightness-100  opacity-60" src={logo} alt="LOGO" />
-          </div>
-          <div className="flex items-center justify-center flex-col">
-            <h1 className="font-bold hover:shadow-2xl text-6xl text-center pt-6 m text-amber-900">
-              Double Tree by hilton 
+      <div className="container items-center">
+        <div className="flex flex-col justify-center items-center">
+          <div className="flex items-center justify-center flex-col pl-10">
+            <h1
+              className="font-bold text-4xl md:text-5xl lg:text-6xl text-center pt-2 text-green-500 opacity-70"
+            >
+              Double Tree by Hilton
             </h1>
           </div>
         </div>
