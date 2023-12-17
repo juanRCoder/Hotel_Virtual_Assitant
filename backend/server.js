@@ -5,6 +5,7 @@ import { servicioRouter } from "./routers/servicios.router.js";
 import bodyParser from "body-parser";
 import connectDB from "../databases/database.js";
 import path from "path";
+import {ClientAutentication} from "./middlewares/client.middleware.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,6 +18,9 @@ app.use(bodyParser.json());
 // Servir archivos estaticos de la carpeta dist/
 app.use(express.static(path.resolve(__dirname, "../dist")));
 
+
+//Middleware
+app.use("/dashboard", ClientAutentication);
 //RUTAS 
 app.use(dashboardRouter);
 app.use(servicioRouter);
