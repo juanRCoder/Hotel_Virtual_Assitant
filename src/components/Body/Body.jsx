@@ -35,14 +35,14 @@ function Body() {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center mt-12">
-      {/* Imagen del frontdesk a un lado izquierdo */}
+      
       <img
         className="w-full md:w-3/5 h-70 rounded-3xl hover:drop-shadow-2xlxl mb-6 md:mr-6 border border-green-600 hover:shadow-2xl"
         src={room}
         alt="frontdesk"
       />
 
-      {/* Fondo blanco detrás del formulario */}
+      {/*  behind  the form */}
       <div className="
       bg-white
        p-8 
