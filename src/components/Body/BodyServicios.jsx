@@ -26,22 +26,22 @@ function BodyServicios() {
           <label htmlFor="descripcion">descripcion</label>
           <input
             type="text"
-            id="servicio2"
-            placeholder='Ingrese el tipo de servicio 2'
+            id="descripcion"
+            placeholder='descripcion'
             className='border border-black p-2 w-full'
           />
-          <label htmlFor="servicio2">Tipo de Servicio </label>
+          <label htmlFor="fecha">fecha </label>
           <select id="fecha" className='border border-black p-2 mb-4 w-full'>
             <option value="fecha">fecha1</option>
             <option value="fecha">fecha2</option>
             <option value="fecha">fecha3</option>
             
           </select>
-          <label htmlFor="servicio2">Tipo de Servicio </label>
+          <label htmlFor="codigo">codigo </label>
           <input
             type="text"
-            id="servicio2"
-            placeholder='Ingrese el tipo de servicio 2'
+            id="codigo"
+            placeholder='Ingrese su codigo de usuario'
             className='border border-black p-2 w-full'
           />
         </form>
