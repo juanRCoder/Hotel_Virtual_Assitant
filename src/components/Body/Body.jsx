@@ -1,5 +1,6 @@
 import room from '../../assets/images/room.png';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 
 
 function Body() {
@@ -113,7 +114,7 @@ function Body() {
               Por favor, ingrese su código.
             </p>
           </div>
-          <div className="flex items-center justify-center shadow-xl">
+          <div className="flex items-center justify-center shadow-xl ">
             <button
               className="bg-green-300 hover:bg-green-600 text-black font-bold py-4  rounded focus:outline-none focus:shadow-outline  w-full "
               type="button"
