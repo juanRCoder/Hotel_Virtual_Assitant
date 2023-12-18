@@ -2,7 +2,14 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: { 
+        'Dancing-script': ["'Dancing Script', cursive"],
+        'Pacifico': ['Pacifico'],
+        'Oswald': ['sans-serif']
+
+      },
       colors: {
+        backgroundColor: ['responsive', 'hover', 'focus', 'active'],
         navy: {
           '50':  '#f3f8f9',
           '100': '#daf1fa',
@@ -138,9 +145,6 @@ module.exports = {
       }
     },
   },
-  fontFamily: { 
-    abc: ["'Dancing Script', cursive;"],
-    ab: ['Pacifico'],
-  },
+  
   plugins: [],
 };
