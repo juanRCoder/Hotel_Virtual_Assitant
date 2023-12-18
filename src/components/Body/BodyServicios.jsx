@@ -2,6 +2,8 @@ import React from 'react';
 import servicios from '../../assets/images/frontdesk.png';
 
 function BodyServicios() {
+
+
   return (
     <div className="flex items-center mx-4">
       <img className="w-200" src={servicios} alt="SERVICIOS" />
