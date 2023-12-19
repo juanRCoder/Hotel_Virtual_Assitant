@@ -1,7 +1,8 @@
 import express from "express";
 import { fileURLToPath } from "url";
-import { dashboardRouter } from "./routers/dashboard.routers.js";
+import { dashboardRouter } from "./routers/dashboard.router.js";
 import { servicioRouter } from "./routers/servicios.router.js";
+import { faqRouter } from "./routers/FAQ.router.js";
 import bodyParser from "body-parser";
 import connectDB from "../databases/database.js";
 import path from "path";
@@ -21,9 +22,11 @@ app.use(express.static(path.resolve(__dirname, "../dist")));
 
 //Middleware
 app.use("/dashboard", ClientAutentication);
+
 //RUTAS 
 app.use(dashboardRouter);
 app.use(servicioRouter);
+app.use(faqRouter);
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../dist/index.html"));
