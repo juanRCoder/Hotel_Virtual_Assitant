@@ -14,7 +14,7 @@ export const postRegistro = async (req, res) => {
     if (!Registrado) {
       return res.status(404).json({ message: "Cliente no registrado" });
     }
-    res.status(200).json({ message: "Cliente registrado" });
+    res.status(200).json({ clienteId: Registrado._id });
   } catch (e) {
     console.error("Error al guardar datos de MongoDB", e);
     res.status(500).json({ e: "Error al procesar los datos del cliente!" });
