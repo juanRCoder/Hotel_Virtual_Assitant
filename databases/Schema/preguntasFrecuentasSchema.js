@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
 const pregFrecSchema = new mongoose.Schema({
-  nombre: String,
-  preguntas: String,
+  pregunta: String,
+  respuesta: String,
 });
 
 const PreguntasFrecuentes = mongoose.model('PreguntasFrecuentes', pregFrecSchema);
