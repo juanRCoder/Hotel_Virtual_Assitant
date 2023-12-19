@@ -14,7 +14,7 @@ const Layout = () => {
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          filter: 'blur(300px)', 
+          filter: 'blur(60px)', 
           zIndex: -1,
           opacity: 0.9,
         }}

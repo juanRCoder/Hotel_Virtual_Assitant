@@ -1,11 +1,12 @@
 import React from 'react'
-import BodyDashboard from '../components/Body/BodyDashboard'
+
 import BodyServicios from '../components/Body/BodyServicios'
+import Header from '../components/Header/Header'
 
 function Servicios ()  {
   return (
     <>
-
+    <Header/>
     <BodyServicios/>
 
     </>

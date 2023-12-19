@@ -1,53 +1,104 @@
-import React from 'react';
+import React, { useState } from 'react';
 import servicios from '../../assets/images/frontdesk.png';
+import DatePicker from 'react-datepicker';
+import TimePicker from 'react-time-picker';
+import 'react-datepicker/dist/react-datepicker.css';
+import 'react-time-picker/dist/TimePicker.css';
+
 
 function BodyServicios() {
+  const [date, setDate] = useState(new Date());
+  const [time, setTime] = useState('12:00'); 
+  const handleClick = () => { 
+   
+    const button = document.getElementById('submitButton');
+    button.classList.add('jello-vertical');
 
+ 
+    setTimeout(() => {
+      button.classList.remove('jello-vertical');
+    }, 500);
+  };
 
   return (
     <div className="flex items-center mx-4">
       <img className="w-200" src={servicios} alt="SERVICIOS" />
-      <div className='flex flex-col w-full h-full ml-4'>
-        <form action="" className="border border-black rounded-3xl p-4">
-          <label htmlFor="servicio1">Servicio </label>
+      <div className="flex flex-col w-full h-full ml-4">
+        <form action="" className="border border-black rounded-3xl p-8 bg-gray-100">
+          <div className="flex mb-2 mr-8">
+            <div className="w-1/2 pr-2">
+              <label htmlFor="fecha" className="text-lg font-semibold ">
+                Fecha<br/>
+              </label>
+              <DatePicker
+                selected={date}
+                onChange={(date) => setDate(date)}
+                className="border border-black p-2 w-full rounded"
+              />
+            </div>
+            <div className="w-1/2 pl-2">
+              <label htmlFor="hora" className="text-lg font-semibold mb-2">
+                Hora
+              </label>
+              <TimePicker
+                value={time}
+                onChange={(newTime) => setTime(newTime)}
+                className="border border-black p-2 w-full rounded"
+              />
+            </div>
+          </div>
+          
+          <label htmlFor="servicio1" className="text-lg font-semibold mb-2">
+            Servicio
+          </label>
           <input
             type="text"
             id="servicio1"
-            placeholder='Ingrese el tipo de servicio '
-            className='border border-black p-2 mb-4 w-full'
+            placeholder="Ingrese el tipo de servicio"
+            className="border border-black p-2 mb-4 w-full rounded"
           />
-                
-          <label htmlFor="descripcion">Tipo de Servicio </label>
-          <select id="servicio" className='border border-black p-2 mb-4 w-full'>
-            <option value="">selecione el tipo de servicio</option>
-            <option value="servicio">toallas</option>
-            <option value="servicio">lavanderia</option>
-            
+
+          <label htmlFor="descripcion" className="text-lg font-semibold mb-2">
+            Tipo de Servicio
+          </label>
+          <select
+            id="servicio"
+            className="border border-black p-2 mb-4 w-full rounded"
+          >
+            <option value="">Seleccione el tipo de servicio</option>
+            <option value="toallas">Toallas</option>
+            <option value="lavanderia">Lavandería</option>
           </select>
-      
-          <label htmlFor="descripcion">descripcion</label>
+
+          <label htmlFor="descripcion" className="text-lg font-semibold mb-2">
+            Descripción
+          </label>
           <input
             type="text"
             id="descripcion"
-            placeholder='descripcion'
-            className='border border-black p-2 w-full'
+            placeholder="Descripción"
+            className="border border-black p-2 w-full rounded"
           />
-          <label htmlFor="fecha">fecha </label>
-          <select id="fecha" className='border border-black p-2 mb-4 w-full'>
-            <option value="fecha">fecha1</option>
-            <option value="fecha">fecha2</option>
-            <option value="fecha">fecha3</option>
-            
-          </select>
-          <label htmlFor="codigo">codigo </label>
-          <input
-            type="text"
-            id="codigo"
-            placeholder='Ingrese su codigo de usuario'
-            className='border border-black p-2 w-full'
-          />
+
+         
+          <button 
+          onClick={handleClick}
+          id="submitButton"
+          type='button' 
+          className='text-center 
+          justify-center 
+          items-center flex
+           border-black text-2xl
+            rounded-xl w-full
+             bg-green-400 mt-6 
+             jello-vertical'>
+
+            Enviar informacion
+      </button>
         </form>
+    
       </div>
+      
     </div>
   );
 }
