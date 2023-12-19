@@ -17,24 +17,24 @@ function BodyServicios() {
     button.classList.add('jello-vertical');
 
  /*post*/
- try {
-  await fetch(`/enviarServicio/${id}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      nombreServicio,
-      descripcion,
-      horario,
-      fecha,
-    }),
-  })
-    .then((res) => res.json())
-    .then((data) =>
-      navigate(`/dashboard/servicios/resultService/${data.serviceId}`)
-    )
-    .catch((e) => console.log(e));
-} catch (error) {
-  console.error("Error")
+//  try {
+//   await fetch(`/enviarServicio/${id}`, {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({
+//       nombreServicio,
+//       descripcion,
+//       horario,
+//       fecha,
+//     }),
+//   })
+//     .then((res) => res.json())
+//     .then((data) =>
+//       navigate(`/dashboard/servicios/resultService/${data.serviceId}`)
+//     )
+//     .catch((e) => console.log(e));
+// } catch (error) {
+//   console.error("Error")
 
 
 

@@ -26,7 +26,7 @@ function Body() {
       if (response.ok) {
         const data = await response.json();
         const userId = data.clienteId;
-          navigate(`/Dashboard/${userId}`); //
+          navigate(`/Dashboard/${userId}`); 
         setGoToDashboard(true);
       } else {
         console.error("Los datos no son correctos");
