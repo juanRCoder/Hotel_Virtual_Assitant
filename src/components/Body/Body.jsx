@@ -24,7 +24,8 @@ function Body() {
       });
 
       if (response.ok) {
-          const userId = data.clienteId;
+        const data = await response.json();
+        const userId = data.clienteId;
           navigate(`/Dashboard/${userId}`); //
         setGoToDashboard(true);
       } else {
