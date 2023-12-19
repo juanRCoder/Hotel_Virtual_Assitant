@@ -4,21 +4,14 @@ import Servicios from "../../databases/Schema/serviciosSchema.js";
 //CREA UNA NUEVA SOLICITUD EN LA COLLECION SERVICIO
 export const postServicio = async (req, res) => {
   try {
-    const { nombreServicio, descripcion, fecha, horario, codigoCliente } =
-      req.body;
+    const { nombreServicio, descripcion, fecha, horario } = req.body;
 
-    // Buscar al cliente usando el código proporcionado
-    const clienteAsociado = await Cliente.findOne({ codigo: codigoCliente });
-
-    if (!clienteAsociado) {
-      return res.status(404).json({
-        message: "No se encontró un cliente asociado al código proporcionado",
-      });
-    }
+    //Obteniendo el id del cliente de la URL
+    const clienteId = req.params.id;
 
     // Crear un nuevo servicio asociado al cliente encontrado
     const nuevoServicio = new Servicios({
-      id_cliente: clienteAsociado._id,
+      id_cliente: clienteId,
       nombreServicio,
       descripcion,
       fecha,
@@ -27,26 +20,63 @@ export const postServicio = async (req, res) => {
 
     await nuevoServicio.save();
 
-    // Datos a enviar al frontend
+    const serviceId = nuevoServicio._id;
+
+    res.status(201).json({ serviceId });
+  } catch (error) {
+    console.error("Error al crear el servicio:", error);
+    res
+      .status(500)
+      .json({ error: "Error al procesar la solicitud del servicio" });
+  }
+};
+
+
+// Controlador para enviar los datos al front
+export const getServicio = async (req, res) => {
+  try {
+    const servicioId = req.params.idService;
+
+    // Buscar el servicio en la base de datos basado en el servicioId
+    const servicioEncontrado = await Servicios.findById(servicioId);
+
+    if (!servicioEncontrado) {
+      return res.status(404).json({
+        message: "No se encontró el servicio con el ID proporcionado",
+      });
+    }
+
+    // Buscar al cliente asociado al servicio usando el ID del cliente en el servicio encontrado
+    const clienteAsociado = await Cliente.findById(
+      servicioEncontrado.id_cliente
+    );
+
+    if (!clienteAsociado) {
+      return res.status(404).json({
+        message: "No se encontró un cliente asociado al servicio",
+      });
+    }
+
+    // Estructurar los datos que deseas enviar al frontend
     const datosClienteServicio = {
       Cliente: {
         nombres: clienteAsociado.nombres,
-        apellido: clienteAsociado.apellidos,
+        apellidos: clienteAsociado.apellidos,
         codigo: clienteAsociado.codigo,
         habitacion: clienteAsociado.habitacion,
       },
       Servicios: {
-        nombreServicio,
-        descripcion,
-        fecha,
-        horario,
+        nombreServicio: servicioEncontrado.nombreServicio,
+        descripcion: servicioEncontrado.descripcion,
+        fecha: servicioEncontrado.fecha,
+        horario: servicioEncontrado.horario,
       },
     };
-    res
-      .status(201)
-      .json({ message: "Servicio creado y asociado al cliente correctamente" });
+
+    // Enviar los datos al frontend como respuesta en formato JSON
+    res.status(200).json({ datosClienteServicio });
   } catch (error) {
-    console.error("Error al crear el servicio:", error);
+    console.error("Error al obtener el servicio:", error);
     res
       .status(500)
       .json({ error: "Error al procesar la solicitud del servicio" });
