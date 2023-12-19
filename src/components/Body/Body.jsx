@@ -23,6 +23,7 @@ function Body() {
       });
 
       if (response.ok) {
+        const data = await response.json();
         const userId = data.clienteId;
           navigate(`/Dashboard/${userId}`); //
         setGoToDashboard(true);
