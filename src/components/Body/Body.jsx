@@ -20,10 +20,11 @@ function Body() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(nombreCompleto),
+        
       });
 
       if (response.ok) {
-        const userId = data.clienteId;
+          const userId = data.clienteId;
           navigate(`/Dashboard/${userId}`); //
         setGoToDashboard(true);
       } else {
@@ -46,7 +47,7 @@ function Body() {
       {/*  behind  the form */}
       <div className="
       bg-white
-       p-8 
+      //  p-8 
        -mt-5 
         rounded-3xl 
         shadow-md 
@@ -56,7 +57,7 @@ function Body() {
         md:w-80 
         bg-gradient-to-br
         from-white
-        via-lime-100
+        // via-lime-100
         to-lime-200 ">
         {/* Formulario de login */}
         <form className="w-full">
