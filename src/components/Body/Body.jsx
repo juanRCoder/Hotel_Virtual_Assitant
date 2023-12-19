@@ -1,11 +1,13 @@
 import room from '../../assets/images/room.png';
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 function Body() {
   const [nombreCompleto, setNombreCompleto] = useState("");
   const [goToDashboard, setGoToDashboard] = useState(false);
+  const navigate = useNavigate();
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -21,6 +23,8 @@ function Body() {
       });
 
       if (response.ok) {
+        const userId = data.clienteId;
+          navigate(`/Dashboard/${userId}`); //
         setGoToDashboard(true);
       } else {
         console.error("Los datos no son correctos");
@@ -29,11 +33,7 @@ function Body() {
       console.error("Error al procesar la solicitud:", error);
     }
   };
-
-  if (goToDashboard) {
-    return <Navigate to="Dashboard" />;
-  }
-
+ 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center mt-12">
       

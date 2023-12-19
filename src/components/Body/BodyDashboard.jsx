@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import frontdesk from "../../assets/images/frontdesk.png";
 import './animations.css'
 
 function BodyDashboard() {
+  const { id } = useParams();
   return (
     <>
       <div className="flex justify-center items-center pt-10">
@@ -15,7 +16,7 @@ function BodyDashboard() {
       </div>
 
       <div className="flex pt-30 space-x-2 p-12">
-        <Link to="/dashboard/servicios">
+        <Link to={`/dashboard/servicios/${id}`}>
           <button
             className="
             font-mono 
@@ -30,8 +31,8 @@ function BodyDashboard() {
             via-lime-200
             to-green-300 
             animation  -ripple
-            "
-                     >
+            ">
+
             SERVICIOS
           </button>
         </Link>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {useParams } from "react-router-dom";
 import servicios from '../../assets/images/frontdesk.png';
 import DatePicker from 'react-datepicker';
 import TimePicker from 'react-time-picker';
@@ -7,6 +8,7 @@ import 'react-time-picker/dist/TimePicker.css';
 
 
 function BodyServicios() {
+  const { id } = useParams();
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState('12:00'); 
   const handleClick = () => { 
@@ -14,7 +16,28 @@ function BodyServicios() {
     const button = document.getElementById('submitButton');
     button.classList.add('jello-vertical');
 
- 
+ /*post*/
+//  try {
+//   await fetch(`/enviarServicio/${id}`, {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({
+//       nombreServicio,
+//       descripcion,
+//       horario,
+//       fecha,
+//     }),
+//   })
+//     .then((res) => res.json())
+//     .then((data) =>
+//       navigate(`/dashboard/servicios/resultService/${data.serviceId}`)
+//     )
+//     .catch((e) => console.log(e));
+// } catch (error) {
+//   console.error("Error")
+
+
+
     setTimeout(() => {
       button.classList.remove('jello-vertical');
     }, 500);
@@ -48,15 +71,7 @@ function BodyServicios() {
             </div>
           </div>
           
-          <label htmlFor="servicio1" className="text-lg font-semibold mb-2">
-            Servicio
-          </label>
-          <input
-            type="text"
-            id="servicio1"
-            placeholder="Ingrese el tipo de servicio"
-            className="border border-black p-2 mb-4 w-full rounded"
-          />
+          
 
           <label htmlFor="descripcion" className="text-lg font-semibold mb-2">
             Tipo de Servicio
