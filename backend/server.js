@@ -2,7 +2,7 @@ import express from "express";
 import { fileURLToPath } from "url";
 import { dashboardRouter } from "./routers/dashboard.router.js";
 import { servicioRouter } from "./routers/servicios.router.js";
-import { faqRouter } from "./routers/FAQ.router.js";
+import { faqRouter } from "./routers/faq.router.js";
 import bodyParser from "body-parser";
 import connectDB from "../databases/database.js";
 import path from "path";

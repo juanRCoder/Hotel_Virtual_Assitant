@@ -5,8 +5,6 @@ import Servicios from "../../databases/Schema/serviciosSchema.js";
 export const postServicio = async (req, res) => {
   try {
     const { nombreServicio, descripcion, fecha, horario } = req.body;
-
-    //Obteniendo el id del cliente de la URL
     const clienteId = req.params.id;
 
     // Crear un nuevo servicio asociado al cliente encontrado
@@ -22,7 +20,7 @@ export const postServicio = async (req, res) => {
 
     const serviceId = nuevoServicio._id;
 
-    res.status(201).json({ serviceId });
+    res.status(201).json(serviceId);
   } catch (error) {
     console.error("Error al crear el servicio:", error);
     res
@@ -31,8 +29,6 @@ export const postServicio = async (req, res) => {
   }
 };
 
-
-// Controlador para enviar los datos al front
 export const getServicio = async (req, res) => {
   try {
     const servicioId = req.params.idService;
@@ -60,6 +56,7 @@ export const getServicio = async (req, res) => {
     // Estructurar los datos que deseas enviar al frontend
     const datosClienteServicio = {
       Cliente: {
+        id: clienteAsociado._id,
         nombres: clienteAsociado.nombres,
         apellidos: clienteAsociado.apellidos,
         codigo: clienteAsociado.codigo,
@@ -74,7 +71,7 @@ export const getServicio = async (req, res) => {
     };
 
     // Enviar los datos al frontend como respuesta en formato JSON
-    res.status(200).json({ datosClienteServicio });
+    res.status(200).json(datosClienteServicio);
   } catch (error) {
     console.error("Error al obtener el servicio:", error);
     res
