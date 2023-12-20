@@ -2,9 +2,10 @@ import PreguntasFrecuentes from "../../databases/Schema/preguntasFrecuentasSchem
 
 export const getFAQ = async (req, res) => {
   try {
+    const ClientId = req.params.id;
     const faqs = await PreguntasFrecuentes.find({});
 
-    res.status(201).json( faqs );
+    res.status(201).json({faqs, ClientId});
   } catch (e) {
     console.error("Error al obtener las FAQs:", error);
     res
