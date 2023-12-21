@@ -1,7 +1,11 @@
+import BodyTecnico from "../components/Body/BodyTecnico"
 
 function Tecnico  () {
   return (
-    <div>Tecnico</div>
+    <>
+    <BodyTecnico/>
+    
+    </>
   )
 }
 

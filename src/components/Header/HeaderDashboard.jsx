@@ -8,7 +8,7 @@ function HeaderDashboard() {
   return (
     
     <div className="flex flex-col items-center relative">
-      <div className="absolute  top-0 left-0 w-20 h-1 mt-5">
+      <div className="absolute  top-0 left-0 w-20 h-1 mt-5 ">
         <img className="" src={logo} alt="LOGO" />
       </div>
       <div className="absolute top-4 right-4 w-14">
