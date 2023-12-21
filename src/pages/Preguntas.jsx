@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import BodyPreguntas from "../components/Body/BodyPreguntas";
 
-function Preguntas  ()  {
+
+function Preguntas() {
   return (
-    <div>Preguntas</div>
-  )
+    <>
+        <BodyPreguntas />
+      
+    </>
+  );
 }
 
-export default Preguntas
+export default Preguntas;
