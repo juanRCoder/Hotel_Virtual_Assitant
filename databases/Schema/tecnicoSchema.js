@@ -8,7 +8,11 @@ const tecnicoSchema = new mongoose.Schema({
     problema: String,
     descripcion: String,
     fecha: Date,
-    horario: String
+    horario: String,
+    updated_at: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 const Tecnico = mongoose.model('tecnico', tecnicoSchema);

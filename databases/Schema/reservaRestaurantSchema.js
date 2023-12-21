@@ -9,6 +9,10 @@ const reservaSchema = new mongoose.Schema({
     cantidad: Number,
     fecha: Date,
     horario: String,
+    updated_at: {
+        type: Date,
+        default: Date.now
+    }
 })
 
 const Reserva_restaurant = mongoose.model("Reserva Restaurant", reservaSchema);

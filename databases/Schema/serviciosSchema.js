@@ -9,6 +9,10 @@ const serviciosSchema = new mongoose.Schema({
     descripcion: String,
     fecha: Date,
     horario: String,
+    updated_at: {
+        type: Date,
+        default: Date.now
+    }
 })
 
 const Servicios = mongoose.model('Servicios', serviciosSchema);

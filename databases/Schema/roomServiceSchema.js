@@ -15,7 +15,11 @@ const roomServiceSchema = new mongoose.Schema({
     ref: 'Menu'
   },
   fecha: Date,
-  horario: String
+  horario: String,
+  updated_at: {
+    type: Date,
+    default: Date.now
+}
 });
 
 const RoomService = mongoose.model('RoomService', roomServiceSchema);
