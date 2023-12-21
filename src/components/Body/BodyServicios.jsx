@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {useParams } from "react-router-dom";
 import servicios from '../../assets/images/frontdesk.png';
-import DatePicker from 'react-datepicker';
+import DateTimePicker from 'react-datepicker';
 import TimePicker from 'react-time-picker';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-time-picker/dist/TimePicker.css';
@@ -34,7 +34,7 @@ function BodyServicios() {
 //     )
 //     .catch((e) => console.log(e));
 // } catch (error) {
-//   console.error("Error")
+//   console.error("Error")}
 
 
 
@@ -53,7 +53,7 @@ function BodyServicios() {
               <label htmlFor="fecha" className="text-lg font-semibold ">
                 Fecha<br/>
               </label>
-              <DatePicker
+              <DateTimePicker
                 selected={date}
                 onChange={(date) => setDate(date)}
                 className="border border-black p-2 w-full rounded"
@@ -63,11 +63,14 @@ function BodyServicios() {
               <label htmlFor="hora" className="text-lg font-semibold mb-2">
                 Hora
               </label>
-              <TimePicker
+              {/* <TimePicker
                 value={time}
                 onChange={(newTime) => setTime(newTime)}
+                minDate={new Date().setHours(8, 0)} // Hora mínima a las 8:00 AM
+                maxDate={new Date().setHours(20, 0)} // Hora máxima a las 8:00 PM
                 className="border border-black p-2 w-full rounded"
-              />
+                
+              /> */}
             </div>
           </div>
           
@@ -80,9 +83,13 @@ function BodyServicios() {
             id="servicio"
             className="border border-black p-2 mb-4 w-full rounded"
           >
-            <option value="">Seleccione el tipo de servicio</option>
+             <option value="" disabled selected>Seleccione el servicio</option>
             <option value="toallas">Toallas</option>
             <option value="lavanderia">Lavandería</option>
+            <option value="limpieza">limpieza</option>
+            <option value="amenities">amenities</option>
+            <option value="lavanderia">No limpieza</option>
+            
           </select>
 
           <label htmlFor="descripcion" className="text-lg font-semibold mb-2">
@@ -106,7 +113,8 @@ function BodyServicios() {
            border-black text-2xl
             rounded-xl w-full
              bg-green-400 mt-6 
-             jello-vertical'>
+             jello-vertical
+            default:'>
 
             Enviar informacion
       </button>
