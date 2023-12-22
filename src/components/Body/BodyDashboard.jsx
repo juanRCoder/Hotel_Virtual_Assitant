@@ -75,7 +75,7 @@ function BodyDashboard() {
             shadow-2xl
           "
           >
-            TECNICO
+            PROBLEMAS
           </button>
         </Link>
 
