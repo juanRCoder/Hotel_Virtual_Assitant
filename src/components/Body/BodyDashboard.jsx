@@ -37,7 +37,7 @@ function BodyDashboard() {
           </button>
         </Link>
 
-        <Link to="/dashboard/preguntas">
+        <Link to={`/dashboard/preguntas/${id}`}>
           <button
             className="
             font-mono 
@@ -58,7 +58,7 @@ function BodyDashboard() {
           </button>
         </Link>
 
-        <Link to="/dashboard/tecnico">
+        <Link to={`/dashboard/tecnico/${id}`}>
           <button
             className="
             font-mono 
