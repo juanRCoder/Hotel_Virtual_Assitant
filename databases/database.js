@@ -5,10 +5,7 @@ const url = 'mongodb://127.0.0.1/testaroo';
 
 async function connectDB() {
     try {
-        await mongoose.connect(url, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
+        await mongoose.connect(url);
 
         mongoose.connection.on('connected', () => {
             console.log("connection has been made...");
