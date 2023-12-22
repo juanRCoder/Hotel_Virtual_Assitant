@@ -4,7 +4,7 @@ import Servicios from "../../databases/Schema/serviciosSchema.js";
 //CREA UNA NUEVA SOLICITUD EN LA COLLECION SERVICIO
 export const postServicio = async (req, res) => {
   try {
-    const { nombreServicio, descripcion, horario } = req.body;
+    const { nombreServicio, descripcion, fecha, horario } = req.body;
     const clienteId = req.params.id;
 
     // Crear un nuevo servicio asociado al cliente encontrado
@@ -12,6 +12,7 @@ export const postServicio = async (req, res) => {
       id_cliente: clienteId,
       nombreServicio,
       descripcion,
+      fecha,
       horario,
     });
 
@@ -64,8 +65,9 @@ export const getServicio = async (req, res) => {
       Servicios: {
         nombreServicio: servicioEncontrado.nombreServicio,
         descripcion: servicioEncontrado.descripcion,
-        horario: servicioEncontrado.horario,
-        created_at: servicioEncontrado.created_at
+        hora: servicioEncontrado.hora,
+        minutes: servicioEncontrado.minutes,
+        createdAt: servicioEncontrado.createdAt
       },
     };
 
