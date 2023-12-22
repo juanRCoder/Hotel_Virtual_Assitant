@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import servicios from "../../assets/images/frontdesk.png";
 // import DateTimePicker from "react-datepicker";
 // import TimePicker from "react-time-picker";
@@ -12,6 +12,9 @@ function BodyServicios() {
   const [descripcion, setDescripcion] = useState("");
   const [hora, setHora] = useState("");
   const [minutes, setMinutes] = useState("");
+
+  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,7 +33,7 @@ function BodyServicios() {
   const handleClick = async (e) => {
     const button = document.getElementById("submitButton");
     button.classList.add("jello-vertical");
-    e.eventPrevenDefault();
+    e.preventDefault();
 
     /*post*/
     try {
@@ -149,6 +152,9 @@ function BodyServicios() {
             Enviar informacion
           </button>
         </form>
+        <Link to={`/dashboard/${id}`}>
+        <button>Volver a Dashboard</button>
+      </Link>
       </div>
     </div>
   );
