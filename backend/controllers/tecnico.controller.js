@@ -60,7 +60,7 @@ export const getTecnico = async (req, res) => {
         descripcion: servicioTecnico.descripcion,
         hora: servicioTecnico.hora,
         minutes: servicioTecnico.minutes,
-        createdAt: servicioTecnico.createdAt
+        created_at: servicioTecnico.created_at
       },
     };
 
