@@ -3,7 +3,7 @@ import Tecnico from "../../databases/Schema/tecnicoSchema.js";
 
 export const postTecnico = async (req, res) => {
   try {
-    const { problema, descripcion, fecha, horario } = req.body;
+    const { problema, descripcion, hora, minutes } = req.body;
     const clienteId = req.params.id;
 
     //crear nuevo servicio tecnico.
@@ -11,8 +11,8 @@ export const postTecnico = async (req, res) => {
       id_cliente: clienteId,
       problema,
       descripcion,
-      fecha,
-      horario,
+      hora,
+      minutes
     });
 
     await newServicoTecnico.save();
@@ -26,6 +26,8 @@ export const postTecnico = async (req, res) => {
       .json({ error: "Error al procesar la solicitud del servicio" });
   }
 };
+
+
 
 //EXTRAER SERVICIOS TECNICOS ASOCIADO CON EL CLIENTE
 export const getTecnico = async (req, res) => {
@@ -56,9 +58,9 @@ export const getTecnico = async (req, res) => {
       Tecnico: {
         problema: servicioTecnico.problema,
         descripcion: servicioTecnico.descripcion,
-        fecha: servicioTecnico.fecha,
-        horario: servicioTecnico.horario,
-        createdAt: servicioTecnico.createdAt,
+        hora: servicioTecnico.hora,
+        minutes: servicioTecnico.minutes,
+        createdAt: servicioTecnico.createdAt
       },
     };
 
