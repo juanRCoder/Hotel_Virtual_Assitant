@@ -68,7 +68,7 @@ function BodyTecnico() {
          hover:shadow-sm" >
           </textarea>
           
-          <h1 className="text-xl font-mono mt-6">Seleccione el Horario de atencion</h1>
+          {/* <h1 className="text-xl font-mono mt-6">Seleccione el Horario de atencion</h1>
              <select
             id="servicio"
             className="
@@ -94,7 +94,34 @@ function BodyTecnico() {
             <option value="lavanderia">AIRE ACONDICADO</option>
             <option value="lavanderia">DUCHA</option>
             <option value="lavanderia">OTROS</option>
-          </select>
+          </select> */}
+           <div className="
+      flex 
+      items-center
+      border border-emerald-600
+      mt-4">
+        <label htmlFor="horario" className="mr-2">
+          Horario:
+        </label>
+        <select id="hora" name="hora" >
+          <option value="">...</option>
+          <option value="Inmediata">Inmediata</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+        </select>{" "}
+        :{" "}
+        <select id="minutes" name="minutes"  >
+          <option value="">...</option>
+          <option value="00">00</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+          <option value="40">40</option>
+        </select>
+      </div>
+
           <div className="
           flex 
           items-center 
