@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import servicios from "../../assets/images/frontdesk.png";
 // import DateTimePicker from "react-datepicker";
 // import TimePicker from "react-time-picker";
 // import "react-datepicker/dist/react-datepicker.css";
@@ -63,100 +62,159 @@ function BodyServicios() {
   };
 
   return (
-    <div className="flex items-center mx-4">
-      <img className="w-200" src={servicios} alt="SERVICIOS" />
-      <div className="flex flex-col w-full h-full ml-4">
-        <form
-          action=""
-          className="border border-black rounded-3xl p-8 bg-gray-100"
-        >
-          {/*SELECCIONAR TIPO DE SERVICIO*/}
-          <div>
-            <label htmlFor="descripcion" className="text-lg font-semibold mb-2">
-              Tipo de Servicio
-            </label>
-            <select
-              id="servicio"
-              className="border border-black p-2 mb-4 w-full rounded"
-              name="nombreServicio"
-              value={nombreServicio}
-              onChange={handleChange}
-            >
-              <option value="" disabled selected>
-                Seleccione el servicio
-              </option>
-              <option value="toallas">Toallas</option>
-              <option value="lavanderia">Lavandería</option>
-              <option value="limpieza">limpieza</option>
-              <option value="amenities">amenities</option>
-              <option value="lavanderia">No limpieza</option>
-            </select>
-          </div>
-
-          {/*DETALLES DEL SERVICIO*/}
-          <div>
-            <label htmlFor="descripcion" className="text-lg font-semibold mb-2">
-              Detalles del servicio.
-            </label>
-            <textarea
-              type="text"
-              id="descripcion"
-              name="descripcion"
-              value={descripcion}
-              placeholder="Descripción"
-              className="border border-black p-2 w-full rounded"
-              onChange={handleChange}
-            ></textarea>
-          </div>
-
-          {/*HORARIO DEL SERVICIO*/}
-          <div>
-            <label htmlFor="horario">Horario: </label>
-            <select id="hora" name="hora" value={hora} onChange={handleChange}>
-              <option value="">...</option>
-              <option value="Inmediata">Inmediata</option>
-              <option value="08">08</option>
-              <option value="09">09</option>
-              <option value="10">10</option>
-            </select>{" "}
-            :{" "}
-            <select
-              id="minutes"
-              name="minutes"
-              value={minutes}
-              onChange={handleChange}
-            >
-              <option value="">...</option>
-              <option value="00">00</option>
-              <option value="10">10</option>
-              <option value="15">15</option>
-              <option value="30">30</option>
-              <option value="35">35</option>
-              <option value="40">40</option>
-            </select>
-          </div>
-
-          <button
-            onClick={handleClick}
-            id="submitButton"
-            type="button"
-            className="text-center 
-          justify-center 
-          items-center flex
-           border-black text-2xl
-            rounded-xl w-full
-             bg-green-400 mt-6 
-             jello-vertical
-            default:"
-          >
-            Enviar informacion
-          </button>
-        </form>
-        <Link to={`/dashboard/${id}`}>
-        <button>Volver a Dashboard</button>
-      </Link>
-      </div>
+    <>
+    <div className="
+    flex 
+    justify-center 
+    text-center
+    ml-16">
+      <h1 className="
+      text-5xl
+      font-bold
+      text-shadow-lg
+      shadow-black/100
+      ">
+        SERVICIOS DE HOUSEKEEPING
+      </h1>
     </div>
+    <div className="flex items-center justify-center mx-4 mt-10">
+    <form
+      action=""
+      className=" 
+      flex 
+          flex-col
+          items-center
+          ml-20 
+          w-2/5 
+          h-3/5 
+          rounded-3xl 
+          shadow-2xl 
+          shadow-green-900 
+          border 
+          border-green-500 
+          hover:shadow-2xl 
+          border-l-4 
+          border-y-2
+          p-8 bg-gray-100"
+    >
+      {/* SELECCIONAR TIPO DE SERVICIO */}
+      <div>
+        <label htmlFor="descripcion" className="
+        text-lg 
+        font-mono 
+        mb-2
+        ">
+          Tipo de Servicio
+        </label>
+        <select
+          id="servicio"
+          className="border 
+          border-green-600
+          p-2 
+          mb-4 
+          w-full 
+          rounded"
+          name="nombreServicio"
+          value={nombreServicio}
+          onChange={handleChange}
+        >
+          <option value="" disabled selected>
+            Seleccione el servicio
+          </option>
+          <option value="toallas">Toallas</option>
+          <option value="lavanderia">Lavandería</option>
+          <option value="limpieza">limpieza</option>
+          <option value="amenities">amenities</option>
+          <option value="lavanderia">No limpieza</option>
+        </select>
+      </div>
+
+      {/* DETALLES DEL SERVICIO */}
+      <div>
+        <label htmlFor="descripcion" className="
+        text-lg 
+        font-mono 
+        mb-2">
+          Detalles del servicio.
+        </label>
+        <textarea
+          type="text"
+          id="descripcion"
+          name="descripcion"
+          value={descripcion}
+          placeholder="Descripción"
+          className="
+          rounded-xl
+          border 
+          border-green-600
+          border-l-4 border-y-2
+          shadow-xl
+          shadow-emerald-200 
+          p-2 
+          w-full 
+          
+          h-48"
+          onChange={handleChange}
+        ></textarea>
+      </div>
+
+      {/* HORARIO DEL SERVICIO */}
+      <div className="
+      flex 
+      items-center
+      border border-emerald-600
+      mt-4">
+        <label htmlFor="horario" className="mr-2">
+          Horario:
+        </label>
+        <select id="hora" name="hora" value={hora} onChange={handleChange}>
+          <option value="">...</option>
+          <option value="Inmediata">Inmediata</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+        </select>{" "}
+        :{" "}
+        <select id="minutes" name="minutes" value={minutes} onChange={handleChange}>
+          <option value="">...</option>
+          <option value="00">00</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+          <option value="40">40</option>
+        </select>
+      </div>
+
+      <button
+        onClick={handleClick}
+        id="submitButton"
+        type="button"
+        className="
+        border
+        border-black 
+        mt-4
+        shadow-xl
+        shadow-green-400
+        bg-green-500
+        hover:bg-green-950
+        text-black 
+        w-24
+        h-12 
+        rounded 
+        focus:outline-none 
+        focus:shadow-outline  
+        font-bold
+        text-xl
+      
+        jello-vertical 
+        default:"
+      >
+        Enviar 
+      </button>
+    </form>
+  </div>
+  </>
   );
 }
 

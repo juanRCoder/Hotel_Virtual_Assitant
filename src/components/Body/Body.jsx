@@ -49,7 +49,7 @@ function Body() {
         w-full
         md:w-3/5
         h-70
-        shadow-xl
+        shadow-2xl
         shadow-black
         hover:drop-shadow-2xl 
         rounded-l
