@@ -24,7 +24,7 @@ function Body() {
       });
 
       if (response.ok) {
-        const userId = await response.json();
+        const userId = await response.json();gi
           navigate(`/Dashboard/${userId}`); 
         setGoToDashboard(true);
       } else {
@@ -36,10 +36,27 @@ function Body() {
   };
  
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center mt-12">
+    <div className="
+    flex 
+    flex-col 
+    md:flex-row 
+    items-center 
+    justify-center 
+    mt-12">
       
       <img
-        className="w-full md:w-3/5 h-70 rounded-3xl hover:drop-shadow-2xlxl mb-6 md:mr-6 border border-green-600 hover:shadow-2xl"
+        className="
+        w-full
+        md:w-3/5
+        h-70
+        shadow-xl
+        shadow-black
+        hover:drop-shadow-2xl 
+        rounded-l
+        mb-6 md:mr-6 
+        border
+        border-green-600
+        hover:shadow-2xl"
         src={room}
         alt="frontdesk"
       />
@@ -50,7 +67,8 @@ function Body() {
       //  p-8 
        -mt-5 
         rounded-3xl 
-        shadow-md 
+        shadow-2xl
+        shadow-black
         border border-green-600 
         hover:shadow-2xl 
         w-full 
@@ -58,18 +76,34 @@ function Body() {
         bg-gradient-to-br
         from-white
         via-lime-100
-        to-lime-200 ">
+        to-lime-200  
+        ">
         {/* Formulario de login */}
         <form className="w-full">
           <div className="mb-6">
             <label
-              className="block text-green-600 text-sm font-bold mb-2"
+              clxassName="
+              block 
+              text-green-600 
+              text-sm 
+              font-bold 
+              mb-2"
               htmlFor="nombres"
             >
               Nombres
             </label>
             <input
-              className="shadow-xl appearance-none border-l-4 border-y border-r rounded-t-xl  border-green-400  w-full py-2 px-3 text-black mb-3"
+              className="
+              shadow-md 
+              shadow-green-950 
+              appearance-none 
+              border-l-4 border-y 
+              border-r rounded-t-xl  
+              border-green-400  
+              w-full 
+              py-2 px-3 
+             text-black
+              mb-3"
               id="nombres"
               type="text"
               name="nombres"
@@ -80,13 +114,30 @@ function Body() {
           </div>
           <div className="mb-6">
             <label
-              className="block text-green-600 text-sm font-bold mb-2"
+              className="
+              block 
+              text-green-600 
+              text-sm 
+              font-bold 
+              mb-2"
               htmlFor="apellidos"
             >
               Apellidos
             </label>
             <input
-              className="shadow-xl appearance-none border-l-4 border-y-1 border-y border-r rounded-t-xl  border-green-400 w-full py-2 px-3 text-black mb-3"
+              className="
+              shadow-md 
+              shadow-green-950 
+              appearance-none 
+              border-l-4 
+              border-y-1 
+              border-y 
+              border-r 
+              rounded-t-xl  
+              border-green-400 
+              w-full 
+              py-2 px-3 
+              text-black mb-3"
               id="apellidos"
               type="text"
               name="apellidos"
@@ -97,13 +148,30 @@ function Body() {
           </div>
           <div className="mb-6">
             <label
-              className="block text-green-600 text-sm font-bold mb-2"
+              className="
+              block 
+              text-green-600 
+              text-sm 
+              font-bold 
+              mb-2"
               htmlFor="codigo"
             >
               Código
             </label>
             <input
-              className="shadow-xl appearance-none border-l-4 border-y-1 border-y border-r rounded-t-xl  border-green-400 w-full py-2 px-3 text-black  mb-3 "
+              className="
+              shadow-md 
+              shadow-green-950
+              appearance-none 
+              border-l-4 
+              border-y-1 
+              border-y border-r 
+              rounded-t-xl  
+              border-green-400 
+              w-full 
+              py-2 px-3 
+              text-black  
+              mb-3 "
               id="codigo"
               type="text"
               name="codigo"
@@ -117,7 +185,14 @@ function Body() {
           </div>
           <div className="flex items-center justify-center shadow-xl ">
             <button
-              className="bg-green-300 hover:bg-green-600 text-black font-bold py-4  rounded focus:outline-none focus:shadow-outline  w-full "
+              className="
+              bg-green-300
+              hover:bg-green-600 
+              text-black font-bold py-4  
+              rounded 
+              focus:outline-none 
+              focus:shadow-outline  
+              w-full "
               type="button"
               onClick={handleSubmit}
             >
