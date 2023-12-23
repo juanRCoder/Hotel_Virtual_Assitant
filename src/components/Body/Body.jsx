@@ -24,7 +24,7 @@ function Body() {
       });
 
       if (response.ok) {
-        const userId = await response.json();gi
+        const userId = await response.json();
           navigate(`/Dashboard/${userId}`); 
         setGoToDashboard(true);
       } else {
