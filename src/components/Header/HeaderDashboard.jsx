@@ -1,7 +1,9 @@
 import React from 'react';
 import logo from '../../assets/images/logo-removebg-preview.png';
-import Lottie from 'lottie-react';
-import buzzer from '../../assets/images/buzzer.png'
+import Lottie from "lottie-react";
+import animation from "../../assets/back.json";
+
+
 
 function HeaderDashboard() {
   
@@ -11,12 +13,9 @@ function HeaderDashboard() {
       <div className="absolute  top-0 left-0 w-20 h-1 mt-5 ">
         <img className="" src={logo} alt="LOGO" />
       </div>
-      <div className="absolute top-4 right-4 w-14">
-        {/* <Lottie
-          className='w-32 h-28'
-          animationData={Hotel24}
-        /> */}
-        <img className='w-28 -h20' src={buzzer} alt="buzzer" />
+      <div>
+        
+        <Lottie className="w-12 absolute top-4 right-6" animationData={animation} />
       </div>
       <div className="flex items-center justify-center flex-col">
         <h1 className="font-Oswald text-7xl text-center pt-5">

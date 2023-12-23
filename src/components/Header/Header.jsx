@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/images/logo-removebg-preview.png';
+
 
 const Header = () => {
   return (

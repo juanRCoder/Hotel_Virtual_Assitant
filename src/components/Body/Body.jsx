@@ -58,7 +58,7 @@ function Body() {
         md:w-80 
         bg-gradient-to-br
         from-white
-        // via-lime-100
+        via-lime-100
         to-lime-200 ">
         {/* Formulario de login */}
         <form className="w-full">
