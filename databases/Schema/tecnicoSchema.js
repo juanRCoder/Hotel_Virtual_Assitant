@@ -7,9 +7,9 @@ const tecnicoSchema = new mongoose.Schema({
     },
     problema: String,
     descripcion: String,
-    fecha: Date,
-    horario: String,
-    updated_at: {
+    hora: String,
+    minutes: String,
+    created_at: {
         type: Date,
         default: Date.now
     }

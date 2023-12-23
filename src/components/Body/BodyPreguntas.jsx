@@ -1,23 +1,51 @@
-import React from 'react';
-import imagen from '../../assets/images/frontdesk.png';
-import Acordeon from './Acordeon';
+import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import Acordeon from "./Acordeon";
 
 function BodyPreguntas() {
-    return (
-      <div className="flex mx-4">
-        <div className="w-40%">
-          <img src={imagen} alt="" className="w-full h-auto" />
-        </div>
-        <div className="">
-         
-        </div>
-        <div className='mt-20 flex w-1/2 text-sm font-mono h-full rounded-xl '>
-        <Acordeon />
-        </div>
-      </div>
-    );
-  }
-  
+  const { id } = useParams();
+  const [faq, setFaq] = useState([]);
+  const [clientID, setClientID] = useState(null);
+
+  useEffect(() => {
+    const responseFetch = async () => {
+      try {
+        await fetch(`/extraerFAQ/${id}`, {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            setFaq(data.faqs);
+            setClientID(data.ClientId);
+            console.log(data.ClientId);
+          })
+          .catch((e) => console.log(e));
+      } catch (error) {
+        console.error("Error:", error.message);
+        // Aquí podrías mostrar un mensaje de error al usuario
+      }
+    };
+    responseFetch();
+  }, []);
+
+  return (
+    <>
+      {faq.map((f) => {
+        return (
+          <div key={f.id}>
+            <Acordeon question={f.pregunta} response={f.respuesta} />
+          </div>
+        );
+      })}
+      {clientID && ( // Renderiza el botón solo si 'clientId' tiene un valor
+        <Link to={`/dashboard/${clientID}`}>
+          <button>Volver a Dashboard</button>
+        </Link>
+      )}
+    </>
+  );
+}
 
 // function BodyPreguntas() {
 //   return (
@@ -25,7 +53,7 @@ function BodyPreguntas() {
 //       <div className="flex items-center mx-4 absolute">
 //         <img src={imagen} alt="" />
 
-    /* <div className="ml-40 ">
+/* <div className="ml-40 ">
           <h1 className='text-lg font-semibold block ml-'>Descripción del problema</h1>
           <div className="bg-red border border-black mt-4 p-4">
           <select

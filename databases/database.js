@@ -6,9 +6,9 @@ const url = 'mongodb://127.0.0.1/testaroo';
 async function connectDB() {
     try {
         await mongoose.connect(url)
-        console.log("connection has been made...");
+        console.log("MongoDB connected!...");
     } catch (err) {
-        console.log("Connection error: ", err)
+        console.log("MongoDB disconnected!", err)
     }
 }
 

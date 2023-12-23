@@ -7,9 +7,9 @@ const serviciosSchema = new mongoose.Schema({
     },
     nombreServicio: String,
     descripcion: String,
-    fecha: Date,
-    horario: String,
-    updated_at: {
+    hora: String,
+    minutes: String,
+    created_at: {
         type: Date,
         default: Date.now
     }

@@ -27,6 +27,8 @@ export const postTecnico = async (req, res) => {
   }
 };
 
+
+
 //EXTRAER SERVICIOS TECNICOS ASOCIADO CON EL CLIENTE
 export const getTecnico = async (req, res) => {
   try {
@@ -56,9 +58,9 @@ export const getTecnico = async (req, res) => {
       Tecnico: {
         problema: servicioTecnico.problema,
         descripcion: servicioTecnico.descripcion,
-        fecha: servicioTecnico.fecha,
-        horario: servicioTecnico.horario,
-        createdAt: servicioTecnico.createdAt,
+        hora: servicioTecnico.hora,
+        minutes: servicioTecnico.minutes,
+        created_at: servicioTecnico.created_at
       },
     };
 

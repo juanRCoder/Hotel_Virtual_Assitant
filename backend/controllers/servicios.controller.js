@@ -65,8 +65,9 @@ export const getServicio = async (req, res) => {
       Servicios: {
         nombreServicio: servicioEncontrado.nombreServicio,
         descripcion: servicioEncontrado.descripcion,
-        fecha: servicioEncontrado.fecha,
-        horario: servicioEncontrado.horario,
+        hora: servicioEncontrado.hora,
+        minutes: servicioEncontrado.minutes,
+        created_at: servicioEncontrado.created_at
       },
     };
 
