@@ -1,6 +1,7 @@
 import React from "react";
 import BodyPreguntas from "../components/Body/BodyPreguntas";
 import backgroundImage from '../assets/images/fondo-verde-amarillo-fondo-verde-naranja_873925-18302.jpg'
+import AllHeaders from "../components/Header/AllHeaders";
 
 function Preguntas() {
   return (
@@ -15,7 +16,7 @@ function Preguntas() {
             opacity: 0.9,
           }}
         ></div>
-
+        <AllHeaders/>
         <BodyPreguntas />
       </div>
     </>
