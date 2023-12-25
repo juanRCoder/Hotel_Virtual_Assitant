@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import logo from "../../assets/images/logo-removebg-preview.png";
 import Lottie from "lottie-react";
 import animation from "../../assets/back.json";
 
-function AllHeaders({ serviceTecnico }) {
+function AllHeaders() {
+  const { id } = useParams();
   return (
     <div className="flex flex-col items-center relative">
       <div className="absolute top-0 left-0  w-28  mt-2 ml-2">
@@ -12,7 +13,7 @@ function AllHeaders({ serviceTecnico }) {
       </div>
 
       <div>
-        <Link to={`/dashboard/${serviceTecnico && serviceTecnico.Cliente.id}`}>
+        <Link to={`/dashboard/${id}`}>
           <button>
             <Lottie
               className="w-12 absolute top-4 right-8 mt-2"

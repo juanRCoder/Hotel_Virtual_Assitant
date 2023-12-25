@@ -3,7 +3,7 @@ import Tecnico from "../../databases/Schema/tecnicoSchema.js";
 
 export const postTecnico = async (req, res) => {
   try {
-    const { problema, descripcion, fecha, horario } = req.body;
+    const { problema, descripcion, hora, minutes } = req.body;
     const clienteId = req.params.id;
 
     //crear nuevo servicio tecnico.
@@ -11,8 +11,8 @@ export const postTecnico = async (req, res) => {
       id_cliente: clienteId,
       problema,
       descripcion,
-      fecha,
-      horario,
+      hora,
+      minutes,
     });
 
     await newServicoTecnico.save();

@@ -1,17 +1,69 @@
+import { useState } from "react";
+import { useNavigate, useParams, Link } from "react-router-dom";
 
 function BodyTecnico() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const [problema, setProblema] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [minutes, setMinutes] = useState("");
+  const [hora, setHora] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "problema") {
+      setProblema(value);
+    } else if (name === "descripcion") {
+      setDescripcion(value);
+    } else if (name === "hora") {
+      setHora(value);
+    } else if (name === "minutes") {
+      setMinutes(value);
+    }
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await fetch(`/enviarServiciosTec/${id}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          problema,
+          descripcion,
+          hora,
+          minutes,
+        }),
+      })
+        .then((res) => res.json())
+        .then((tecnicoId) => {
+          navigate(`/dashboard/serviciosTec/resultServiceTec/${tecnicoId}`);
+          console.log({ tecnicoId });
+        })
+
+        .catch((e) => console.log(e));
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
+  };
+
   return (
     <>
       <div className="flex justify-center text-center -mt-2">
-        <h1 className="
+        <h1
+          className="
         text-5xl
         text-shadow-lg
         shadow-black/100
         text-center
         ml-16
         font-bold 
-        ">
-          SERVICIO TECNICO</h1>
+        "
+        >
+          PROBLEMAS
+        </h1>
       </div>
       <div className="flex justify-center items-center text-center mt-3">
         <div
@@ -29,9 +81,12 @@ function BodyTecnico() {
         hover:shadow-2xl
         border-l-4 border-y-2 "
         >
-          <h1 className="text-xl mt-6 font-mono" >Problema Tecnico</h1>
+          <h1 className="text-xl mt-6 font-mono">Tipo de Problema:</h1>
           <select
-            id="servicio"
+            id="problema"
+            name="problema"
+            value={problema}
+            onChange={handleChange}
             className="
             border border-green-400
             p-2 
@@ -50,12 +105,20 @@ function BodyTecnico() {
             <option value="lavanderia">LUZ</option>
             <option value="limpieza">INTERNET</option>
             <option value="amenities">TV</option>
-            <option value="lavanderia">AIRE ACONDICADO</option>
-            <option value="lavanderia">DUCHA</option>
-            <option value="lavanderia">OTROS</option>
+            <option value="aire acondicionado">AIRE ACONDICIONADO</option>
+            <option value="ducha">DUCHA</option>
+            <option value="otros">OTROS</option>
           </select>
-          <h1 className="font-mono text-xl">Descripcion del problema tecnico</h1>
-          <textarea type="text" className="
+          <h1 className="font-mono text-xl">
+            Descripcion del problema tecnico
+          </h1>
+          <textarea
+            id="descripcion"
+            name="descripcion"
+            placeholder="descripcion..."
+            value={descripcion}
+            onChange={handleChange}
+            className="
          shadow-2xl
          shadow-cocoa-900
          w-5/6
@@ -65,9 +128,9 @@ function BodyTecnico() {
          rounded-3xl
          border-l-8 border-y-0
          border border-green-400
-         hover:shadow-sm" >
-          </textarea>
-          
+         hover:shadow-sm"
+          ></textarea>
+
           {/* <h1 className="text-xl font-mono mt-6">Seleccione el Horario de atencion</h1>
              <select
             id="servicio"
@@ -95,39 +158,48 @@ function BodyTecnico() {
             <option value="lavanderia">DUCHA</option>
             <option value="lavanderia">OTROS</option>
           </select> */}
-           <div className="
+          <div
+            className="
       flex 
       items-center
       border border-emerald-600
-      mt-4">
-        <label htmlFor="horario" className="mr-2">
-          Horario:
-        </label>
-        <select id="hora" name="hora" >
-          <option value="">...</option>
-          <option value="Inmediata">Inmediata</option>
-          <option value="08">08</option>
-          <option value="09">09</option>
-          <option value="10">10</option>
-        </select>{" "}
-        :{" "}
-        <select id="minutes" name="minutes"  >
-          <option value="">...</option>
-          <option value="00">00</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
-          <option value="30">30</option>
-          <option value="35">35</option>
-          <option value="40">40</option>
-        </select>
-      </div>
+      mt-4"
+          >
+            <label htmlFor="hora" className="mr-2">
+              Horario:
+            </label>
+            <select id="hora" name="hora" value={hora} onChange={handleChange}>
+              <option value="">...</option>
+              <option value="Inmediata">Inmediata</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+            </select>{" "}
+            :{" "}
+            <select
+              id="minutes"
+              name="minutes"
+              value={minutes}
+              onChange={handleChange}
+            >
+              <option value="">...</option>
+              <option value="00">00</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+            </select>
+          </div>
 
-          <div className="
+          <div
+            className="
           flex 
           items-center 
           justify-center 
           shadow-xl 
-          py-2">
+          py-2"
+          >
             <button
               className="
               bg-green-500
@@ -143,21 +215,15 @@ function BodyTecnico() {
               jello-vertical
               default
               "
-              type="button"
-             
+              type="submit"
+              onClick={handleSubmit}
             >
               ENVIAR
             </button>
           </div>
         </div>
-        
-      
       </div>
-    
-    
- 
-
     </>
   );
 }
-export default BodyTecnico
+export default BodyTecnico;
