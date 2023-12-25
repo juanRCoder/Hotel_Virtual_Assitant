@@ -19,6 +19,7 @@ const roomServiceSchema = new mongoose.Schema({
   otros_detalles: String,
   fecha: Date,
   hora: String,
+  minutes: String,
   updated_at: {
     type: Date,
     default: Date.now
