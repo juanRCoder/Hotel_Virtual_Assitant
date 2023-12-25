@@ -8,7 +8,8 @@ const reservaSchema = new mongoose.Schema({
     id_mesa: Number,
     cantidad: Number,
     fecha: Date,
-    horario: String,
+    hora: String,
+    minutes: String,
     updated_at: {
         type: Date,
         default: Date.now

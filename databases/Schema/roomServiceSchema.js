@@ -14,8 +14,11 @@ const roomServiceSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Menu'
   },
+  cant_beb: Number,
+  cant_menu: Number,
+  otros_detalles: String,
   fecha: Date,
-  horario: String,
+  hora: String,
   updated_at: {
     type: Date,
     default: Date.now
