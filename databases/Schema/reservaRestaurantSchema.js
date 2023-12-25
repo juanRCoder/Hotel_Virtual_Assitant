@@ -5,7 +5,10 @@ const reservaSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Cliente'
     },
-    id_mesa: Number,
+    id_mesa: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Mesas'
+    },
     cantidad: Number,
     fecha: Date,
     hora: String,
