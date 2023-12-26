@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import mongoose from 'mongoose';
 
 
 const BodyReservaRestaurant = () => {
     const [mesas, setMesas] = useState([]);
     const [reservaInfo, setReservaInfo] = useState({
-        tipoMesa: '',
+        tipo_mesa: '',
         cantidadPersonas: '',
         hora: '',
-        minutos: '',
+        minutes: '',
         fecha: ''
     });
 
@@ -21,7 +22,7 @@ const BodyReservaRestaurant = () => {
                 const data = await response.json();
                 setMesas(data);
             } catch (err) {
-                console.error('Error al obtener las mesas:', error);
+                console.error('Error al obtener las mesas:', err);
             }
         };
 
@@ -37,16 +38,16 @@ const BodyReservaRestaurant = () => {
 
     const handleCrearReserva = async () => {
         try {
-            const clienteId = 'ID del cliente';
+            const clienteId = new mongoose.Types.ObjectId();
 
-            reservaInfo.tipoMesa = reservaInfo.tipoMesa || (mesas.length > 0 ? mesas[0].tipo_mesa : '');
+            reservaInfo.tipo_mesa = reservaInfo.tipo_mesa || (mesas.length > 0 ? mesas[0].tipo_mesa : '');
         
             const datosReserva = {
-                reserva: reservaInfo.tipoMesa,
+                reserva: reservaInfo.tipo_mesa,
                 cantidad: reservaInfo.cantidadPersonas || 1,
                 fecha: reservaInfo.fecha || '15-01/2024',
                 hora: reservaInfo.hora || '12',
-                minutos: reservaInfo.minutos || '00'
+                minutos: reservaInfo.minutes || '00'
             };
             
             const response = await fetch(`http://localhost:3004/enviarReserva/${clienteId}`, {
@@ -79,14 +80,14 @@ const BodyReservaRestaurant = () => {
                     <select 
                         name="tipoMesa" 
                         id="tipoMesa" 
-                        value={ reservaInfo.tipoMesa}
+                        value={ reservaInfo.tipo_mesa}
                         onChange={ handleChange }
                         >
                         <option>
                             Selecciona el tipo de mesa
                         </option>
                         {mesas.map((mesa) => (
-                            <option key={ mesa._id } value={ mesa.tipoMesa }>
+                            <option key={ mesa._id } value={ mesa.tipo_mesa }>
                                 { mesa.tipo_mesa}
                             </option>
                         ))}    
@@ -124,7 +125,7 @@ const BodyReservaRestaurant = () => {
                 <select 
                     name="minutes" 
                     id="minutes"
-                    value={ reservaInfo.minutos }
+                    value={ reservaInfo.minutes }
                     onChange={ handleChange }
                 >
                     {/* Opciones para los minutos */}
