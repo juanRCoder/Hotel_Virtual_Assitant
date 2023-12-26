@@ -42,21 +42,24 @@ function Body() {
     md:flex-row 
     items-center 
     justify-center 
-    mt-12">
+     
+    ">
       
       <img
         className="
-        w-full
+        w-80
         md:w-3/5
-        h-70
+        h-4/6
         shadow-2xl
         shadow-black
         hover:drop-shadow-2xl 
-        rounded-l
+        rounded-xl
         mb-6 md:mr-6 
         border
         border-green-600
-        hover:shadow-2xl"
+        hover:shadow-2xl
+        rounded-s-2xl
+        "
         src={room}
         alt="frontdesk"
       />
@@ -76,7 +79,8 @@ function Body() {
         bg-gradient-to-br
         from-white
         via-lime-100
-        to-lime-200  
+        to-lime-200 
+        ml-32 
         ">
         {/* Formulario de login */}
         <form className="w-full">

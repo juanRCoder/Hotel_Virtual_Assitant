@@ -9,11 +9,14 @@ function BodyTecnico() {
         shadow-black/100
         text-center
         ml-16
-        font-bold 
+        font-Abril-Fatface
+        text-green-800
+        mt-10
+        
         ">
-          SERVICIO TECNICO</h1>
+          PROBLEMA TECNICO</h1>
       </div>
-      <div className="flex justify-center items-center text-center mt-3">
+      <div className="flex justify-center items-center text-center mt-10">
         <div
           className="
         bg-white
@@ -27,13 +30,15 @@ function BodyTecnico() {
         shadow-green-900
         border border-green-800
         hover:shadow-2xl
-        border-l-4 border-y-2 "
+        border-l-8
+        border-y-2
+         "
         >
           <h1 className="text-xl mt-6 font-mono" >Problema Tecnico</h1>
           <select
             id="servicio"
             className="
-            border border-green-400
+            border border-green-800
             p-2 
             mb-4 
             mt-2
@@ -41,7 +46,10 @@ function BodyTecnico() {
             text-center
             justify-center
             items-center 
-            rounded-lg"
+            rounded-lg
+            border-l-2
+            border-y-2
+            border-x-2"
           >
             <option value="" disabled selected>
               Seleccione el problema
@@ -54,52 +62,34 @@ function BodyTecnico() {
             <option value="lavanderia">DUCHA</option>
             <option value="lavanderia">OTROS</option>
           </select>
-          <h1 className="font-mono text-xl">Descripcion del problema tecnico</h1>
+          <h1 className="
+          font-mono
+          text-xl
+           ">Descripcion del problema tecnico</h1>
           <textarea type="text" className="
          shadow-2xl
-         shadow-cocoa-900
+        
          w-5/6
          h-48
-         p-4  // Adjusted padding
-         mt-2  // Removed my-2 margin
+         p-4  
+         mt-2 
          rounded-3xl
-         border-l-8 border-y-0
-         border border-green-400
+         border-l-8
+         border-y-2
+         border-x-2
+         border border-green-800
          hover:shadow-sm" >
           </textarea>
           
-          {/* <h1 className="text-xl font-mono mt-6">Seleccione el Horario de atencion</h1>
-             <select
-            id="servicio"
-            className="
-            border border-green-400
-            p-2 
-            mb-4 
-            mt-2
-            w-4/5
-            text-center
-            justify-center
-            items-center 
-            rounded-lg
-            "
-          >
-
-            <option value="date" disabled selected>
-              Seleccione el horario de atencion
-            </option>
-            <option value="toallas">AGUA</option>
-            <option value="lavanderia">LUZ</option>
-            <option value="limpieza">INTERNET</option>
-            <option value="amenities">TV</option>
-            <option value="lavanderia">AIRE ACONDICADO</option>
-            <option value="lavanderia">DUCHA</option>
-            <option value="lavanderia">OTROS</option>
-          </select> */}
            <div className="
       flex 
       items-center
-      border border-emerald-600
-      mt-4">
+      border border-green-800
+      mt-4
+      border-l-2
+      border-y-2
+      border-x-2
+      ">
         <label htmlFor="horario" className="mr-2">
           Horario:
         </label>
@@ -131,10 +121,11 @@ function BodyTecnico() {
             <button
               className="
               bg-green-500
-              hover:bg-green-950
+              hover:bg-green-800
               text-black 
               w-24
-              h-12 
+              h-12
+              px-2   
               rounded 
               focus:outline-none 
               focus:shadow-outline  
@@ -142,6 +133,11 @@ function BodyTecnico() {
               text-xl
               jello-vertical
               default
+              border
+              border-black
+              border-l-2
+              border-y-2
+              border-x-2
               "
               type="button"
              
