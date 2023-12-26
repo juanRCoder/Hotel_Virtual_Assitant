@@ -4,6 +4,8 @@ import { dashboardRouter } from "./routers/dashboard.router.js";
 import { servicioRouter } from "./routers/servicios.router.js";
 import { faqRouter } from "./routers/faq.router.js";
 import { tecnicoRouter } from "./routers/tecnico.router.js";
+import { reservaRouter } from "./routers/reserva.router.js";
+import { roomServiceRouter } from "./routers/roomService.router.js";
 import bodyParser from "body-parser";
 import connectDB from "../databases/database.js";
 import path from "path";
@@ -28,6 +30,8 @@ app.use(dashboardRouter);
 app.use(servicioRouter);
 app.use(faqRouter);
 app.use(tecnicoRouter);
+app.use(reservaRouter);
+app.use(roomServiceRouter);
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../dist/index.html"));
