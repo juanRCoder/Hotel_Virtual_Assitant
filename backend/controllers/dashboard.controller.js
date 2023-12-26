@@ -22,3 +22,20 @@ export const postRegistro = async (req, res) => {
     res.status(500).json({ e: "Error al procesar los datos del cliente!" });
   }
 };
+
+export const getUser = async (req, res) => {
+  try {
+    const servicioId = req.params.id;
+    //Buscar cliente a travez del id
+    const cliente = await Cliente.findById(servicioId);
+
+    if (!cliente) {
+      return res.status(404).json({ error: "Cliente no encontrado" });
+    }
+    //mandar el nombre del cliente al front
+    const nameUser = cliente.nombres;
+    res.status(201).json(nameUser);
+  } catch (e) {
+    console.log("error al conectar con la base de datos : " + e);
+  }
+};
