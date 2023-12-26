@@ -1,5 +1,5 @@
 import BodyTecnico from "../components/Body/BodyTecnico";
-import backgroundImage from "../assets/images/fondo-verde-amarillo-fondo-verde-naranja_873925-18302.jpg";
+import backgroundImage from '../assets/images/background.jpg';
 import HeaderDashboard from "../components/Header/HeaderDashboard";
 import AllHeaders from "../components/Header/AllHeaders";
 

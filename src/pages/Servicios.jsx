@@ -1,6 +1,6 @@
 import BodyServicios from '../components/Body/BodyServicios'
 import AllHeaders from '../components/Header/AllHeaders'
-import backgroundImage from '..//../src/assets/images/fondo-verde-amarillo-fondo-verde-naranja_873925-18302.jpg'
+import backgroundImage from '../assets/images/background.jpg';
 
 function Servicios ()  {
   return (

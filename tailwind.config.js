@@ -12,7 +12,8 @@ module.exports = {
       fontFamily: { 
         'Dancing-script': ["'Dancing Script', cursive"],
         'Pacifico': ['Pacifico'],
-        'Oswald': ['sans-serif']
+        'Oswald': ['sans-serif'],
+        'Abril-Fatface':['serif'] 
 
       },
       colors: {

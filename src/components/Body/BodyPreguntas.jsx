@@ -42,10 +42,27 @@ function BodyPreguntas() {
 
   return (
     <>
+    <div className="
+    justify-center
+    text-center
+    mt-6
+    mb-8 
+    ">
+    <h1 className="
+    text-6xl
+    font-Abril-Fatface
+    text-shadow-lg
+    shadow-black/100
+    text-green-800
+    ">
+        PREGUNTAS FRECUENTES
+    </h1>
+    </div>
       {/* Mapea las preguntas frecuentes y renderiza componentes Acordeon para cada una */}
       {faq.map((f) => (
-        <div key={f.id}>
-          <Acordeon question={f.pregunta} response={f.respuesta} />
+        <div key={f.id} >
+          <Acordeon question={f.pregunta} response={f.respuesta} className="
+          text-center justify-center items-center w-96 h-auto mt-20" />
         </div>
       ))}
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderDashboard from '../components/Header/HeaderDashboard';
 import BodyDashboard from '../components/Body/BodyDashboard';
-import backgroundImage from '../assets/images/fondo-verde-amarillo-fondo-verde-naranja_873925-18302.jpg';
+import backgroundImage from '../assets/images/background.jpg';
 
 
 const Dashboard = () => {
