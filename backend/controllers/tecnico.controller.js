@@ -6,6 +6,11 @@ export const postTecnico = async (req, res) => {
     const { problema, descripcion, hora, minutes } = req.body;
     const clienteId = req.params.id;
 
+    // Validar la existencia y validez del ID del cliente
+    if (!clienteId) {
+      return res.status(400).json({ error: "ID del cliente no proporcionado" });
+    }
+
     //crear nuevo servicio tecnico.
     const newServicoTecnico = new Tecnico({
       id_cliente: clienteId,
@@ -26,8 +31,6 @@ export const postTecnico = async (req, res) => {
       .json({ error: "Error al procesar la solicitud del servicio" });
   }
 };
-
-
 
 //EXTRAER SERVICIOS TECNICOS ASOCIADO CON EL CLIENTE
 export const getTecnico = async (req, res) => {
@@ -60,7 +63,7 @@ export const getTecnico = async (req, res) => {
         descripcion: servicioTecnico.descripcion,
         hora: servicioTecnico.hora,
         minutes: servicioTecnico.minutes,
-        created_at: servicioTecnico.created_at
+        created_at: servicioTecnico.created_at,
       },
     };
 
