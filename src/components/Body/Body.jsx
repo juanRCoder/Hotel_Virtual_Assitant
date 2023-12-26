@@ -34,6 +34,7 @@ function Body() {
       console.error("Error al procesar la solicitud:", error);
     }
   };
+  
  
   return (
     <div className="
@@ -47,7 +48,7 @@ function Body() {
       
       <img
         className="
-        w-80
+        // w-80
         md:w-3/5
         h-4/6
         shadow-2xl
@@ -80,18 +81,19 @@ function Body() {
         from-white
         via-lime-100
         to-lime-200 
-        ml-32 
+        ml-20 
         ">
         {/* Formulario de login */}
         <form className="w-full">
           <div className="mb-6">
             <label
-              clxassName="
+              className="
               block 
-              text-green-600 
+              text-green-600
               text-sm 
               font-bold 
-              mb-2"
+              mb-2
+              "
               htmlFor="nombres"
             >
               Nombres

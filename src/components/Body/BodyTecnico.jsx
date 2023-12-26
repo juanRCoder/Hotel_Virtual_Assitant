@@ -54,19 +54,26 @@ function BodyTecnico() {
       <div className="flex justify-center text-center -mt-2">
         <h1
           className="
-        text-5xl
+        text-6xl
         text-shadow-lg
-        shadow-black/100
+        shadow-green-950/100
         text-center
         ml-16
-        font-bold 
+        font-Abril-Fatface
+        text-green-800
+        mt-2 
         ">
-          SERVICIO TECNICO</h1>
+          PROBLEMA TECNICO</h1>
       </div>
-      <div className="flex justify-center items-center text-center mt-10">
+      <div className="
+      flex 
+      justify-center 
+      items-center 
+      text-center 
+      mt-6">
         <div
           className="
-        bg-white
+        bg-gray-100
         flex flex-col 
         items-center
         ml-20 
@@ -79,6 +86,8 @@ function BodyTecnico() {
         hover:shadow-2xl
         border-l-8
         border-y-2
+
+      
          "
         >
           <h1 className="text-xl mt-6 font-mono">Tipo de Problema:</h1>
@@ -121,43 +130,24 @@ function BodyTecnico() {
          p-4  
          mt-2 
          rounded-3xl
-         border-l-8 border-y-0
-         border border-green-400
-         hover:shadow-sm" >
+         border-l-8
+         border-y-2
+         border-x-2
+         border border-green-800
+         hover:shadow-sm
+         " >
           </textarea>
-          
-          {/* <h1 className="text-xl font-mono mt-6">Seleccione el Horario de atencion</h1>
-             <select
-            id="servicio"
-            className="
-            border border-green-400
-            p-2 
-            mb-4 
-            mt-2
-            w-4/5
-            text-center
-            justify-center
-            items-center 
-            rounded-lg
-            "
-          >
-
-            <option value="date" disabled selected>
-              Seleccione el horario de atencion
-            </option>
-            <option value="toallas">AGUA</option>
-            <option value="lavanderia">LUZ</option>
-            <option value="limpieza">INTERNET</option>
-            <option value="amenities">TV</option>
-            <option value="lavanderia">AIRE ACONDICADO</option>
-            <option value="lavanderia">DUCHA</option>
-            <option value="lavanderia">OTROS</option>
-          </select> */}
+        
            <div className="
       flex 
       items-center
-      border border-emerald-600
-      mt-4">
+      border border-green-800
+      border-y-2
+      border-x-2
+      mt-4
+      rounded-md
+      py-2
+      px-1">
         <label htmlFor="horario" className="mr-2">
           Horario:
         </label>
@@ -208,6 +198,7 @@ function BodyTecnico() {
               border-l-2
               border-y-2
               border-x-2
+              mt-4
               "
               type="submit"
               onClick={handleSubmit}

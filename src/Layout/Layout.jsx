@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header/Header';
 import Routers from '../routes/Routers';
 import Body from '../components/Body/Body';
-import backgroundImage from '../assets/images/fondo-verde-amarillo-fondo-verde-naranja_873925-18302.jpg';
+import backgroundImage from '../assets/images/background.jpg'
 import overlayImage from '../assets/images/room.png'; 
 import Logo from '../components/Logo/Logo';
 

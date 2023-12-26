@@ -97,7 +97,8 @@ function BodyServicios() {
           hover:shadow-2xl 
           border-l-8 
           border-y-2
-          p-8 bg-gray-100"
+          p-8
+          bg-gray-100"
     >
       {/* SELECCIONAR TIPO DE SERVICIO */}
       <div>

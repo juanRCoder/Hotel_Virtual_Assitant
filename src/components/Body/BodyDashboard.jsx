@@ -38,18 +38,24 @@ function BodyDashboard() {
         font-Abril-Fatface
         text-green-900
         text-shadow-sm
-        shadow-lime-400/100
+        shadow-green-800/100
+        mt-2  
         ">
            Bienvenido Huesped</h1>
       </div>
-      <div className="flex justify-around pt-30   p-12">
+      <div className="
+      flex 
+      justify-around 
+      pt-14   
+      p-12">
         <Link to={`/dashboard/servicios/${id}`}>
           <button
             className="
             font-semibold 
-            text-3xl
+            text-xl
             rounded-2xl
-            h-28  w-60 
+            h-20 
+             w-52 
             border
             border-green-800
             shadow-2xl
@@ -58,6 +64,9 @@ function BodyDashboard() {
             via-lime-200
             to-green-300 
             animation  -ripple
+            border-y-2
+            border-x-2
+            text-green-950
             ">
 
             SERVICIOS
@@ -68,10 +77,10 @@ function BodyDashboard() {
           <button
             className="
             font-semibold 
-            text-3xl
+            text-xl
             bg-white 
             rounded-2xl
-            h-28 w-60 
+            h-20 w-52 
             border
             border-green-800
             bg-gradient-to-br
@@ -79,6 +88,9 @@ function BodyDashboard() {
             via-lime-200
             to-green-300 
             shadow-2xl
+            border-y-2
+            border-x-2
+            text-green-950
           "
           >
             PREGUNTAS FRECUENTES
@@ -89,10 +101,10 @@ function BodyDashboard() {
           <button
             className="
             font-semibold 
-            text-3xl
+            text-xl
             bg-white 
             rounded-2xl
-            h-28 w-60 
+            h-20 w-52 
             border
             border-green-800
             bg-gradient-to-br
@@ -100,6 +112,9 @@ function BodyDashboard() {
             via-lime-200
             to-green-300 
             shadow-2xl
+            border-y-2
+            border-x-2
+            text-green-950
           "
           >
             PROBLEMAS
@@ -110,10 +125,10 @@ function BodyDashboard() {
           <button
             className="
             font-semibold 
-            text-3xl
+            text-xl
             bg-white 
             rounded-2xl
-            h-28 w-60 
+            h-20 w-52 
             border
             border-green-800
             bg-gradient-to-br
@@ -121,6 +136,9 @@ function BodyDashboard() {
             via-lime-200
             to-green-300 
             shadow-2xl 
+            border-y-2
+            border-x-2
+            text-green-950
           "
           >
             RESTAURANTE
