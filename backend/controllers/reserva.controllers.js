@@ -22,7 +22,7 @@ export const postReserva = async (req, res) => {
     const { reserva, cantidad, fecha, hora, minutes } = req.body;
     const clienteId = req.params.id;
 
-    const mesaEncontrada = await Mesas.findOne({ tipo_mesa: reserva });
+    const mesaEncontrada = await Mesas.findOne({ tipoMesa: reserva });
     if (!mesaEncontrada) {
       return res.status(404).json({ error: "Mesa no encontrada" });
     }
@@ -96,7 +96,7 @@ export const getReserva = async (req, res) => {
         hora: ReservaEncontrada.hora,
         minutes: ReservaEncontrada.minutes,
         updated_at: ReservaEncontrada.updated_at,
-        tipo_mesa: mesaAsociada.tipo_mesa,
+        tipoMesa: mesaAsociada.tipoMesa,
       },
     };
 
