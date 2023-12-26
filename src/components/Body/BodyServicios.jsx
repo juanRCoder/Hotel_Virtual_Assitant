@@ -30,6 +30,12 @@ function BodyServicios() {
   };
 
   const handleClick = async (e) => {
+
+    if (!nombreServicio || !descripcion || !hora || !minutes) {
+      alert("Por favor, complete todos los campos antes de enviar.");
+      return;
+    }
+
     const button = document.getElementById("submitButton");
     button.classList.add("jello-vertical");
     e.preventDefault();
@@ -124,8 +130,9 @@ function BodyServicios() {
           name="nombreServicio"
           value={nombreServicio}
           onChange={handleChange}
+          required
         >
-          <option value="" disabled selected>
+          <option value="" defaultValue>
             Seleccione el servicio
           </option>
           <option value="toallas">Toallas</option>
@@ -158,9 +165,9 @@ function BodyServicios() {
           shadow-xl
           shadow-emerald-200 
           p-2 
-          w-full 
-          
+          w-full
           h-48"
+          required
           onChange={handleChange}
         ></textarea>
       </div>
@@ -178,10 +185,10 @@ function BodyServicios() {
       border-y-2
       border-x-2
       ">
-        <label htmlFor="horario" className="mr-2">
+        <label htmlFor="horario" className="mr-2" >
           Horario:
         </label>
-        <select id="hora" name="hora" value={hora} onChange={handleChange}>
+        <select id="hora" name="hora" value={hora} onChange={handleChange} required>
           <option value="">...</option>
           <option value="Inmediata">Inmediata</option>
           <option value="08">08</option>
@@ -189,7 +196,7 @@ function BodyServicios() {
           <option value="10">10</option>
         </select>{" "}
         :{" "}
-        <select id="minutes" name="minutes" value={minutes} onChange={handleChange}>
+        <select id="minutes" name="minutes" value={minutes} onChange={handleChange} required>
           <option value="">...</option>
           <option value="00">00</option>
           <option value="10">10</option>

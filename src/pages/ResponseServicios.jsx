@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import moment from "moment-timezone";
 import backgroundImage from '../assets/images/background.jpg'
-import AllHeaders from "../components/Header/AllHeaders";
+import Lottie from 'lottie-react'
+import animation from "../assets/back.json";
+
 
 function ResponseServicios() {
   const { idService } = useParams();
@@ -52,7 +54,7 @@ function ResponseServicios() {
           opacity: 0.9,
         }}
       ></div>
-       <AllHeaders></AllHeaders>
+      
       <div className="flex justify-center text-center mt-8">
         <h1 className="font-Abril-Fatface text-6xl text-green-800 text-shadow-lg shadow-black/100">SERVICIO ENVIADO !</h1>
       </div>
@@ -92,10 +94,14 @@ function ResponseServicios() {
         ) : (
           <p>Cargando datos...</p>
         )}
-
-        {/* <Link to={`/dashboard/${servicio && servicio.Cliente.id}`}>
-        <button>Volver a Dashboard</button>
-      </Link> */}
+           <Link to={`/dashboard/${servicio && servicio.Cliente.id}`}>
+        <button> 
+            <Lottie
+              className="w-12 absolute top-4 right-8 mt-2"
+              animationData={animation}
+            /></button>
+      </Link> 
+        
       </div>
     </>
   );

@@ -110,7 +110,7 @@ function BodyTecnico() {
             border-y-2
             border-x-2"
           >
-            <option value="" disabled selected>
+            <option value="" disabled selected required>
               Seleccione el problema
             </option>
             <option value="toallas">AGUA</option>
@@ -122,9 +122,11 @@ function BodyTecnico() {
             <option value="otros">OTROS</option>
           </select>
           <h1 className="font-mono text-xl">Descripcion del problema tecnico</h1>
-          <textarea type="text" className="
+          <textarea type="text" 
+          
+          className="
          shadow-2xl
-        
+         required
          w-5/6
          h-48
          p-4  
@@ -136,6 +138,7 @@ function BodyTecnico() {
          border border-green-800
          hover:shadow-sm
          " >
+        
           </textarea>
         
            <div className="
@@ -151,7 +154,7 @@ function BodyTecnico() {
         <label htmlFor="horario" className="mr-2">
           Horario:
         </label>
-        <select id="hora" name="hora" >
+        <select id="hora" name="hora" required >
           <option value="">...</option>
           <option value="Inmediata">Inmediata</option>
           <option value="08">08</option>
@@ -159,7 +162,7 @@ function BodyTecnico() {
           <option value="10">10</option>
         </select>{" "}
         :{" "}
-        <select id="minutes" name="minutes"  >
+        <select id="minutes" name="minutes" required  >
           <option value="">...</option>
           <option value="00">00</option>
           <option value="10">10</option>

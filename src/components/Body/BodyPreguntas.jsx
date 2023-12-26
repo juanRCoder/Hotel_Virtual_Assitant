@@ -66,12 +66,12 @@ function BodyPreguntas() {
         </div>
       ))}
 
-      {/* Renderiza el botón solo si 'clientID' tiene un valor */}
+      {/* Renderiza el botón solo si 'clientID' tiene un valor 
       {clientID && (
         <button onClick={() => console.log("Botón clickeado")}>
           Acción con el cliente {clientID}
         </button>
-      )}
+      )}*/}
     </>
   );
 }
