@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import mongoose from 'mongoose';
 
 
 const BodyReservaRestaurant = () => {
+    const { id } = useParams();
     const [mesas, setMesas] = useState([]);
     const [reservaInfo, setReservaInfo] = useState({
         tipo_mesa: '',
@@ -18,7 +19,7 @@ const BodyReservaRestaurant = () => {
     useEffect(() => {
         const fetchMesas = async () => {
             try {
-                const response = await fetch('http://localhost:3004/extraerMesas');
+                const response = await fetch(`http://localhost:3004/extraerMesas/${id}`);
                 const data = await response.json();
                 setMesas(data);
             } catch (err) {
@@ -27,7 +28,7 @@ const BodyReservaRestaurant = () => {
         };
 
         fetchMesas();
-    }, []);
+    }, [id]);
     
     const handleChange = (e) => {
         setReservaInfo({
