@@ -13,7 +13,7 @@ const serviciosSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
-})
+});
 
 const Servicios = mongoose.model('Servicios', serviciosSchema);
 

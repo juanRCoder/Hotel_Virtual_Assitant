@@ -19,6 +19,6 @@ const reservaSchema = new mongoose.Schema({
     }
 })
 
-const Reserva_restaurant = mongoose.model("Reserva Restaurant", reservaSchema);
+const ReservaRestaurant = mongoose.model("ReservaRestaurant", reservaSchema);
 
-export default Reserva_restaurant;
+export default ReservaRestaurant;
