@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import moment from "moment-timezone";
 import Routers from '../routes/Routers';
+import backgroundImage from '../assets/images/background.jpg'
+import Lottie from 'lottie-react'
+import animation from "../assets/back.json";
 
 function ResponseTecnico() {
   const { idServiceTec } = useParams();
@@ -38,18 +41,42 @@ function ResponseTecnico() {
 
   return (
     <>
+    <div
+        className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          filter: "blur(150px)",
+          zIndex: -1,
+          opacity: 0.9,
+        }}
+      ></div>
+      <div className="flex justify-center text-center mt-8">
+        <h1 className="font-Abril-Fatface text-6xl text-green-800 text-shadow-lg shadow-black/100">SERVICIO ENVIADO !</h1>
+      </div>
+      <div className="flex justify-center text-center mt-4"> 
+        <h1 className="font-Abril-Fatface text-4xl text-green-800 text-shadow-lg shadow-black/100">Nuestro personal pronto se pondra en contacto</h1>
+      </div>
+      <div className="flex justify-center items-center min-h-screen -mt-20  ">
       {serviceTecnico ? (
-        <div>
-          <h1>Cliente:</h1>
+        <div className="max-w-md p-6 bg-white rounded-lg shadow-md bg-gradient-to-br
+        from-white
+        via-lime-100
+        to-lime-200
+        border-l-8
+        border-r-2
+        border-y-2
+        border-green-800
+        ">
+          <h1 className="text-2xl font-bold mb-4">Cliente:</h1>
           <ul>
-            <li>Nombre: {serviceTecnico.Cliente.nombres}</li>
-            <li>Apellido: {serviceTecnico.Cliente.apellidos}</li>
-            <li>Habitación: {serviceTecnico.Cliente.habitacion}</li>
+            <li className="font-bold text-sm text-green-600 ">Nombre: {serviceTecnico.Cliente.nombres}</li>
+            <li className="font-bold text-sm text-green-600 ">Apellido: {serviceTecnico.Cliente.apellidos}</li>
+            <li className="font-bold text-sm text-green-600 ">Habitación: {serviceTecnico.Cliente.habitacion}</li>
           </ul>
-          <h1>Servicio Tecnico:</h1>
+          <h1 className="text-2xl font-bold mt-4">Servicio Tecnico:</h1>
           <ul>
-            <li>Tipo de problema: {serviceTecnico.Tecnico.problema}</li>
-            <li>Detalle del problema: {serviceTecnico.Tecnico.descripcion}</li>
+            <li className="font-bold text-sm text-green-600 ">Tipo de problema: {serviceTecnico.Tecnico.problema}</li>
+            <li className="font-bold text-sm text-green-600 ">Detalle del problema: {serviceTecnico.Tecnico.descripcion}</li>
             <li>
               {formatearFechaHora(
                 serviceTecnico.Tecnico.created_at,
@@ -64,8 +91,13 @@ function ResponseTecnico() {
       )}
 
       <Link to={`/dashboard/${serviceTecnico && serviceTecnico.Cliente.id}`}>
-        <button>Volver a Dashboard</button>
+      <button> 
+            <Lottie
+              className="w-12 absolute top-4 right-8 mt-2"
+              animationData={animation}
+            /></button>
       </Link>
+      </div>
     </>
   );
 }
