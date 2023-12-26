@@ -13,18 +13,25 @@ function BodyTecnico() {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === "problema") {
+      if (name === "problema") {
       setProblema(value);
     } else if (name === "descripcion") {
       setDescripcion(value);
     } else if (name === "hora") {
       setHora(value);
-    } else if (name === "minutes") {
+    } else if (name === "minutes") {      
       setMinutes(value);
     }
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!problema || !descripcion || !hora || !minutes) {
+      alert("Por favor, complete todos los campos antes de enviar.");
+      return;
+    }
+
+   
 
     try {
       await fetch(`/enviarServiciosTec/${id}`, {
@@ -70,7 +77,7 @@ function BodyTecnico() {
       justify-center 
       items-center 
       text-center 
-      mt-6">
+      ">
         <div
           className="
         bg-gray-100
@@ -90,7 +97,7 @@ function BodyTecnico() {
       
          "
         >
-          <h1 className="text-xl mt-6 font-mono">Tipo de Problema:</h1>
+          <h1 className="text-xl mt-4 font-mono">Tipo de Problema:</h1>
           <select
             id="problema"
             name="problema"
@@ -113,13 +120,13 @@ function BodyTecnico() {
             <option value="" disabled selected required>
               Seleccione el problema
             </option>
-            <option value="toallas">AGUA</option>
-            <option value="lavanderia">LUZ</option>
-            <option value="limpieza">INTERNET</option>
-            <option value="amenities">TV</option>
-            <option value="aire acondicionado">AIRE ACONDICIONADO</option>
-            <option value="ducha">DUCHA</option>
-            <option value="otros">OTROS</option>
+            <option value="AGUA">AGUA</option>
+            <option value="LUZ">LUZ</option>
+            <option value="INTERNET">INTERNET</option>
+            <option value="TV">TV</option>
+            <option value="AIRE ACONDICIONADO">AIRE ACONDICIONADO</option>
+            <option value="DUCHA">DUCHA</option>
+            <option value="OTROS">OTROS</option>
           </select>
           <h1 className="font-mono text-xl">Descripcion del problema tecnico</h1>
           <textarea type="text" 
