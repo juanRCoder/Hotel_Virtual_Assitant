@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 const bebidasSchema = new mongoose.Schema({
   nombres: String,
+  cantidad: Number,
   estado: Boolean,
   codigo: String,
 });
