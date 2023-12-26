@@ -69,12 +69,14 @@ function BodyServicios() {
     text-center
     ml-16">
       <h1 className="
-      text-5xl
-      font-bold
+      text-6xl
+      font-Abril-Fatface
+      text-green-800
       text-shadow-lg
       shadow-black/100
+      
       ">
-        SERVICIOS DE HOUSEKEEPING
+        SERVICIO DE HOUSEKEEPING
       </h1>
     </div>
     <div className="flex items-center justify-center mx-4 mt-10">
@@ -91,9 +93,9 @@ function BodyServicios() {
           shadow-2xl 
           shadow-green-900 
           border 
-          border-green-500 
+          border-green-800 
           hover:shadow-2xl 
-          border-l-4 
+          border-l-8 
           border-y-2
           p-8 bg-gray-100"
     >
@@ -103,17 +105,21 @@ function BodyServicios() {
         text-lg 
         font-mono 
         mb-2
+        
         ">
           Tipo de Servicio
         </label>
         <select
           id="servicio"
           className="border 
-          border-green-600
+          border-green-800
           p-2 
           mb-4 
           w-full 
-          rounded"
+          rounded
+          border-l-2
+          border-y-2
+          border-x-2"
           name="nombreServicio"
           value={nombreServicio}
           onChange={handleChange}
@@ -146,8 +152,8 @@ function BodyServicios() {
           className="
           rounded-xl
           border 
-          border-green-600
-          border-l-4 border-y-2
+          border-green-800
+          border-l-8 border-y-2
           shadow-xl
           shadow-emerald-200 
           p-2 
@@ -162,8 +168,15 @@ function BodyServicios() {
       <div className="
       flex 
       items-center
-      border border-emerald-600
-      mt-4">
+      border border-green-800
+      mt-4
+      px-2
+      py-1
+      rounded-md
+      border-l-2
+      border-y-2
+      border-x-2
+      ">
         <label htmlFor="horario" className="mr-2">
           Horario:
         </label>

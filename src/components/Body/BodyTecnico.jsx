@@ -60,12 +60,10 @@ function BodyTecnico() {
         text-center
         ml-16
         font-bold 
-        "
-        >
-          PROBLEMAS
-        </h1>
+        ">
+          SERVICIO TECNICO</h1>
       </div>
-      <div className="flex justify-center items-center text-center mt-3">
+      <div className="flex justify-center items-center text-center mt-10">
         <div
           className="
         bg-white
@@ -79,7 +77,9 @@ function BodyTecnico() {
         shadow-green-900
         border border-green-800
         hover:shadow-2xl
-        border-l-4 border-y-2 "
+        border-l-8
+        border-y-2
+         "
         >
           <h1 className="text-xl mt-6 font-mono">Tipo de Problema:</h1>
           <select
@@ -88,7 +88,7 @@ function BodyTecnico() {
             value={problema}
             onChange={handleChange}
             className="
-            border border-green-400
+            border border-green-800
             p-2 
             mb-4 
             mt-2
@@ -96,7 +96,10 @@ function BodyTecnico() {
             text-center
             justify-center
             items-center 
-            rounded-lg"
+            rounded-lg
+            border-l-2
+            border-y-2
+            border-x-2"
           >
             <option value="" disabled selected>
               Seleccione el problema
@@ -109,28 +112,20 @@ function BodyTecnico() {
             <option value="ducha">DUCHA</option>
             <option value="otros">OTROS</option>
           </select>
-          <h1 className="font-mono text-xl">
-            Descripcion del problema tecnico
-          </h1>
-          <textarea
-            id="descripcion"
-            name="descripcion"
-            placeholder="descripcion..."
-            value={descripcion}
-            onChange={handleChange}
-            className="
+          <h1 className="font-mono text-xl">Descripcion del problema tecnico</h1>
+          <textarea type="text" className="
          shadow-2xl
-         shadow-cocoa-900
+        
          w-5/6
          h-48
-         p-4  // Adjusted padding
-         mt-2  // Removed my-2 margin
+         p-4  
+         mt-2 
          rounded-3xl
          border-l-8 border-y-0
          border border-green-400
-         hover:shadow-sm"
-          ></textarea>
-
+         hover:shadow-sm" >
+          </textarea>
+          
           {/* <h1 className="text-xl font-mono mt-6">Seleccione el Horario de atencion</h1>
              <select
             id="servicio"
@@ -158,39 +153,32 @@ function BodyTecnico() {
             <option value="lavanderia">DUCHA</option>
             <option value="lavanderia">OTROS</option>
           </select> */}
-          <div
-            className="
+           <div className="
       flex 
       items-center
       border border-emerald-600
-      mt-4"
-          >
-            <label htmlFor="hora" className="mr-2">
-              Horario:
-            </label>
-            <select id="hora" name="hora" value={hora} onChange={handleChange}>
-              <option value="">...</option>
-              <option value="Inmediata">Inmediata</option>
-              <option value="08">08</option>
-              <option value="09">09</option>
-              <option value="10">10</option>
-            </select>{" "}
-            :{" "}
-            <select
-              id="minutes"
-              name="minutes"
-              value={minutes}
-              onChange={handleChange}
-            >
-              <option value="">...</option>
-              <option value="00">00</option>
-              <option value="10">10</option>
-              <option value="15">15</option>
-              <option value="30">30</option>
-              <option value="35">35</option>
-              <option value="40">40</option>
-            </select>
-          </div>
+      mt-4">
+        <label htmlFor="horario" className="mr-2">
+          Horario:
+        </label>
+        <select id="hora" name="hora" >
+          <option value="">...</option>
+          <option value="Inmediata">Inmediata</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+        </select>{" "}
+        :{" "}
+        <select id="minutes" name="minutes"  >
+          <option value="">...</option>
+          <option value="00">00</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+          <option value="40">40</option>
+        </select>
+      </div>
 
           <div
             className="
@@ -203,10 +191,11 @@ function BodyTecnico() {
             <button
               className="
               bg-green-500
-              hover:bg-green-950
+              hover:bg-green-800
               text-black 
               w-24
-              h-12 
+              h-12
+              px-2   
               rounded 
               focus:outline-none 
               focus:shadow-outline  
@@ -214,6 +203,11 @@ function BodyTecnico() {
               text-xl
               jello-vertical
               default
+              border
+              border-black
+              border-l-2
+              border-y-2
+              border-x-2
               "
               type="submit"
               onClick={handleSubmit}
