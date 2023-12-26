@@ -38,6 +38,7 @@ export const postReserva = async (req, res) => {
     });
     //cambiar el estado a mesa ocupada (de false a true)
     mesaEncontrada.estado = true;
+    await mesaEncontrada.save();
     await newReserva.save();
     //enviar el id al front
     const idReserva = newReserva._id;
