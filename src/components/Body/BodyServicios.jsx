@@ -222,7 +222,6 @@ function BodyServicios() {
 
       <button
         className="
-       
         border
         border-black 
         mt-4
@@ -237,13 +236,8 @@ function BodyServicios() {
         focus:outline-none 
         focus:shadow-outline  
         font-bold
-<<<<<<< HEAD
-        text-xl"
-      >
-=======
-        text-xl
-        ">
->>>>>>> main
+        text-xl">
+
         Enviar 
       </button>
     </form>
