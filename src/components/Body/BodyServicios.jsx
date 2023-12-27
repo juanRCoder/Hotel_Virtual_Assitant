@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
-// import DateTimePicker from "react-datepicker";
-// import TimePicker from "react-time-picker";
-// import "react-datepicker/dist/react-datepicker.css";
-// import "react-time-picker/dist/TimePicker.css";
+import { useParams, useNavigate } from "react-router-dom";
 
 function BodyServicios() {
   const { id } = useParams();
@@ -30,15 +26,6 @@ function BodyServicios() {
   };
 
   const handleClick = async (e) => {
-
-    if (!nombreServicio || !descripcion || !hora || !minutes) {
-      alert("Por favor, complete todos los campos antes de enviar.");
-      return;
-    
-    }
-
-    const button = document.getElementById("submitButton");
-    button.classList.add("jello-vertical");
     e.preventDefault();
 
     /*post*/
@@ -93,6 +80,7 @@ function BodyServicios() {
     mx-4 
     mt-4">
     <form
+    onSubmit={handleClick}
       action=""
       className=" 
           flex 
@@ -114,12 +102,13 @@ function BodyServicios() {
     >
       {/* SELECCIONAR TIPO DE SERVICIO */}
       <div>
-        <label htmlFor="descripcion" className="
+        <label htmlFor="descripcion"  className="
         text-lg 
         font-mono 
         mb-2
         
         ">
+          
           Tipo de Servicio
         </label>
         <select
@@ -226,10 +215,8 @@ function BodyServicios() {
       </div>
 
       <button
-        onClick={handleClick}
-        id="submitButton"
-        type="button"
-        className="
+        
+       
         border
         border-black 
         mt-4
@@ -245,9 +232,6 @@ function BodyServicios() {
         focus:shadow-outline  
         font-bold
         text-xl
-      
-        jello-vertical 
-        default:"
       >
         Enviar 
       </button>
