@@ -13,6 +13,7 @@ import Restaurante from '../pages/Restaurante';
 import Reserva from '../pages/Reserva';
 import ResponseReseva from '../pages/ResponseReserva';
 import Roomservice from '../pages/Roomservice';
+import ResponseRoomService from "../pages/ResponseRoomService";
 
 
 const Routers = () => {
@@ -29,6 +30,7 @@ const Routers = () => {
       <Route path="/dashboard/restaurante/reserva/:id" element={<Reserva/>} />
       <Route path="/dashboard/restaurant/reserva/resultReserva/:idReserva" element={<ResponseReseva />} />
       <Route path="/dashboard/restaurante/roomservice/:id" element={<Roomservice />} />
+      <Route path="/dashboard/restaurante/roomservice/resultRoomService/:idRoomService" element={<ResponseRoomService />} />
       <Route path="/*" element={<NotFound />} />
 
     </Routes>
