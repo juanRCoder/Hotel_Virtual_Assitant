@@ -26,6 +26,7 @@ const Routers = () => {
       <Route path="/dashboard/serviciosTec/resultServiceTec/:idServiceTec" element={<ResponseTecnico />} />
       <Route path="/dashboard/restaurante/:id" element={<Restaurante />} />
       <Route path="/dashboard/restaurante/reserva/:id" element={<Reserva/>} />
+      <Route path="/dashboard/restaurant/reserva/resultReserva/:idReserva" element={<ResponseReseva />} />
       <Route path="/dashboard/restaurante/roomservice/:id" element={<Roomservice />} />
       <Route path="/*" element={<NotFound />} />
 

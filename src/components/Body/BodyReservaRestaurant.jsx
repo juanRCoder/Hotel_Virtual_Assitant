@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import mongoose from "mongoose";
 
 const BodyReservaRestaurant = () => {
   const { id } = useParams();
@@ -39,10 +38,9 @@ const BodyReservaRestaurant = () => {
     });
   };
 
-  const handleCrearReserva = async () => {
+  const handleCrearReserva = async (e) => {
+    e.preventDefault();
     try {
-      const clienteId = new mongoose.Types.ObjectId();
-
       reservaInfo.tipoMesa =
         reservaInfo.tipoMesa || (mesas.length > 0 ? mesas[0].tipoMesa : "");
 
@@ -55,7 +53,7 @@ const BodyReservaRestaurant = () => {
       };
 
       const response = await fetch(
-        `http://localhost:3004/enviarReserva/${clienteId}`,
+        `/enviarReserva/${id}`,
         {
           method: "POST",
           headers: {
@@ -64,11 +62,12 @@ const BodyReservaRestaurant = () => {
           body: JSON.stringify(datosReserva),
         }
       );
+      if(response.ok) {
+        const data = await response.json();
+        console.log("ID de la reserva:", data);
+        navigate(`/dashboard/restaurant/reserva/resultReserva/${data}`);
+      }
 
-      const data = await response.json();
-      console.log("ID de la reserva:", data);
-
-      navigate.goBack();
     } catch (error) {
       console.error("Error al crear la reserva:", error);
     }
@@ -81,7 +80,9 @@ const BodyReservaRestaurant = () => {
         items-center 
         text-center 
         flex-col">
-  <form className="
+  <form 
+        onSubmit={handleCrearReserva}
+        className="
         w-full 
         max-w-md">
     <h2 className="
@@ -208,8 +209,6 @@ const BodyReservaRestaurant = () => {
       </div>
       {/* Botones para enviar o cancelar la reserva */}
       <button
-        type="button"
-        onClick={handleCrearReserva}
         className="
         bg-blue-500 
         hover:bg-blue-700 
