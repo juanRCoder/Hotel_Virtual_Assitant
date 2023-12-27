@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 const BodyReservaRestaurant = () => {
   const { id } = useParams();
-  const [mesas, setMesas] = useState([]);
+  const [mesas, setMesas] = useState(null);
   const [reservaInfo, setReservaInfo] = useState({
     tipoMesa: "",
     cantidadPersonas: "",
@@ -19,7 +19,7 @@ const BodyReservaRestaurant = () => {
     const fetchMesas = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3004/extraerMesas/${id}`
+         "/extraerMesas"
         );
         const data = await response.json();
         console.log("Mesas", data);
@@ -30,7 +30,7 @@ const BodyReservaRestaurant = () => {
     };
 
     fetchMesas();
-  }, [id]);
+  }, []);
 
   const handleChange = (e) => {
     setReservaInfo({
@@ -72,10 +72,6 @@ const BodyReservaRestaurant = () => {
     } catch (error) {
       console.error("Error al crear la reserva:", error);
     }
-  };
-
-  const handleCancelarReserva = () => {
-    navigate.goBack();
   };
 
   return (
@@ -121,13 +117,13 @@ const BodyReservaRestaurant = () => {
           px-3"
         >
           <option>Selecciona el tipo de mesa</option>
-          {Array.isArray(mesas) &&
-            mesas.length > 0 &&
-            mesas.map((mesa) => (
-              <option key={mesa._id} value={mesa.tipoMesa}>
-                {mesa.tipoMesa}
-              </option>
-            ))}
+          {mesas ? (
+              mesas.map((mesa) => (
+                <option key={mesa.id} value={mesa.tipoMesa}>{mesa.tipoMesa}</option>
+              ))
+            ) : (
+              <option disabled>No hay datos disponibles</option>
+            )}
         </select>
       </div>
       <div className="mb-4">
