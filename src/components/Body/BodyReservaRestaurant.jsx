@@ -49,7 +49,7 @@ const BodyReservaRestaurant = () => {
         cantidad: reservaInfo.cantidadPersonas || 1,
         fecha: reservaInfo.fecha || "15-01/2024",
         hora: reservaInfo.hora || "12",
-        minutos: reservaInfo.minutes || "00",
+        minutes: reservaInfo.minutes || "00",
       };
 
       const response = await fetch(
@@ -106,6 +106,7 @@ const BodyReservaRestaurant = () => {
       mb-4">
         <label htmlFor="tipoMesa">Tipo de mesa</label>
         <select
+          required
           name="tipoMesa"
           id="tipoMesa"
           value={reservaInfo.tipoMesa}
@@ -130,6 +131,7 @@ const BodyReservaRestaurant = () => {
       <div className="mb-4">
         <label htmlFor="cantidadPersonas">Cantidad de Personas</label>
         <input
+          required
           type="number"
           id="cantidadPersonas"
           name="cantidadPersonas"
@@ -148,6 +150,7 @@ const BodyReservaRestaurant = () => {
         <div className="mr-4">
           <label htmlFor="hora">Hora</label>
           <select
+            required
             name="hora"
             id="hora"
             value={reservaInfo.hora}
@@ -171,6 +174,7 @@ const BodyReservaRestaurant = () => {
         <div>
           <label htmlFor="minutes">Minutos</label>
           <select
+            required
             name="minutes"
             id="minutes"
             value={reservaInfo.minutes}
@@ -194,6 +198,7 @@ const BodyReservaRestaurant = () => {
       <div className="mb-4">
         <label htmlFor="fecha">Fecha</label>
         <input
+          required
           type="date"
           id="fecha"
           name="fecha"

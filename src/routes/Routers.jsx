@@ -11,6 +11,7 @@ import Tecnico from '../pages/Tecnico';
 import ResponseTecnico from "../pages/ResponseTecnico";
 import Restaurante from '../pages/Restaurante';
 import Reserva from '../pages/Reserva';
+import ResponseReseva from '../pages/ResponseReserva';
 import Roomservice from '../pages/Roomservice';
 
 

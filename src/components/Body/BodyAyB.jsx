@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 
 function BodyAyB() {
+  const { id } = useParams();
   return (
     <>
       <div>
@@ -33,7 +34,7 @@ function BodyAyB() {
                     ESCOGE EL SERVICIO QUE DESEE 
           </h1>
           <div className=" mt-20 flex justify-center items-center">
-          <Link to="/dashboard/restaurante/reserva/:id"> 
+          <Link to={`/dashboard/restaurante/reserva/${id}`}> 
           <button className="
           font-Abril-Fatface
           text-4xl
@@ -56,7 +57,7 @@ function BodyAyB() {
           
 
           <div className="flex justify-center items-center mt-14">
-          <Link to="/dashboard/restaurante/roomservice/:id"> 
+          <Link to={`/dashboard/restaurante/roomservice/${id}`}> 
           <button className="
           font-Abril-Fatface
           text-4xl
