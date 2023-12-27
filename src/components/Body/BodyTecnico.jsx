@@ -169,7 +169,7 @@ function BodyTecnico() {
               shadow-xl
               shadow-emerald-200 
               p-2 
-              w-full
+              w-96
               h-40"
             ></textarea>
           </div>
