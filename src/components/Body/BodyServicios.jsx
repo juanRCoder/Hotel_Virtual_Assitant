@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
-// import DateTimePicker from "react-datepicker";
-// import TimePicker from "react-time-picker";
-// import "react-datepicker/dist/react-datepicker.css";
-// import "react-time-picker/dist/TimePicker.css";
+import { useParams, useNavigate} from "react-router-dom";
 
 function BodyServicios() {
   const { id } = useParams();
@@ -30,15 +26,6 @@ function BodyServicios() {
   };
 
   const handleClick = async (e) => {
-
-    if (!nombreServicio || !descripcion || !hora || !minutes) {
-      alert("Por favor, complete todos los campos antes de enviar.");
-      return;
-    
-    }
-
-    const button = document.getElementById("submitButton");
-    button.classList.add("jello-vertical");
     e.preventDefault();
 
     /*post*/
@@ -94,6 +81,7 @@ function BodyServicios() {
     mt-4">
     <form
       action=""
+      onSubmit={handleClick}
       className=" 
           flex 
           flex-col
@@ -138,7 +126,7 @@ function BodyServicios() {
           border-y-2
           border-x-2"  
         >
-          <option value="" defaultValue>
+          <option value="">
             Seleccione el servicio
           </option>
           <option value="toallas">Toallas</option>
@@ -199,7 +187,8 @@ function BodyServicios() {
         id="hora"
         name="hora" 
         value={hora} 
-        onChange={handleChange} required 
+        onChange={handleChange} 
+        required 
         className="appearance-none" >
           <option value="">...</option>
           <option value="Inmediata">Inmediata</option>
@@ -226,9 +215,6 @@ function BodyServicios() {
       </div>
 
       <button
-        onClick={handleClick}
-        id="submitButton"
-        type="button"
         className="
         border
         border-black 
@@ -244,10 +230,7 @@ function BodyServicios() {
         focus:outline-none 
         focus:shadow-outline  
         font-bold
-        text-xl
-      
-        jello-vertical 
-        default:"
+        text-xl"
       >
         Enviar 
       </button>

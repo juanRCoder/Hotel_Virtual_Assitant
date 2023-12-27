@@ -26,11 +26,6 @@ function BodyTecnico() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!problema || !descripcion || !hora || !minutes) {
-      alert("Por favor, complete todos los campos antes de enviar.");
-      return;
-    }
-
     try {
       await fetch(`/enviarServiciosTec/${id}`, {
         method: "POST",
@@ -120,7 +115,7 @@ function BodyTecnico() {
             border-y-2
             border-x-2"
           >
-            <option value="" disabled selected>
+            <option value="">
               Seleccione el problema
             </option>
             <option value="AGUA">AGUA</option>
