@@ -1,4 +1,5 @@
 import backgroundImage from '../assets/images/background.jpg'
+import BodyReservaRestaurant from '../components/Body/BodyReservaRestaurant'
 
 import HeaderAyB from '../components/Header/HeaderAyB'
 
@@ -17,7 +18,7 @@ function Reserva  ()  {
         }}
       ></div>
         <HeaderAyB></HeaderAyB>
-        
+        <BodyReservaRestaurant></BodyReservaRestaurant>
     </div>
     
     </>
