@@ -41,7 +41,7 @@ function ResponseTecnico() {
 
   return (
     <>
-    <div
+     <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
@@ -53,12 +53,10 @@ function ResponseTecnico() {
       <div className="flex justify-center text-center mt-8">
         <h1 className="font-Abril-Fatface text-6xl text-green-800 text-shadow-lg shadow-black/100">SERVICIO ENVIADO !</h1>
       </div>
-      <div className="flex justify-center text-center mt-4"> 
-        <h1 className="font-Abril-Fatface text-4xl text-green-800 text-shadow-lg shadow-black/100">Nuestro personal pronto se pondra en contacto</h1>
-      </div>
-      <div className="flex justify-center items-center min-h-screen -mt-20  ">
-      {serviceTecnico ? (
-        <div className="max-w-md p-6 bg-white rounded-lg shadow-md bg-gradient-to-br
+    <div className="flex justify-center items-center min-h-screen -mt-20">
+  {serviceTecnico ? (
+    <div className="relative"> 
+      <div className="max-w-md p-6 bg-white rounded-lg shadow-md bg-gradient-to-br
         from-white
         via-lime-100
         to-lime-200
@@ -66,38 +64,44 @@ function ResponseTecnico() {
         border-r-2
         border-y-2
         border-green-800
-        ">
-          <h1 className="text-2xl font-bold mb-4">Cliente:</h1>
+      ">
+        <h1 className="text-2xl font-bold mb-4">Cliente:</h1>
+        <ul>
+          <li className="font-bold text-sm text-green-600 ">Nombre: {serviceTecnico?.Cliente?.nombres}</li>
+          <li className="font-bold text-sm text-green-600 ">Apellido: {serviceTecnico?.Cliente?.apellidos}</li>
+          <li className="font-bold text-sm text-green-600 ">Habitación: {serviceTecnico?.Cliente?.habitacion}</li>
+        </ul>
+        <h1 className="text-2xl font-bold mt-4">Servicio Técnico:</h1>
+        <div className="max-w-full overflow-hidden whitespace-pre-line">
           <ul>
-            <li className="font-bold text-sm text-green-600 ">Nombre: {serviceTecnico.Cliente.nombres}</li>
-            <li className="font-bold text-sm text-green-600 ">Apellido: {serviceTecnico.Cliente.apellidos}</li>
-            <li className="font-bold text-sm text-green-600 ">Habitación: {serviceTecnico.Cliente.habitacion}</li>
-          </ul>
-          <h1 className="text-2xl font-bold mt-4">Servicio Tecnico:</h1>
-          <ul>
-            <li className="font-bold text-sm text-green-600 ">Tipo de problema: {serviceTecnico.Tecnico.problema}</li>
-            <li className="font-bold text-sm text-green-600 ">Detalle del problema: {serviceTecnico.Tecnico.descripcion}</li>
+            <li className="font-bold text-sm text-green-600 ">Tipo de problema: {serviceTecnico?.Tecnico?.problema}</li>
+            <li className="font-bold text-sm text-green-600 ">Detalle del problema: {serviceTecnico?.Tecnico?.descripcion}</li>
             <li>
               {formatearFechaHora(
-                serviceTecnico.Tecnico.created_at,
-                serviceTecnico.Tecnico.hora,
-                serviceTecnico.Tecnico.minutes
+                serviceTecnico?.Tecnico?.created_at,
+                serviceTecnico?.Tecnico?.hora,
+                serviceTecnico?.Tecnico?.minutes
               )}
             </li>
           </ul>
         </div>
-      ) : (
-        <p>Cargando datos...</p>
-      )}
-
-      <Link to={`/dashboard/${serviceTecnico && serviceTecnico.Cliente.id}`}>
-      <button> 
-            <Lottie
-              className="w-12 absolute top-4 right-8 mt-2"
-              animationData={animation}
-            /></button>
-      </Link>
       </div>
+    </div>
+  ) : (
+    <p>Cargando datos...</p>
+  )}
+
+  <Link to={`/dashboard/${serviceTecnico && serviceTecnico.Cliente.id}`}>
+    <button> 
+      <Lottie
+        className="w-12 absolute top-4 right-8 mt-2"
+        animationData={animation}
+      />
+    </button>
+  </Link>
+</div>
+
+
     </>
   );
 }
