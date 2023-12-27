@@ -1,5 +1,5 @@
 import backgroundImage from '../assets/images/background.jpg'
-import BodyReserva from '../components/Body/BodyReserva'
+
 import HeaderAyB from '../components/Header/HeaderAyB'
 
 
@@ -17,7 +17,7 @@ function Reserva  ()  {
         }}
       ></div>
         <HeaderAyB></HeaderAyB>
-        <BodyReserva/>        
+        
     </div>
     
     </>

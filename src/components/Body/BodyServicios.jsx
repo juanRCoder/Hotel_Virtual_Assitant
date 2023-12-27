@@ -127,7 +127,7 @@ function BodyServicios() {
           border-y-2
           border-x-2"  
         >
-          <option value="" defaultValue>
+          <option value="">
             Seleccione el servicio
           </option>
           <option value="toallas">Toallas</option>
@@ -215,7 +215,7 @@ function BodyServicios() {
       </div>
 
       <button
-        
+        className="
        
         border
         border-black 
@@ -232,7 +232,7 @@ function BodyServicios() {
         focus:shadow-outline  
         font-bold
         text-xl
-      >
+        ">
         Enviar 
       </button>
     </form>
