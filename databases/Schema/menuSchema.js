@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const menuSchema = new mongoose.Schema({
   nombres: String,
-  contidad: Number,
+  cantidad: Number,
   estado: Boolean,
   codigo: String,
 });
