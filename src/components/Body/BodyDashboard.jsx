@@ -5,6 +5,24 @@ import './animations.css'
 
 function BodyDashboard() {
   const { id } = useParams();
+  const [name, setName] = useState(null);
+
+  useEffect(() => {
+    const sendFetch = async () => {
+      try {
+        await fetch(`/extraerUser/${id}`)
+          .then((res) => res.json())
+          .then((nameUser) => {
+            setName(nameUser);
+          })
+          .catch((e) => console.log(e));
+      } catch (e) {
+        console.error("Error:", error.message);
+      }
+    };
+    sendFetch();
+  }, [id]);
+
   return (
     <>
     <div className="
@@ -41,7 +59,7 @@ function BodyDashboard() {
         shadow-green-800/100
         mt-2  
         ">
-           Bienvenido Huesped</h1>
+           Bienvenido {name}</h1>
       </div>
       <div className="
       flex 
