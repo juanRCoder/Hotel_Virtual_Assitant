@@ -1,8 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 
-
-
 function BodyAyB() {
+  const { id } = useParams();
   return (
     <>
       <div>
@@ -16,7 +15,8 @@ function BodyAyB() {
                 font-Abril-Fatface
                 text-5xl
                 mt-10
-                ">
+                "
+          >
             SERVICIOS DE ALIMENTOS Y BEBIDAS
           </h1>
           <h1
@@ -29,12 +29,14 @@ function BodyAyB() {
                 text-4xl
                 mt-10
 
-                ">
-                    ESCOGE EL SERVICIO QUE DESEE 
+                "
+          >
+            ESCOGE EL SERVICIO QUE DESEE
           </h1>
           <div className=" mt-20 flex justify-center items-center">
-          <Link to="/dashboard/restaurante/reserva/:id"> 
-          <button className="
+            <Link to={`/dashboard/restaurante/reserva/${id}`}>
+              <button
+                className="
           font-Abril-Fatface
           text-4xl
           bg-green-200
@@ -47,17 +49,16 @@ function BodyAyB() {
           text-green-800
           text-shadow-lg
           shadow-black/100
-          ">
+          "
+              >
                 RESERVA RESTAURANTE
-          </button >
-          </Link>
+              </button>
+            </Link>
           </div>
-        
-          
-
           <div className="flex justify-center items-center mt-14">
-          <Link to="/dashboard/restaurante/roomservice/:id"> 
-          <button className="
+            <Link to={`/dashboard/restaurante/roomservice/${id}`}>
+              <button
+                className="
           font-Abril-Fatface
           text-4xl
           bg-green-200
@@ -70,12 +71,12 @@ function BodyAyB() {
           text-green-800
           text-shadow-sm
           shadow-black/50
-          ">
+          "
+              >
                 ROOM SERVICE
-          </button>
-          </Link>
+              </button>
+            </Link>
           </div>
-
         </div>
       </div>
     </>

@@ -1,5 +1,5 @@
 import backgroundImage from '../assets/images/background.jpg'
-import BodyRoomService from '../components/Body/BodyRoomService';
+import BodyRoomServices from '../Jhony/BodyRoomServices';
 import HeaderAyB from '../components/Header/HeaderAyB';
 
 
@@ -17,7 +17,7 @@ function Roomservice() {
           }}
         ></div>
         <HeaderAyB></HeaderAyB>
-        <BodyRoomService/>
+        <BodyRoomServices/>
       </div>
     </>
   );
