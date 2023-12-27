@@ -162,9 +162,11 @@ function BodyServicios() {
           shadow-emerald-200 
           p-2 
           w-full
-          h-40"
+          h-40
+          "
           required
           onChange={handleChange}
+          
         ></textarea>
       </div>
 
