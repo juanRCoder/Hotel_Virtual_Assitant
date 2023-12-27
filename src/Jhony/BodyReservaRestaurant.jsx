@@ -7,7 +7,7 @@ const BodyReservaRestaurant = () => {
     const { id } = useParams();
     const [mesas, setMesas] = useState([]);
     const [reservaInfo, setReservaInfo] = useState({
-        tipo_mesa: '',
+        tipoMesa: '',
         cantidadPersonas: '',
         hora: '',
         minutes: '',
@@ -42,10 +42,10 @@ const BodyReservaRestaurant = () => {
         try {
             const clienteId = new mongoose.Types.ObjectId();
 
-            reservaInfo.tipo_mesa = reservaInfo.tipo_mesa || (mesas.length > 0 ? mesas[0].tipo_mesa : '');
+            reservaInfo.tipoMesa = reservaInfo.tipoMesa || (mesas.length > 0 ? mesas[0].tipoMesa : '');
         
             const datosReserva = {
-                reserva: reservaInfo.tipo_mesa,
+                reserva: reservaInfo.tipoMesa,
                 cantidad: reservaInfo.cantidadPersonas || 1,
                 fecha: reservaInfo.fecha || '15-01/2024',
                 hora: reservaInfo.hora || '12',
@@ -82,15 +82,15 @@ const BodyReservaRestaurant = () => {
                     <select 
                         name="tipoMesa" 
                         id="tipoMesa" 
-                        value={ reservaInfo.tipo_mesa}
+                        value={ reservaInfo.tipoMesa}
                         onChange={ handleChange }
                         >
                         <option>
                             Selecciona el tipo de mesa
                         </option>
                         {Array.isArray(mesas) && mesas.length > 0 && mesas.map((mesa) => (
-                            <option key={ mesa._id } value={ mesa.tipo_mesa }>
-                                { mesa.tipo_mesa}
+                            <option key={ mesa._id } value={ mesa.tipoMesa }>
+                                { mesa.tipoMesa}
                             </option>
                         ))}    
                     </select>
@@ -114,7 +114,7 @@ const BodyReservaRestaurant = () => {
                     onChange={ handleChange }
                 >
                     {/* Opciones de hora */}
-                    <option value="">Seleccione la hora</option>
+                    <option value="">...</option>
                     <option value="08">08</option>
                     <option value="09">09</option>
                     <option value="10">10</option>
@@ -131,7 +131,7 @@ const BodyReservaRestaurant = () => {
                     onChange={ handleChange }
                 >
                     {/* Opciones para los minutos */}
-                    <option value="">Selecciona los minutos</option>
+                    <option value="">...</option>
                     <option value="00">00</option>
                     <option value="15">15</option>
                     <option value="30">30</option>
