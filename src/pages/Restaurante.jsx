@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import BodyReservaRestaurant from '../Jhony/BodyReservaRestaurant.jsx';
 
-function Restaruante  () {
+function Restaurante  () {
   return (
-    <div>Restaruante</div>
+    <BodyReservaRestaurant />
   )
 }
 
-export default Restaruante
+export default Restaurante

@@ -21,6 +21,7 @@ const BodyReservaRestaurant = () => {
             try {
                 const response = await fetch(`http://localhost:3004/extraerMesas/${id}`);
                 const data = await response.json();
+                console.log('Mesas', data);
                 setMesas(data);
             } catch (err) {
                 console.error('Error al obtener las mesas:', err);
@@ -87,7 +88,7 @@ const BodyReservaRestaurant = () => {
                         <option>
                             Selecciona el tipo de mesa
                         </option>
-                        {mesas.map((mesa) => (
+                        {Array.isArray(mesas) && mesas.length > 0 && mesas.map((mesa) => (
                             <option key={ mesa._id } value={ mesa.tipo_mesa }>
                                 { mesa.tipo_mesa}
                             </option>
