@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; 
-import RoomService from "../../databases/Schema/roomServiceSchema";
-import Roomservice from "../../../databases/Schema/r";
+import RoomService from "../../../databases/Schema/roomServiceSchema.js";
+
 
 const BodyRoomServices = () => {
     const [formData, setFormData ] = useState({
         fecha: '',
-        hora: '',
-        minutes: '',
+        hora: 0,
+        minutes: 0,
         bebidas: '',
         menu: '',
         cantidadBebidas: 0,
@@ -50,7 +50,8 @@ const BodyRoomServices = () => {
     const handleClear = () => {
         setFormData({
             fecha: '',
-            hora: '',
+            hora: 0,
+            minutes: 0,
             bebidas: '',
             menu: '',
             cantidadBebidas: 0,
