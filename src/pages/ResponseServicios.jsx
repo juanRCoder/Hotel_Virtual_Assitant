@@ -79,6 +79,7 @@ function ResponseServicios() {
               <li className="font-bold text-sm text-green-600 ">Habitación: {servicio.Cliente.habitacion}</li>
             </ul>
             <h1 className="text-2xl font-bold mt-4">Servicio:</h1>
+            <div className="max-w-full overflow-hidden whitespace-pre-line">
             <ul>
               <li className="font-bold text-sm text-green-600 " >Servicio: {servicio.Servicios.nombreServicio}</li>
               <li className="font-bold text-sm text-green-600">Detalles del servicio: {servicio.Servicios.descripcion}</li>
@@ -90,6 +91,7 @@ function ResponseServicios() {
                 )}
               </li>
             </ul>
+            </div>
           </div>
         ) : (
           <p>Cargando datos...</p>
