@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
-import { useParams, useNavigate} from "react-router-dom";
-=======
 import { useParams, useNavigate } from "react-router-dom";
->>>>>>> main
 
 function BodyServicios() {
   const { id } = useParams();
@@ -84,7 +80,6 @@ function BodyServicios() {
     mx-4 
     mt-4">
     <form
-    onSubmit={handleClick}
       action=""
       onSubmit={handleClick}
       className=" 
