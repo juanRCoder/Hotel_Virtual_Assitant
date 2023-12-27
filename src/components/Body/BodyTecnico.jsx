@@ -13,13 +13,13 @@ function BodyTecnico() {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-      if (name === "problema") {
+    if (name === "problema") {
       setProblema(value);
     } else if (name === "descripcion") {
       setDescripcion(value);
     } else if (name === "hora") {
       setHora(value);
-    } else if (name === "minutes") {      
+    } else if (name === "minutes") {
       setMinutes(value);
     }
   };
@@ -30,8 +30,6 @@ function BodyTecnico() {
       alert("Por favor, complete todos los campos antes de enviar.");
       return;
     }
-
-   
 
     try {
       await fetch(`/enviarServiciosTec/${id}`, {
@@ -61,23 +59,27 @@ function BodyTecnico() {
       <div className="flex justify-center text-center -mt-2">
         <h1
           className="
-        text-6xl
-        text-shadow-lg
-        shadow-green-950/100
-        text-center
-        ml-16
-        font-Abril-Fatface
-        text-green-800
-        mt-2 
-        ">
-          PROBLEMA </h1>
+          text-6xl
+          text-shadow-lg
+          shadow-green-950/100
+          text-center
+          ml-16
+          font-Abril-Fatface
+          text-green-800
+          mt-2 
+          "
+          >
+          PROBLEMA{" "}
+        </h1>
       </div>
-      <div className="
-      flex 
-      justify-center 
-      items-center 
-      text-center 
-      ">
+      <div
+        className="
+        flex 
+        justify-center 
+        items-center 
+        text-center 
+        "
+        >
         <div
           className="
         bg-gray-100
@@ -99,6 +101,7 @@ function BodyTecnico() {
         >
           <h1 className="text-xl mt-4 font-mono">Tipo de Problema:</h1>
           <select
+            required
             id="problema"
             name="problema"
             value={problema}
@@ -117,7 +120,7 @@ function BodyTecnico() {
             border-y-2
             border-x-2"
           >
-            <option value="" disabled selected required>
+            <option value="" disabled selected>
               Seleccione el problema
             </option>
             <option value="AGUA">AGUA</option>
@@ -129,64 +132,72 @@ function BodyTecnico() {
             <option value="OTROS">OTROS</option>
           </select>
           <h1 className="font-mono text-xl">Detalles del problema</h1>
-          <textarea type="text" 
-          
-          className="
-         shadow-2xl
-         required
-         w-5/6
-         h-48
-         p-4  
-         mt-2 
-         rounded-3xl
-         border-l-8
-         border-y-2
-         border-x-2
-         border border-green-800
-         hover:shadow-sm
-         " >
-        
-          </textarea>
-        
-           <div className="
-      flex 
-      items-center
-      border border-green-800
-      border-y-2
-      border-x-2
-      mt-4
-      rounded-md
-      py-2
-      px-1">
-        <label htmlFor="horario" className="mr-2">
-          Horario:
-        </label>
-        <select id="hora" name="hora" required >
-          <option value="">...</option>
-          <option value="Inmediata">Inmediata</option>
-          <option value="08">08</option>
-          <option value="09">09</option>
-          <option value="10">10</option>
-        </select>{" "}
-        :{" "}
-        <select id="minutes" name="minutes" required  >
-          <option value="">...</option>
-          <option value="00">00</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
-          <option value="30">30</option>
-          <option value="35">35</option>
-          <option value="40">40</option>
-        </select>
-      </div>
+          <textarea
+            type="text"
+            required
+            id="descripcion"
+            name="descripcion"
+            value={descripcion}
+            placeholder="descripcion"
+            onChange={handleChange}
+            className="
+
+              shadow-2xl
+              required
+              w-5/6
+              h-48
+              p-4  
+              mt-2 
+              rounded-3xl
+              border-l-8
+              border-y-2
+              border-x-2
+              border border-green-800
+              hover:shadow-sm
+              "
+          ></textarea>
 
           <div
             className="
-          flex 
-          items-center 
-          justify-center 
-          shadow-xl 
-          py-2"
+              flex 
+              items-center
+              border border-green-800
+              border-y-2
+              border-x-2
+              mt-4
+              rounded-md
+              py-2
+              px-1"
+          >
+            <label htmlFor="horario" className="mr-2">
+              Horario:
+            </label>
+            <select id="hora" name="hora" value={hora} required>
+              <option value="">...</option>
+              <option value="Inmediata">Inmediata</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+            </select>{" "}
+            :{" "}
+            <select id="minutes" name="minutes" value={minutes} required>
+              <option value="">...</option>
+              <option value="00">00</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+            </select>
+          </div>
+
+          <div
+            className="
+              flex 
+              items-center 
+              justify-center 
+              shadow-xl 
+              py-2"
           >
             <button
               className="
