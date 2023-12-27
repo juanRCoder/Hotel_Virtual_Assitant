@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import frontdesk from "../../assets/images/frontdesk.png";
 import './animations.css'
@@ -38,7 +38,7 @@ function BodyDashboard() {
       text-shadow-lg
       shadow-black/100
       ">
-        HOTEL CASA ANDINA
+        HOTEL VIRTUAL ASSITANT
       </h1>
     </div>
       <div className="flex justify-center items-center pt-10">
@@ -59,7 +59,7 @@ function BodyDashboard() {
         shadow-green-800/100
         mt-2  
         ">
-           Bienvenido {name}</h1>
+           Bienvenido {name}!</h1>
       </div>
       <div className="
       flex 
