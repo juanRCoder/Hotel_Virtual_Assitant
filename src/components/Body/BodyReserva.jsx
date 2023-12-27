@@ -1,6 +1,6 @@
 import React from "react";
 
-function BodyResponseReserva() {
+function BodyReserva() {
   return (
     <>
       <div>
@@ -159,4 +159,4 @@ function BodyResponseReserva() {
   );
 }
 
-export default BodyResponseReserva;
+export default BodyReserva;

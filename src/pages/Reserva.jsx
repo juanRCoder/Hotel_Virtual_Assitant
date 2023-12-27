@@ -1,13 +1,13 @@
-import BodyAyB from "../components/Body/BodyAyB"
-
 import backgroundImage from '../assets/images/background.jpg'
-import AllHeaders from "../components/Header/AllHeaders";
+import BodyReserva from '../components/Body/BodyReserva'
+import HeaderAyB from '../components/Header/HeaderAyB'
 
-function Restaurante  () {
+
+function Reserva  ()  {
   return (
-    
     <>
-       <div
+    <div>
+    <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
@@ -16,10 +16,12 @@ function Restaurante  () {
           opacity: 0.9,
         }}
       ></div>
-     <AllHeaders></AllHeaders>
-      <BodyAyB/>   
+        <HeaderAyB></HeaderAyB>
+        <BodyReserva/>        
+    </div>
+    
     </>
   )
-} 
+}
 
-export default Restaurante;
+export default Reserva

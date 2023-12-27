@@ -9,7 +9,9 @@ import ResponseServicios from '../pages/ResponseServicios';
 import Preguntas from '../pages/Preguntas';
 import Tecnico from '../pages/Tecnico';
 import ResponseTecnico from "../pages/ResponseTecnico";
-import Restaruante from '../pages/Restaurante';
+import Restaurante from '../pages/Restaurante';
+import Reserva from '../pages/Reserva';
+import Roomservice from '../pages/Roomservice';
 
 
 const Routers = () => {
@@ -22,7 +24,9 @@ const Routers = () => {
       <Route path="/dashboard/preguntas/:id" element={<Preguntas />} />
       <Route path="/dashboard/tecnico/:id" element={<Tecnico />} />
       <Route path="/dashboard/serviciosTec/resultServiceTec/:idServiceTec" element={<ResponseTecnico />} />
-      <Route path="/dashboard/restaurante" element={<Restaruante />} />
+      <Route path="/dashboard/restaurante/:id" element={<Restaurante />} />
+      <Route path="/dashboard/restaurante/reserva/:id" element={<Reserva/>} />
+      <Route path="/dashboard/restaurante/roomservice/:id" element={<Roomservice />} />
       <Route path="/*" element={<NotFound />} />
 
     </Routes>
