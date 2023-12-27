@@ -71,10 +71,10 @@ function BodyServicios() {
   return (
     <>
     <div className="
-    flex 
-    justify-center 
-    text-center
-    ml-16">
+      flex 
+      justify-center 
+      text-center
+      ml-16">
       <h1 className="
       text-6xl
       font-Abril-Fatface
@@ -86,11 +86,16 @@ function BodyServicios() {
         SERVICIO DE HOUSEKEEPING
       </h1>
     </div>
-    <div className="flex items-center justify-center mx-4 mt-4">
+    <div className="
+    flex 
+    items-center 
+    justify-center 
+    mx-4 
+    mt-4">
     <form
       action=""
       className=" 
-      flex 
+          flex 
           flex-col
           items-center
           ml-20 
@@ -119,6 +124,10 @@ function BodyServicios() {
         </label>
         <select
           id="servicio"
+          name="nombreServicio"
+          value={nombreServicio}
+          onChange={handleChange}
+          required
           className="border 
           border-green-800
           p-2 
@@ -127,11 +136,7 @@ function BodyServicios() {
           rounded
           border-l-2
           border-y-2
-          border-x-2"
-          name="nombreServicio"
-          value={nombreServicio}
-          onChange={handleChange}
-          required
+          border-x-2"  
         >
           <option value="" defaultValue>
             Seleccione el servicio
@@ -146,7 +151,8 @@ function BodyServicios() {
 
       {/* DETALLES DEL SERVICIO */}
       <div>
-        <label htmlFor="descripcion" className="
+        <label htmlFor="descripcion" 
+        className="
         text-lg 
         font-mono 
         mb-2">
@@ -189,7 +195,11 @@ function BodyServicios() {
         <label htmlFor="horario" className="mr-2" >
           Horario:
         </label>
-        <select id="hora" name="hora" value={hora} onChange={handleChange} required 
+        <select 
+        id="hora"
+        name="hora" 
+        value={hora} 
+        onChange={handleChange} required 
         className="appearance-none" >
           <option value="">...</option>
           <option value="Inmediata">Inmediata</option>
@@ -198,7 +208,12 @@ function BodyServicios() {
           <option value="10">10</option>
         </select>{" "}
         :{" "}
-        <select id="minutes" name="minutes" value={minutes} onChange={handleChange} required 
+        <select 
+        id="minutes" 
+        name="minutes" 
+        value={minutes} 
+        onChange={handleChange} 
+        required 
         className="appearance-none" >
           <option value="">...</option>
           <option value="00">00</option>

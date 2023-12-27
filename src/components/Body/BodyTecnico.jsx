@@ -172,7 +172,11 @@ function BodyTecnico() {
             <label htmlFor="horario" className="mr-2">
               Horario:
             </label>
-            <select id="hora" name="hora" value={hora} required>
+            <select 
+            id="hora" 
+            name="hora" 
+            value={hora} 
+            required>
               <option value="">...</option>
               <option value="Inmediata">Inmediata</option>
               <option value="08">08</option>
@@ -180,7 +184,11 @@ function BodyTecnico() {
               <option value="10">10</option>
             </select>{" "}
             :{" "}
-            <select id="minutes" name="minutes" value={minutes} required>
+            <select 
+            id="minutes"
+            name="minutes" 
+            value={minutes} 
+            required>
               <option value="">...</option>
               <option value="00">00</option>
               <option value="10">10</option>
