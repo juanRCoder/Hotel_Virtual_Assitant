@@ -1,10 +1,5 @@
 import backgroundImage from '../assets/images/background.jpg'
-<<<<<<< HEAD
-import BodyReservaRestaurant from '../Jhony/BodyReservaRestaurant'
-=======
 import BodyReservaRestaurant from '../components/Body/BodyReservaRestaurant'
-
->>>>>>> main
 import HeaderAyB from '../components/Header/HeaderAyB'
 
 
@@ -22,11 +17,7 @@ function Reserva  ()  {
         }}
       ></div>
         <HeaderAyB></HeaderAyB>
-<<<<<<< HEAD
         <BodyReservaRestaurant/>        
-=======
-        <BodyReservaRestaurant></BodyReservaRestaurant>
->>>>>>> main
     </div>
     
     </>

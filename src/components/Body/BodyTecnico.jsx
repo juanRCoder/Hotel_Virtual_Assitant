@@ -68,30 +68,6 @@ function BodyTecnico() {
       
       "
         >
-<<<<<<< HEAD
-          <h1 className="text-xl mt-4 font-mono">Tipo de Problema:</h1>
-          <select
-            required
-            id="problema"
-            name="problema"
-            value={problema}
-            onChange={handleChange}
-            className="
-            border border-green-800
-            p-2 
-            mb-4 
-            mt-2
-            w-4/5
-            text-center
-            justify-center
-            items-center 
-            rounded-lg
-            border-l-2
-            border-y-2
-            border-x-2"
-          >
-            <option value="">
-=======
           PROBLEMA
         </h1>
       </div>
@@ -153,7 +129,7 @@ function BodyTecnico() {
                 border-x-2"
             >
              <option value="" disabled selected>
->>>>>>> main
+
               Seleccione el problema
             </option>
             <option value="AGUA">AGUA</option>

@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 const BodyReservaRestaurant = () => {
   const { id } = useParams();
-  const [mesas, setMesas] = useState([]);
+  const [mesas, setMesas] = useState(null);
   const [reservaInfo, setReservaInfo] = useState({
     tipoMesa: "",
     cantidadPersonas: "",
@@ -18,11 +18,9 @@ const BodyReservaRestaurant = () => {
   useEffect(() => {
     const fetchMesas = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:3004/extraerMesas/${id}`
-        );
+        const response = await fetch(" /extraerMesas");
         const data = await response.json();
-        console.log("Mesas", data);
+        console.log("Mesas:", data);
         setMesas(data);
       } catch (err) {
         console.error("Error al obtener las mesas:", err);
@@ -30,7 +28,7 @@ const BodyReservaRestaurant = () => {
     };
 
     fetchMesas();
-  }, [id]);
+  }, []);
 
   const handleChange = (e) => {
     setReservaInfo({
@@ -74,10 +72,7 @@ const BodyReservaRestaurant = () => {
     }
   };
 
-  const handleCancelarReserva = () => {
-    navigate.goBack();
-  };
-
+ 
   return (
     <div className="
         flex 
@@ -120,15 +115,15 @@ const BodyReservaRestaurant = () => {
           py-2 
           px-3"
         >
-          <option>Selecciona el tipo de mesa</option>
-          {Array.isArray(mesas) &&
-            mesas.length > 0 &&
-            mesas.map((mesa) => (
-              <option key={mesa._id} value={mesa.tipoMesa}>
-                {mesa.tipoMesa}
-              </option>
-            ))}
-        </select>
+            <option value="">...</option>
+              {mesas ? (
+                mesas.map((mesa) => (
+                <option key={mesa.id} value={mesa.tipoMesa}>{mesa.tipoMesa}</option>
+              ))
+            ) : (
+              <option disabled>No hay datos disponibles</option>
+            )}
+          </select>
       </div>
       <div className="mb-4">
         <label htmlFor="cantidadPersonas">Cantidad de Personas</label>

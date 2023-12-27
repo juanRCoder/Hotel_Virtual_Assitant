@@ -1,10 +1,5 @@
 import backgroundImage from '../assets/images/background.jpg'
-<<<<<<< HEAD
-import BodyRoomServices from '../Jhony/BodyRoomServices';
-=======
 import BodyRoomServices from '../components/Body/BodyRoomServices';
-
->>>>>>> main
 import HeaderAyB from '../components/Header/HeaderAyB';
 
 
@@ -29,11 +24,7 @@ function Roomservice() {
           }}
         ></div>
         <HeaderAyB></HeaderAyB>
-<<<<<<< HEAD
         <BodyRoomServices/>
-=======
-        <BodyRoomServices></BodyRoomServices>
->>>>>>> main
       </div>
     </>
   );
