@@ -70,7 +70,7 @@ function BodyTecnico() {
         text-green-800
         mt-2 
         ">
-          PROBLEMA TECNICO</h1>
+          PROBLEMA </h1>
       </div>
       <div className="
       flex 
@@ -128,7 +128,7 @@ function BodyTecnico() {
             <option value="DUCHA">DUCHA</option>
             <option value="OTROS">OTROS</option>
           </select>
-          <h1 className="font-mono text-xl">Descripcion del problema tecnico</h1>
+          <h1 className="font-mono text-xl">Detalles del problema</h1>
           <textarea type="text" 
           
           className="
@@ -213,7 +213,7 @@ function BodyTecnico() {
               type="submit"
               onClick={handleSubmit}
             >
-              ENVIAR
+              REPORTAR
             </button>
           </div>
         </div>
