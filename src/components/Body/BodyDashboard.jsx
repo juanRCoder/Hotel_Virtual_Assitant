@@ -121,7 +121,7 @@ function BodyDashboard() {
           </button>
         </Link>
 
-        <Link to="/dashboard/restaurante/:id">
+        <Link to={`/dashboard/tecnico/${id}`}>
           <button
             className="
             font-semibold 
