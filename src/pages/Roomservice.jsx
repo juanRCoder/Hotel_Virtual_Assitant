@@ -1,5 +1,10 @@
 import backgroundImage from '../assets/images/background.jpg'
+<<<<<<< HEAD
 import BodyRoomServices from '../Jhony/BodyRoomServices';
+=======
+import BodyRoomServices from '../components/Body/BodyRoomServices';
+
+>>>>>>> main
 import HeaderAyB from '../components/Header/HeaderAyB';
 
 
@@ -8,7 +13,14 @@ function Roomservice() {
     <>
       <div>
         <div
-          className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+          className="
+          absolute 
+          top-0 
+          left-0 
+          w-full 
+          h-full 
+          bg-cover 
+          bg-center"
           style={{
             backgroundImage: `url(${backgroundImage})`,
             filter: "blur(150px)",
@@ -17,7 +29,11 @@ function Roomservice() {
           }}
         ></div>
         <HeaderAyB></HeaderAyB>
+<<<<<<< HEAD
         <BodyRoomServices/>
+=======
+        <BodyRoomServices></BodyRoomServices>
+>>>>>>> main
       </div>
     </>
   );

@@ -1,5 +1,9 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import { useParams, useNavigate} from "react-router-dom";
+=======
+import { useParams, useNavigate } from "react-router-dom";
+>>>>>>> main
 
 function BodyServicios() {
   const { id } = useParams();
@@ -80,6 +84,7 @@ function BodyServicios() {
     mx-4 
     mt-4">
     <form
+    onSubmit={handleClick}
       action=""
       onSubmit={handleClick}
       className=" 
@@ -102,12 +107,13 @@ function BodyServicios() {
     >
       {/* SELECCIONAR TIPO DE SERVICIO */}
       <div>
-        <label htmlFor="descripcion" className="
+        <label htmlFor="descripcion"  className="
         text-lg 
         font-mono 
         mb-2
         
         ">
+          
           Tipo de Servicio
         </label>
         <select
@@ -216,6 +222,7 @@ function BodyServicios() {
 
       <button
         className="
+       
         border
         border-black 
         mt-4
@@ -230,8 +237,13 @@ function BodyServicios() {
         focus:outline-none 
         focus:shadow-outline  
         font-bold
+<<<<<<< HEAD
         text-xl"
       >
+=======
+        text-xl
+        ">
+>>>>>>> main
         Enviar 
       </button>
     </form>

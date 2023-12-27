@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; 
-import RoomService from "../../databases/Schema/roomServiceSchema";
 
 const BodyRoomServices = () => {
     const [formData, setFormData ] = useState({
         fecha: '',
         hora: '',
+        minutes: '',
         bebidas: '',
         menu: '',
         cantidadBebidas: 0,
@@ -20,8 +20,8 @@ const BodyRoomServices = () => {
         // Función para obtener informaicón de las bebidas y el menú
         const fetchData = async () => {
             try {
-                const bebidasResponse = await fetch('./api/bebidas');
-                const menuResponse = await fetch('./api/menu');
+                const bebidasResponse = await fetch(`http://localhost:3004/extraerBebidas`);
+                const menuResponse = await fetch('http://localhost:3004/extraerMenu');
                 
                 const bebidasData = await bebidasResponse.json();
                 const menuData = await menuResponse.json();
@@ -57,6 +57,30 @@ const BodyRoomServices = () => {
         });
     };
 
+    const generateHoursOption = () => {
+        const hoursOption = [];
+        for(let i = 6; i < 24; i++){
+            hoursOption.push(
+                <option key={ i } value={ i }>
+                    { i < 10 ? `0${i}` : i}
+                </option>
+            );
+        }
+        return hoursOption;
+    };
+
+    const generateMinutesOption = () => {
+        const minutesOption = [];
+        for(let i = 0; i <= 45; i += 15) {
+            minutesOption.push(
+                <option key={ i } value={ i }>
+                    { i < 10 ? `0${i}` : i }
+                </option>
+            );
+        }
+        return minutesOption;
+    }
+
     return (
         <div>
             <form onSubmit={ handleSubmit }>
@@ -64,7 +88,14 @@ const BodyRoomServices = () => {
                 <input type="date" name="fecha" value={ formData.fecha } onChange={ handleChange } />
 
                 <label>Hora</label>
-                <input type="text" name="hora" value={ formData.hora } onChange={ handleChange } />
+                <select name="hora" value={ formData.hora } onChange={ handleChange } >
+                    { generateHoursOption() }
+                </select>
+
+                <label>Minutos</label>
+                <select name="minutes" value={ formData.minutes } onChange={ handleChange }>
+                    { generateMinutesOption() }
+                </select>
 
                 <label >Bebidas</label>
                 <select name="bebidas" value={ formData.bebidas } onChange={ handleChange }>

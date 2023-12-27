@@ -23,7 +23,7 @@ function BodyTecnico() {
       setMinutes(value);
     }
   };
-  const handleSubmit = async (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
 
     try {
@@ -51,49 +51,24 @@ function BodyTecnico() {
 
   return (
     <>
-      <div className="flex justify-center text-center -mt-2">
-        <h1
-          className="
-          text-6xl
-          text-shadow-lg
-          shadow-green-950/100
-          text-center
-          ml-16
-          font-Abril-Fatface
-          text-green-800
-          mt-2 
-          "
-          >
-          PROBLEMA{" "}
-        </h1>
-      </div>
       <div
         className="
         flex 
         justify-center 
-        items-center 
-        text-center 
-        "
-        >
-        <div
+        text-center
+        ml-16"
+      >
+        <h1
           className="
-        bg-gray-100
-        flex flex-col 
-        items-center
-        ml-20 
-        w-2/5 
-        h-2/5
-        rounded-3xl
-        shadow-2xl
-        shadow-green-900
-        border border-green-800
-        hover:shadow-2xl
-        border-l-8
-        border-y-2
-
+            text-6xl
+            font-Abril-Fatface
+          text-green-800
+            text-shadow-lg
+          shadow-black/100
       
-         "
+      "
         >
+<<<<<<< HEAD
           <h1 className="text-xl mt-4 font-mono">Tipo de Problema:</h1>
           <select
             required
@@ -116,6 +91,69 @@ function BodyTecnico() {
             border-x-2"
           >
             <option value="">
+=======
+          PROBLEMA
+        </h1>
+      </div>
+      <div
+        className="
+          flex 
+          items-center 
+          justify-center 
+          mx-4 
+          mt-4"
+      >
+        <form
+          onSubmit={handleClick}
+          action=""
+          className=" 
+          flex 
+          flex-col
+          items-center
+          ml-20 
+          w-2/5 
+          h-3/5 
+          rounded-3xl 
+          shadow-2xl 
+          shadow-green-900 
+          border 
+          border-green-800 
+          hover:shadow-2xl 
+          border-l-8 
+          border-y-2
+          p-8
+          bg-gray-100"
+        >
+          {/* SELECCIONAR TIPO DE SERVICIO */}
+          <div>
+            <label
+              htmlFor="descripcion"
+              className="
+              text-lg 
+              font-mono 
+              mb-2
+              ">
+            Seleccione el problema
+
+            </label>
+            <select
+              id="problema"
+              name="problema"
+              value={problema}
+              onChange={handleChange}
+              required
+              className="border 
+              border-green-800
+                p-2 
+                mb-4 
+                w-full 
+                rounded
+                border-l-2
+                border-y-2
+                border-x-2"
+            >
+             <option value="" disabled selected>
+>>>>>>> main
               Seleccione el problema
             </option>
             <option value="AGUA">AGUA</option>
@@ -125,9 +163,22 @@ function BodyTecnico() {
             <option value="AIRE ACONDICIONADO">AIRE ACONDICIONADO</option>
             <option value="DUCHA">DUCHA</option>
             <option value="OTROS">OTROS</option>
-          </select>
-          <h1 className="font-mono text-xl">Detalles del problema</h1>
-          <textarea
+            </select>
+          </div>
+
+          {/* DETALLES DEL SERVICIO */}
+          <div>
+            <label
+              htmlFor="descripcion"
+              className="
+                text-lg 
+                font-mono 
+                mb-2"
+            >
+              
+            </label>
+            <h1 className="font-mono text-xl">Detalles del problema</h1>
+            <textarea
             type="text"
             required
             id="descripcion"
@@ -136,42 +187,44 @@ function BodyTecnico() {
             placeholder="descripcion"
             onChange={handleChange}
             className="
+              rounded-xl
+              border 
+              border-green-800
+              border-l-8 border-y-2
+              shadow-xl
+              shadow-emerald-200 
+              p-2 
+              w-full
+              h-40"
+            ></textarea>
+          </div>
 
-              shadow-2xl
-              required
-              w-5/6
-              h-48
-              p-4  
-              mt-2 
-              rounded-3xl
-              border-l-8
-              border-y-2
-              border-x-2
-              border border-green-800
-              hover:shadow-sm
-              "
-          ></textarea>
-
+          {/* HORARIO DEL SERVICIO */}
           <div
             className="
               flex 
               items-center
               border border-green-800
+              mt-4
+              px-2
+              py-1
+              rounded-md
+              border-l-2
               border-y-2
               border-x-2
-              mt-4
-              rounded-md
-              py-2
-              px-1"
+              "
           >
             <label htmlFor="horario" className="mr-2">
               Horario:
             </label>
-            <select 
-            id="hora" 
-            name="hora" 
-            value={hora} 
-            required>
+            <select
+              id="hora"
+              name="hora"
+              value={hora}
+              onChange={handleChange}
+              required
+              className="appearance-none"
+            >
               <option value="">...</option>
               <option value="Inmediata">Inmediata</option>
               <option value="08">08</option>
@@ -179,11 +232,14 @@ function BodyTecnico() {
               <option value="10">10</option>
             </select>{" "}
             :{" "}
-            <select 
-            id="minutes"
-            name="minutes" 
-            value={minutes} 
-            required>
+            <select
+              id="minutes"
+              name="minutes"
+              value={minutes}
+              onChange={handleChange}
+              required
+              className="appearance-none"
+            >
               <option value="">...</option>
               <option value="00">00</option>
               <option value="10">10</option>
@@ -194,45 +250,30 @@ function BodyTecnico() {
             </select>
           </div>
 
-          <div
-            className="
-              flex 
-              items-center 
-              justify-center 
-              shadow-xl 
-              py-2"
-          >
-            <button
-              className="
-              bg-green-500
-              hover:bg-green-800
-              text-black 
-              w-24
-              h-12
-              px-2   
-              rounded 
-              focus:outline-none 
-              focus:shadow-outline  
-              font-bold
-              text-xl
-              jello-vertical
-              default
-              border
-              border-black
-              border-l-2
-              border-y-2
-              border-x-2
-              mt-4
-              "
-              type="submit"
-              onClick={handleSubmit}
-            >
-              REPORTAR
-            </button>
-          </div>
-        </div>
+          <button
+          className="
+            border
+            border-black
+            mt-4
+            shadow-xl
+            shadow-green-400
+            bg-green-500
+            hover:bg-green-950
+            text-black
+            w-24
+            h-12
+            rounded
+            focus:outline-none
+            focus:shadow-outline
+            font-bold
+            text-xl
+            ">
+            Enviar
+          </button>
+        </form>
       </div>
     </>
   );
 }
 export default BodyTecnico;
+
