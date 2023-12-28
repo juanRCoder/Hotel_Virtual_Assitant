@@ -90,14 +90,17 @@ const BodyRoomServices = () => {
       flex
       text-center
       justify-center
-      mt-10
+      mt-4
+      
       ">
         <h1 className="
-        text-8xl
+        text-7xl
         font-Abril-Fatface
         text-green-800
         text-shadow-lg
         shadow-green-500/100
+       
+        mb-1
         ">ROOMSERVICE</h1>
       </div>
       <div className="
@@ -105,16 +108,22 @@ const BodyRoomServices = () => {
       justify-center 
       items-center 
       h-screen
-      -mt-32
-      rounded-3xl">
+      -mt-24
+      rounded-3xl
+      
+      ">
         <form
           onSubmit={handleSubmit}
           className="
           w-full 
           max-w-md 
-          bg-white 
-          p-8 rounded 
-          shadow-md"
+          bg-lime-100 
+          p-8
+          rounded-green-600 
+          rounded-2xl 
+          shadow-md
+          border
+        border-black"
         >
           <label className="
           block 
@@ -139,14 +148,15 @@ const BodyRoomServices = () => {
           <div className="
           flex 
           justify-between 
-          mb-4">
+          mb-4
+          ">
             <div className="w-1/2 pr-2">
               <label className="
               block 
               text-gray-700 
               text-sm 
               font-bold 
-              mb-2">
+              ">
                 Hora
               </label>
               <select
@@ -156,7 +166,9 @@ const BodyRoomServices = () => {
                 className="
                 w-full border 
                 border-gray-300 
-                p-2"
+                p-2
+                "
+                
               >
                 {generateHoursOption()}
               </select>
@@ -164,13 +176,14 @@ const BodyRoomServices = () => {
 
             <div className="
             w-1/2 
-            pl-2">
+            pl-2
+            ">
               <label className="
               block 
               text-gray-700 
               text-sm 
               font-bold 
-              mb-2">
+              ">
                 Minutos
               </label>
               <select
@@ -200,7 +213,7 @@ const BodyRoomServices = () => {
               text-gray-700 
               text-sm 
               font-bold 
-              mb-2">
+              mb-1">
                 Bebidas
               </label>
               <select
@@ -229,7 +242,7 @@ const BodyRoomServices = () => {
               text-gray-700 
               text-sm 
               font-bold 
-              mb-2">
+              mb-1">
                 Cantidad de bebidas
               </label>
               <input
@@ -248,7 +261,7 @@ const BodyRoomServices = () => {
           <div className="
           flex 
           justify-between 
-          mb-4">
+          ">
             <div className="
             w-1/2 
             pr-2">
@@ -257,7 +270,7 @@ const BodyRoomServices = () => {
               text-gray-700 
               text-sm 
               font-bold 
-              mb-2">
+              ">
                 Menu
               </label>
               <select
@@ -287,7 +300,7 @@ const BodyRoomServices = () => {
               text-gray-700 
               text-sm 
               font-bold 
-              mb-2">
+              ">
                 Cantidad de comida
               </label>
               <input
@@ -309,31 +322,22 @@ const BodyRoomServices = () => {
           <button
             type="submit"
             className="
-            bg-blue-500 
-            hover:bg-blue-700 
+            flex
+            ml-28
+            bg-green-600 
+            hover:bg-green-800
             text-white font-bold 
-            py-2 
-            px-4 
+            py-3 
+            px-8 
             mr-2 
-            rounded"
+            rounded
+            mt-2"
+            
           >
             Enviar
           </button>
 
-          <button
-            type="button"
-            onClick={handleClear}
-            className="
-            bg-red-500 
-            hover:bg-red-700 
-            text-white 
-            font-bold 
-            py-2 
-            px-4 
-            rounded"
-          >
-            Borrar
-          </button>
+          
         </form>
 
         {/* <Link to='/dashboard' className="mt-4 text-blue-500">
