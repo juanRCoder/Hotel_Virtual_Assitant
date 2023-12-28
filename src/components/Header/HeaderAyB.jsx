@@ -14,7 +14,7 @@ import animation from "../../assets/back.json";
       </div>
 
       <div>
-        <Link to='/dashboard/restaurante/:id'>
+        <Link to={`/dashboard/restaurante/${id}`}>
           <button>
             <Lottie
               className="w-12 absolute top-4 right-8 mt-2"
