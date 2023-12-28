@@ -21,13 +21,12 @@ const BodyRoomServices = () => {
         const fetchData = async () => {
             try {
                 const bebidasResponse = await fetch(`http://localhost:3004/extraerBebidas/`);
-                console.log(bebidasResponse)
+
                 const menuResponse = await fetch('http://localhost:3004/extraerMenu/');
-                console.log(menuResponse)
+
                 const bebidasData = await bebidasResponse.json();
-                console.log(bebidasData)
+
                 const menuData = await menuResponse.json();
-                console.log(menuData)
 
                 setBebidasOptions(bebidasData);
                 setMenuOptions(menuData);
@@ -36,7 +35,7 @@ const BodyRoomServices = () => {
             };
         };
         fetchData();
-        console.log(fetchData())
+
     }, []);
 
     const handleChange = (e) => {
@@ -47,20 +46,21 @@ const BodyRoomServices = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Datos enviados', formData);
+        handleClear();
     };
 
-    // const handleClear = () => {
-    //     setFormData({
-    //         fecha: '',
-    //         hora: 0,
-    //         minutes: 0,
-    //         bebidas: '',
-    //         menu: '',
-    //         cantidadBebidas: 0,
-    //         cantidadMenu: 0,
-    //         resumen: ''
-    //     });
-    // };
+    const handleClear = () => {
+        setFormData({
+            fecha: '',
+            hora: 0,
+            minutes: 0,
+            bebidas: '',
+            menu: '',
+            cantidadBebidas: 0,
+            cantidadMenu: 0,
+            resumen: ''
+        });
+    };
 
     const generateHoursOption = () => {
         const hoursOption = [];
@@ -343,10 +343,6 @@ const BodyRoomServices = () => {
 
           
         </form>
-
-        {/* <Link to='/dashboard' className="mt-4 text-blue-500">
-        Volver
-    </Link> */}
       </div>
     </>
   );
