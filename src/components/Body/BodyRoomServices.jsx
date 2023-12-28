@@ -20,11 +20,14 @@ const BodyRoomServices = () => {
         // Función para obtener informaicón de las bebidas y el menú
         const fetchData = async () => {
             try {
-                const bebidasResponse = await fetch(`http://localhost:3004/extraerBebidas`);
-                const menuResponse = await fetch('http://localhost:3004/extraerMenu');
-                
+                const bebidasResponse = await fetch(`http://localhost:3004/extraerBebidas/`);
+                console.log(bebidasResponse)
+                const menuResponse = await fetch('http://localhost:3004/extraerMenu/');
+                console.log(menuResponse)
                 const bebidasData = await bebidasResponse.json();
+                console.log(bebidasData)
                 const menuData = await menuResponse.json();
+                console.log(menuData)
 
                 setBebidasOptions(bebidasData);
                 setMenuOptions(menuData);
@@ -33,30 +36,31 @@ const BodyRoomServices = () => {
             };
         };
         fetchData();
+        console.log(fetchData())
     }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value })
+        setFormData({ ...formData, [ name ]: value })
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Datos envaidos', formData);
+        console.log('Datos enviados', formData);
     };
 
-    const handleClear = () => {
-        setFormData({
-            fecha: '',
-            hora: 0,
-            minutes: 0,
-            bebidas: '',
-            menu: '',
-            cantidadBebidas: 0,
-            cantidadMenu: 0,
-            resumen: ''
-        });
-    };
+    // const handleClear = () => {
+    //     setFormData({
+    //         fecha: '',
+    //         hora: 0,
+    //         minutes: 0,
+    //         bebidas: '',
+    //         menu: '',
+    //         cantidadBebidas: 0,
+    //         cantidadMenu: 0,
+    //         resumen: ''
+    //     });
+    // };
 
     const generateHoursOption = () => {
         const hoursOption = [];
@@ -137,7 +141,7 @@ const BodyRoomServices = () => {
             type="date"
             name="fecha"
             value={formData.fecha}
-            onChange={handleChange}
+            onChange={handleChange} 
             className="
             w-full border 
             border-gray-300 
@@ -227,8 +231,8 @@ const BodyRoomServices = () => {
               >
                 <option value="">Seleccionar Bebida</option>
                 {bebidasOptions.map((bebida) => (
-                  <option key={bebida.id} value={bebida.name}>
-                    {bebida.name}
+                  <option key={bebida.id} value={bebida.nombres}>
+                    {bebida.nombres}
                   </option>
                 ))}
               </select>
@@ -285,8 +289,8 @@ const BodyRoomServices = () => {
               >
                 <option value="">Seleccionar menu</option>
                 {menuOptions.map((menu) => (
-                  <option key={menu.id} value={menu.name}>
-                    {menu.name}
+                  <option key={menu.id} value={menu.nombres}>
+                    {menu.nombres}
                   </option>
                 ))}
               </select>
