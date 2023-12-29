@@ -130,7 +130,7 @@ const BodyRoomServices = () => {
       flex 
       justify-center 
       items-center 
-      h-screen
+      h-auto
       -mt-24
       rounded-3xl
       

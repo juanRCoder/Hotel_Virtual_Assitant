@@ -61,27 +61,9 @@ function ResponseRoomServices() {
       <div className="flex justify-center text-center mt-4"> 
         <h1 className="font-Abril-Fatface text-4xl text-green-800 text-shadow-lg shadow-black/100">Su pedido se genero con exito</h1>
       </div>
-    <div className="
-    flex 
-    justify-center 
-    items-center 
-    min-h-screen 
-    -mt-20  ">
+    <div className="flex justify-center items-center  min-h-screen -mt-20  ">
       {roomService ? (
-        <div  className="
-        max-w-md p-6
-        bg-white 
-        rounded-lg 
-        shadow-md 
-        bg-gradient-to-br
-        from-white
-        via-lime-100
-        to-lime-200
-        border-l-8
-        border-r-2
-        border-y-2
-        border-green-800
-        " >
+        <div  className="max-w-md p-6 bg-white rounded-lg shadow-md bg-gradient-to-br from-white via-lime-100 to-lime-200 border-l-8 border-r-2 border-y-2 border-green-800 " >
           <h1 className="text-2xl font-bold mb-4">Cliente:</h1>
           <ul>
             <li className="font-bold text-sm text-green-600 ">Nombre: {roomService.Cliente.nombres}</li>
