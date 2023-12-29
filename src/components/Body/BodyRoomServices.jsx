@@ -3,13 +3,14 @@ import { useParams, useNavigate } from "react-router-dom";
 
 const BodyRoomServices = () => {
   const navigate = useNavigate();
+  const fechaInicial = new Date();
   const [formData, setFormData] = useState({
     bebidaOption: "",
     menuOption: "",
     cant_beb: 0,
     cant_menu: 0,
     otros_detalles: "",
-    fecha,
+    fecha: fechaInicial,
     hora: "",
     minutes: "",
   });
@@ -52,14 +53,11 @@ const BodyRoomServices = () => {
     e.preventDefault();
     console.log("Datos enviados", formData);
     try {
-      const response = await fetch(
-        `/enviarRoomService/${id}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch(`/enviarRoomService/${id}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
       if (!response.ok) {
         throw new Error(`Error al enviar la solicitud: ${response.statusText}`);
@@ -87,29 +85,29 @@ const BodyRoomServices = () => {
   //   });
   // };
 
-  const generateHoursOption = () => {
-    const hoursOption = [];
-    for (let i = 6; i < 24; i++) {
-      hoursOption.push(
-        <option key={i} value={i}>
-          {i < 10 ? `0${i}` : i}
-        </option>
-      );
-    }
-    return hoursOption;
-  };
+  // const generateHoursOption = () => {
+  //   const hoursOption = [];
+  //   for (let i = 6; i < 24; i++) {
+  //     hoursOption.push(
+  //       <option key={i} value={i}>
+  //         {i < 10 ? `0${i}` : i}
+  //       </option>
+  //     );
+  //   }
+  //   return hoursOption;
+  // };
 
-  const generateMinutesOption = () => {
-    const minutesOption = [];
-    for (let i = 0; i <= 45; i += 15) {
-      minutesOption.push(
-        <option key={i} value={i}>
-          {i < 10 ? `0${i}` : i}
-        </option>
-      );
-    }
-    return minutesOption;
-  };
+  // const generateMinutesOption = () => {
+  //   const minutesOption = [];
+  //   for (let i = 0; i <= 45; i += 15) {
+  //     minutesOption.push(
+  //       <option key={i} value={i}>
+  //         {i < 10 ? `0${i}` : i}
+  //       </option>
+  //     );
+  //   }
+  //   return minutesOption;
+  // };
 
   return (
     <>
@@ -210,7 +208,12 @@ const BodyRoomServices = () => {
                 p-2
                 "
               >
-                {generateHoursOption()}
+                <option value="">...</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
               </select>
             </div>
 
@@ -240,7 +243,12 @@ const BodyRoomServices = () => {
                 border-gray-300 
                 p-2"
               >
-                {generateMinutesOption()}
+                <option value="">...</option>
+                <option value="00">00</option>
+                <option value="05">05</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
               </select>
             </div>
           </div>
@@ -268,7 +276,7 @@ const BodyRoomServices = () => {
               </label>
               <select
                 name="bebidas"
-                value={formData.bebidas}
+                value={formData.bebidasOption}
                 onChange={handleChange}
                 className="
                 w-full border 
@@ -301,8 +309,8 @@ const BodyRoomServices = () => {
               </label>
               <input
                 type="number"
-                name="cantidadBebidas"
-                value={formData.cantidadBebidas}
+                name="cant_beb"
+                value={formData.cant_beb}
                 onChange={handleChange}
                 className="
                 w-full border 
@@ -334,8 +342,8 @@ const BodyRoomServices = () => {
                 Menu
               </label>
               <select
-                name="menu"
-                value={formData.menu}
+                name="menuOption"
+                value={formData.menuOption}
                 onChange={handleChange}
                 className="
                 w-full 
@@ -369,8 +377,8 @@ const BodyRoomServices = () => {
               </label>
               <input
                 type="number"
-                name="cantidadMenu"
-                value={formData.cantidadMenu}
+                name="cant_menu"
+                value={formData.cant_menu}
                 onChange={handleChange}
                 className="
                 w-full 
@@ -385,7 +393,7 @@ const BodyRoomServices = () => {
               Información adicional
             </label>
             <textarea
-              name="resumen"
+              name="otros_detalles"
               value={formData.otros_detalles}
               onChange={handleChange}
               className="w-full border border-gray-300 p-2"
@@ -395,7 +403,6 @@ const BodyRoomServices = () => {
           {/* Resto del formulario ... */}
 
           <button
-            type="submit"
             className="
             flex
             ml-28
