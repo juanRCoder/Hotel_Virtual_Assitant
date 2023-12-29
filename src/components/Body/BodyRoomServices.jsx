@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; 
+import { useParams } from "react-router-dom"; 
 
 const BodyRoomServices = () => {
     const [formData, setFormData ] = useState({
@@ -15,7 +15,10 @@ const BodyRoomServices = () => {
 
     const [bebidasOptions, setBebidasOptions] = useState([]);
     const [menuOptions, setMenuOptions] = useState([]);
-
+    const { id } = useParams();
+    const clienteId = id;
+    console.log('clienteId: ', clienteId)
+    console.log('ID: ',id);
     useEffect(() => {
         // Función para obtener informaicón de las bebidas y el menú
         const fetchData = async () => {
@@ -43,9 +46,25 @@ const BodyRoomServices = () => {
         setFormData({ ...formData, [ name ]: value })
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('Datos enviados', formData);
+        try {
+          const response = await fetch(`http://localhost:3004/dashboard/enviarRoomService/:${clienteId}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+          });
+
+          if(!response.ok) {
+            throw new Error(`Error al enviar la solicitud: ${response.statusText}`);
+          }
+
+          const responseData = await response.json();
+          console.log('Datos enviado: ', responseData);
+        } catch (err) {
+          console.error("Error al enviar la solicitud:", err);
+        }
         handleClear();
     };
 
@@ -58,7 +77,7 @@ const BodyRoomServices = () => {
             menu: '',
             cantidadBebidas: 0,
             cantidadMenu: 0,
-            resumen: ''
+            otros_detalles: ''
         });
     };
 
@@ -319,6 +338,17 @@ const BodyRoomServices = () => {
                 p-2"
               />
             </div>
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-1">
+              Información adicional
+            </label>
+            <textarea
+              name="resumen"
+              value={formData.otros_detalles}
+              onChange={handleChange}
+              className="w-full border border-gray-300 p-2"
+            />
           </div>
 
           {/* Resto del formulario ... */}
