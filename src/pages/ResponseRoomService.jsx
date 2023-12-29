@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import moment from "moment-timezone";
+import backgroundImage from '../assets/images/background.jpg'
+import Lottie from 'lottie-react'
+import animation from "../assets/back.json";
 
 function ResponseRoomServices() {
   const { idRoomService } = useParams();
@@ -42,21 +45,56 @@ function ResponseRoomServices() {
   };
 
   return (
-    <div>
+    <>
+      <div
+        className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          filter: "blur(150px)",
+          zIndex: -1,
+          opacity: 0.9,
+        }}
+      ></div>
+    <div className="flex justify-center text-center mt-8">
+        <h1 className="font-Abril-Fatface text-6xl text-green-800 text-shadow-lg shadow-black/100">SERVICIO ENVIADO !</h1>
+      </div>
+      <div className="flex justify-center text-center mt-4"> 
+        <h1 className="font-Abril-Fatface text-4xl text-green-800 text-shadow-lg shadow-black/100">Su pedido se genero con exito</h1>
+      </div>
+    <div className="
+    flex 
+    justify-center 
+    items-center 
+    min-h-screen 
+    -mt-20  ">
       {roomService ? (
-        <div>
-          <h1>Cliente:</h1>
+        <div  className="
+        max-w-md p-6
+        bg-white 
+        rounded-lg 
+        shadow-md 
+        bg-gradient-to-br
+        from-white
+        via-lime-100
+        to-lime-200
+        border-l-8
+        border-r-2
+        border-y-2
+        border-green-800
+        " >
+          <h1 className="text-2xl font-bold mb-4">Cliente:</h1>
           <ul>
-            <li>Nombre: {roomService.Cliente.nombres}</li>
-            <li>Apellido: {roomService.Cliente.apellidos}</li>
-            <li>Habitación: {roomService.Cliente.habitacion}</li>
+            <li className="font-bold text-sm text-green-600 ">Nombre: {roomService.Cliente.nombres}</li>
+            <li className="font-bold text-sm text-green-600 ">Apellido: {roomService.Cliente.apellidos}</li>
+            <li className="font-bold text-sm text-green-600 ">Habitación: {roomService.Cliente.habitacion}</li>
           </ul>
-          <h1>RoomService:</h1>
+          <h1 className="text-2xl font-bold mt-4" >RoomService:</h1>
+          <div className="max-w-full overflow-hidden whitespace-pre-line">
           <ul>
-            <li>Comida: {roomService.RoomService.comida}</li>
-            <li>Cantidad: {roomService.RoomService.cant_comida}</li>
-            <li>Bebida: {roomService.RoomService.bebida}</li>
-            <li>Cantidad: {roomService.RoomService.cant_comida}</li>
+            <li className="font-bold text-sm text-green-600 ">Comida: {roomService.RoomService.comida}</li>
+            <li className="font-bold text-sm text-green-600 ">Cantidad: {roomService.RoomService.cant_comida}</li>
+            <li className="font-bold text-sm text-green-600 " >Bebida: {roomService.RoomService.bebida}</li>
+            <li className="font-bold text-sm text-green-600 ">Cantidad: {roomService.RoomService.cant_comida}</li>
             <li>
               {formatearFechaHora(
                 roomService.RoomService.updated_at,
@@ -65,15 +103,19 @@ function ResponseRoomServices() {
               )}
             </li>
           </ul>
+          </div>
         </div>
       ) : (
         <p>Cargando datos...</p>
       )}
 
       <Link to={`/dashboard/${roomService && roomService.Cliente.id}`}>
-        <button>Volver a Dashboard</button>
+        <button> <Lottie
+              className="w-12 absolute top-4 right-8 mt-2"
+              animationData={animation}/> </button>
       </Link>
     </div>
+    </>
   );
 }
 
