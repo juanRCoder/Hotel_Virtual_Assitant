@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom"; 
+import { useParams, useNavigate } from "react-router-dom";
 
 const BodyRoomServices = () => {
-
   const fechaInicial = new Date();
   const formattedDate = fechaInicial.toISOString().split("T")[0];
-  
-  const [formData, setFormData ] = useState({
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
     bebidaOption: "",
     menuOption: "",
     cant_beb: 0,
@@ -14,86 +13,88 @@ const BodyRoomServices = () => {
     otros_detalles: "",
     fecha: formattedDate,
     hora: 0,
-    minutes: 0
+    minutes: 0,
   });
 
-    const [bebidasOptions, setBebidasOptions] = useState([]);
-    const [menuOptions, setMenuOptions] = useState(null);
-    const { id } = useParams();
+  const [bebidasOptions, setBebidasOptions] = useState([]);
+  const [menuOptions, setMenuOptions] = useState(null);
+  const { id } = useParams();
 
-    useEffect(() => {
-        // Función para obtener informaicón de las bebidas y el menú
-        const fetchData = async () => {
-            try {
-                const bebidasResponse = await fetch("/extraerBebidas");
-                const menuResponse = await fetch("/extraerMenu");
-
-                const bebidasData = await bebidasResponse.json();
-                const menuData = await menuResponse.json();
-
-                setBebidasOptions(bebidasData);
-                setMenuOptions(menuData);
-            } catch (error) {
-                console.error('Error al obtener opciones', error);
-            };
-        };
-        fetchData();
-    }, []);
-
-    const handleChange = (e) => {
-      setFormData({
-        ...formData,
-        [e.target.name]: e.target.value,
-      });
-    };
-
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-
+  useEffect(() => {
+    // Función para obtener informaicón de las bebidas y el menú
+    const fetchData = async () => {
       try {
-        const response = await fetch(`/enviarRoomService/${id}`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
-        if (!response.ok) {
-          throw new Error(`Error al enviar la solicitud: ${response.statusText}`);
-        }
-  
-        const responseData = await response.json();
-        console.log("Id RoomService: ", responseData);
-        } catch (err) {
-          console.error("Error al enviar la solicitud:", err);
-        }
-    };
+        const bebidasResponse = await fetch("/extraerBebidas");
+        const menuResponse = await fetch("/extraerMenu");
 
-    const generateHoursOption = () => {
-        const hoursOption = [];
-        for(let i = 6; i < 24; i++){
-            hoursOption.push(
-                <option key={ i } value={ i }>
-                    { i < 10 ? `0${i}` : i}
-                </option>
-            );
-        }
-        return hoursOption;
-    };
+        const bebidasData = await bebidasResponse.json();
+        const menuData = await menuResponse.json();
 
-    const generateMinutesOption = () => {
-        const minutesOption = [];
-        for(let i = 0; i <= 45; i += 15) {
-            minutesOption.push(
-                <option key={ i } value={ i }>
-                    { i < 10 ? `0${i}` : i }
-                </option>
-            );
-        }
-        return minutesOption;
+        setBebidasOptions(bebidasData);
+        setMenuOptions(menuData);
+      } catch (error) {
+        console.error("Error al obtener opciones", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(`/enviarRoomService/${id}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) {
+        throw new Error(`Error al enviar la solicitud: ${response.statusText}`);
+      }
+
+      const responseData = await response.json();
+      navigate(
+        `/dashboard/restaurante/roomservice/resultRoomService/${responseData}`
+      );
+      console.log("Id RoomService: ", responseData);
+    } catch (err) {
+      console.error("Error al enviar la solicitud:", err);
     }
+  };
 
+  const generateHoursOption = () => {
+    const hoursOption = [];
+    for (let i = 6; i < 24; i++) {
+      hoursOption.push(
+        <option key={i} value={i}>
+          {i < 10 ? `0${i}` : i}
+        </option>
+      );
+    }
+    return hoursOption;
+  };
 
-    return (
-      <>
+  const generateMinutesOption = () => {
+    const minutesOption = [];
+    for (let i = 0; i <= 45; i += 15) {
+      minutesOption.push(
+        <option key={i} value={i}>
+          {i < 10 ? `0${i}` : i}
+        </option>
+      );
+    }
+    return minutesOption;
+  };
+
+  return (
+    <>
       <div
         className="
       flex
@@ -381,7 +382,7 @@ const BodyRoomServices = () => {
         </form>
       </div>
     </>
-    );
-  }
+  );
+};
 
 export default BodyRoomServices;
