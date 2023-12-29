@@ -2,35 +2,30 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const BodyRoomServices = () => {
-  const navigate = useNavigate();
   const fechaInicial = new Date();
+  const formattedDate = fechaInicial.toISOString().split("T")[0];
   const [formData, setFormData] = useState({
     bebidaOption: "",
     menuOption: "",
     cant_beb: 0,
     cant_menu: 0,
     otros_detalles: "",
-    fecha: fechaInicial,
-    hora: "",
-    minutes: "",
+    fecha: formattedDate,
+    hora: 0,
+    minutes: 0,
   });
 
-  const [bebidasOptions, setBebidasOptions] = useState([]);
-  const [menuOptions, setMenuOptions] = useState([]);
+  const [bebidasOptions, setBebidasOptions] = useState(null);
+  const [menuOptions, setMenuOptions] = useState(null);
   const { id } = useParams();
-  // const clienteId = id;
-  // console.log("clienteId: ", clienteId);
-  console.log("ID: ", id);
+
   useEffect(() => {
-    // Función para obtener informaicón de las bebidas y el menú
     const fetchData = async () => {
       try {
         const bebidasResponse = await fetch(`/extraerBebidas`);
-
         const menuResponse = await fetch("/extraerMenu");
 
         const bebidasData = await bebidasResponse.json();
-
         const menuData = await menuResponse.json();
 
         setBebidasOptions(bebidasData);
@@ -51,100 +46,54 @@ const BodyRoomServices = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Datos enviados", formData);
+
     try {
       const response = await fetch(`/enviarRoomService/${id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
       if (!response.ok) {
         throw new Error(`Error al enviar la solicitud: ${response.statusText}`);
       }
 
       const responseData = await response.json();
-      navigate(``);
-      console.log("Datos enviado: ", responseData);
+      console.log("Id RoomService: ", responseData);
     } catch (err) {
       console.error("Error al enviar la solicitud:", err);
     }
-    // handleClear();
   };
 
-  // const handleClear = () => {
-  //   setFormData({
-  //     fecha: "",
-  //     hora: 0,
-  //     minutes: 0,
-  //     bebidas: "",
-  //     menu: "",
-  //     cantidadBebidas: 0,
-  //     cantidadMenu: 0,
-  //     otros_detalles: "",
-  //   });
-  // };
+  const generateHoursOption = () => {
+    const hoursOption = [];
+    for (let i = 6; i < 24; i++) {
+      hoursOption.push(
+        <option key={i} value={i}>
+          {i < 10 ? `0${i}` : i}
+        </option>
+      );
+    }
+    return hoursOption;
+  };
 
-  // const generateHoursOption = () => {
-  //   const hoursOption = [];
-  //   for (let i = 6; i < 24; i++) {
-  //     hoursOption.push(
-  //       <option key={i} value={i}>
-  //         {i < 10 ? `0${i}` : i}
-  //       </option>
-  //     );
-  //   }
-  //   return hoursOption;
-  // };
-
-  // const generateMinutesOption = () => {
-  //   const minutesOption = [];
-  //   for (let i = 0; i <= 45; i += 15) {
-  //     minutesOption.push(
-  //       <option key={i} value={i}>
-  //         {i < 10 ? `0${i}` : i}
-  //       </option>
-  //     );
-  //   }
-  //   return minutesOption;
-  // };
+  const generateMinutesOption = () => {
+    const minutesOption = [];
+    for (let i = 0; i <= 45; i += 15) {
+      minutesOption.push(
+        <option key={i} value={i}>
+          {i < 10 ? `0${i}` : i}
+        </option>
+      );
+    }
+    return minutesOption;
+  };
 
   return (
     <>
-      <div
-        className="
-      flex
-      text-center
-      justify-center
-      mt-4
-      
-      "
-      >
-        <h1
-          className="
-        text-7xl
-        font-Abril-Fatface
-        text-green-800
-        text-shadow-lg
-        shadow-green-500/100
-       
-        mb-1
-        "
-        >
-          ROOMSERVICE
-        </h1>
+      <div className=" flex text-center justify-center mt-4 " >
+        <h1   className=" text-7xl font-Abril-Fatface text-green-800 text-shadow-lg shadow-green-500/100 mb-1 " > ROOMSERVICE </h1>
       </div>
-      <div
-        className="
-      flex 
-      justify-center 
-      items-center 
-      h-screen
-      -mt-24
-      rounded-3xl
-      
-      "
-      >
+      <div  className=" flex  justify-center items-center h-screen -mt-24 rounded-3xl" >
         <form
           onSubmit={handleSubmit}
           className="
@@ -188,14 +137,7 @@ const BodyRoomServices = () => {
           "
           >
             <div className="w-1/2 pr-2">
-              <label
-                className="
-              block 
-              text-gray-700 
-              text-sm 
-              font-bold 
-              "
-              >
+              <label className="block  text-gray-700  text-sm  font-bold ">
                 Hora
               </label>
               <select
@@ -208,12 +150,7 @@ const BodyRoomServices = () => {
                 p-2
                 "
               >
-                <option value="">...</option>
-                <option value="08">08</option>
-                <option value="09">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
+                {generateHoursOption()}
               </select>
             </div>
 
@@ -243,12 +180,7 @@ const BodyRoomServices = () => {
                 border-gray-300 
                 p-2"
               >
-                <option value="">...</option>
-                <option value="00">00</option>
-                <option value="05">05</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
+                {generateMinutesOption()}
               </select>
             </div>
           </div>
@@ -264,19 +196,12 @@ const BodyRoomServices = () => {
             w-1/2 
             pr-2"
             >
-              <label
-                className="
-              block 
-              text-gray-700 
-              text-sm 
-              font-bold 
-              mb-1"
-              >
+              <label className=" block  text-gray-700  text-sm  font-bold  mb-1">
                 Bebidas
               </label>
               <select
-                name="bebidas"
-                value={formData.bebidasOption}
+                name="bebidaOption"
+                value={formData.bebidaOption}
                 onChange={handleChange}
                 className="
                 w-full border 
@@ -284,11 +209,12 @@ const BodyRoomServices = () => {
                 p-2"
               >
                 <option value="">Seleccionar Bebida</option>
-                {bebidasOptions.map((bebida) => (
-                  <option key={bebida.id} value={bebida.nombres}>
-                    {bebida.nombres}
-                  </option>
-                ))}
+                {bebidasOptions &&
+                  bebidasOptions.map((bebida) => (
+                    <option key={bebida.id} value={bebida.nombres}>
+                      {bebida.nombres}
+                    </option>
+                  ))}
               </select>
             </div>
 
@@ -352,11 +278,12 @@ const BodyRoomServices = () => {
                 p-2"
               >
                 <option value="">Seleccionar menu</option>
-                {menuOptions.map((menu) => (
-                  <option key={menu.id} value={menu.nombres}>
-                    {menu.nombres}
-                  </option>
-                ))}
+                {menuOptions &&
+                  menuOptions.map((menu) => (
+                    <option key={menu.id} value={menu.nombres}>
+                      {menu.nombres}
+                    </option>
+                  ))}
               </select>
             </div>
 
