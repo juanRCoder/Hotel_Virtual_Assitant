@@ -99,10 +99,7 @@ const BodyRoomServices = () => {
         className="
       flex
       text-center
-      justify-center
-      mt-4
-      
-      "
+      justify-center"
       >
         <h1
           className="
@@ -110,10 +107,7 @@ const BodyRoomServices = () => {
         font-Abril-Fatface
         text-green-800
         text-shadow-lg
-        shadow-green-500/100
-       
-        mb-1
-        "
+        shadow-green-500/100 "
         >
           ROOMSERVICE
         </h1>
@@ -124,7 +118,7 @@ const BodyRoomServices = () => {
       justify-center 
       items-center 
       h-screen
-      -mt-24
+      -mt-10
       rounded-3xl
       
       "
@@ -140,8 +134,10 @@ const BodyRoomServices = () => {
           rounded-2xl 
           shadow-md
           border
-        border-black"
-        >
+        border-black
+          px-6
+          py-4  "
+          >
           <label
             className="
           block 
