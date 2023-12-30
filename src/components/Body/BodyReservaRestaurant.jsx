@@ -100,8 +100,8 @@ const BodyReservaRestaurant = () => {
         my-8 border 
         border-black 
         p-6 
-        rounded-md
-        bg-">
+        rounded-2xl
+        bg-lime-100">
       <div className="
       mb-4">
         <label htmlFor="tipoMesa">Tipo de mesa</label>
