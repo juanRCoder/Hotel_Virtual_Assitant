@@ -1,0 +1,99 @@
+
+
+@media screen and (max-width: 770px) {
+
+    body {
+        /* background: aqua; */
+        transition: background-color 0.5s ease;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    .container-principal {
+        /* background-color: red; */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: auto;
+        bottom: auto;
+        transition: display 1.5s ease;
+    }
+
+    .header-principal {
+        position: absolute;
+        margin-bottom: 50px;
+        top: 50px;
+        width: 80%;
+    }
+
+    .imagen-room {
+        margin-top: 300px;
+        
+    }
+
+    .formulario-data {
+        /* background-color: blue; */
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        height: 100%;
+    }
+        
+}
+
+
+@media screen and (min-width:771px) {
+
+    .header-principal {
+        position: absolute;
+        top: 50px;
+        width: 80%;
+    }
+
+    .imagen-room {
+        margin-top: 100px;
+        
+    }
+
+    .formulario-data {
+        /* background-color: blue; */
+        margin-top: 100px;
+        margin-left: 20px;
+        margin-right: 20px;
+        height: 80%;
+    }
+}
+
+
+
+/* Pantalla a partir de los 700px */
+/* @media screen and (min-width: 700px) {
+    body {
+        background-color: transparent; 
+        transition: background-color 0.5s ease;
+    }
+} */
+
+
+
+/* Pantalla a partir de los 900px */
+/* @media screen and (min-width: 900px) { */
+    /* body {
+        background-color: rgb(9, 170, 25);
+        transition: background-color 0.5s ease;
+    } */
+
+    /* div .absolute { */
+        /* background-color: red; */
+        /* padding: 50px;
+        display: flex;
+    } */
+
+    /* div .absolute img .flex, .flex-col {
+        height: 450px;
+    } */
+/* } */
+

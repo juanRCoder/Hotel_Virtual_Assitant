@@ -1,6 +1,7 @@
 import room from '../../assets/images/room.png';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../../Jhony/Header.AllHeaders.css'
 
 
 function Body() {
@@ -43,7 +44,7 @@ function Body() {
     md:flex-row 
     items-center 
     justify-center 
-     
+    container-principal
     ">
       
       <img
@@ -60,6 +61,7 @@ function Body() {
         border-green-600
         hover:shadow-2xl
         rounded-s-2xl
+        imagen-room
         "
         src={room}
         alt="frontdesk"
@@ -82,10 +84,11 @@ function Body() {
         via-lime-100
         to-lime-200 
         ml-20 
+        formulario-data
         ">
         {/* Formulario de login */}
         <form className="w-full">
-          <div className="mb-6">
+          <div className="mb-6 formulario-login">
             <label
               className="
               block 
@@ -93,6 +96,7 @@ function Body() {
               text-sm 
               font-bold 
               mb-2
+              Nombres-login
               "
               htmlFor="nombres"
             >
@@ -189,7 +193,7 @@ function Body() {
               Por favor, ingrese su código.
             </p>
           </div>
-          <div className="flex items-center justify-center shadow-xl ">
+          <div className="flex items-center justify-center shadow-xl boton-ingresar">
             <button
               className="
               bg-green-300
@@ -198,7 +202,7 @@ function Body() {
               rounded 
               focus:outline-none 
               focus:shadow-outline  
-              w-full "
+              w-full boton-ingresar"
               type="button"
               onClick={handleSubmit}
             >

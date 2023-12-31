@@ -4,7 +4,7 @@ import React from 'react';
 const Header = () => {
   return (
     <>
-      <div className="container items-center">
+      <div className="container items-center header-principal">
         <div className="flex flex-col justify-center items-center">
           <div className="flex items-center justify-center flex-col pl-10">
             <h1
