@@ -2,6 +2,7 @@ import BodyAyB from "../components/Body/BodyAyB"
 
 import backgroundImage from '../assets/images/background.jpg'
 import AllHeaders from "../components/Header/AllHeaders";
+import HeaderRestaurante from "../components/Header/HeaderRestaurante";
 
 function Restaurante  () {
   return (
@@ -16,7 +17,7 @@ function Restaurante  () {
           opacity: 0.9,
         }}
       ></div>
-     <AllHeaders></AllHeaders>
+     <HeaderRestaurante></HeaderRestaurante>
       <BodyAyB/>   
     </>
 
