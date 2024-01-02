@@ -8,12 +8,9 @@ function Acordeon({ question, response }) {
       <div className="
       flex 
       flex-col 
-      py-2 
-      px-2
+      mb-1
       justify-center
-      items-center
-      
-      ">
+      items-center">
         <div className="">
           <button
             onClick={() => setAccordionOpen(!accordionOpen)}
@@ -26,10 +23,14 @@ function Acordeon({ question, response }) {
             border-y-2 
             rounded-lg  
             bg-gray-100 
-            py-2
+            py-3
+            px-3
             -mt-4
             flex
             justify-between
+            mb-1
+            text-green-700
+            text-xl
              "
           >
             <span>{question}</span>
@@ -42,8 +43,8 @@ function Acordeon({ question, response }) {
             transition-all 
             duration-300 
             ease-in-out  
-            text-slate-600 
-            text-sm
+            text-green-800 
+            text-sm  
             justify-end
             ${
               accordionOpen
@@ -58,6 +59,8 @@ function Acordeon({ question, response }) {
             border-green-800
             w-96
             h-auto
+            py-3
+            px-3
             rounded-md
             "> {response} </div>
           </div>
