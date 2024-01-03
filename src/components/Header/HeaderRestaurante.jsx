@@ -33,7 +33,7 @@ function HeaderRestaurante  () {
     <h1 className="text-center
      text-green-800 text-shadow-sm
       shadow-green-600/100 font-Abril-Fatface text-4xl sm:text-2xl md:text-4xl mt-6">
-      ESCOGE EL SERVICIO QUE DESEE
+      Escoge el servicio deseado!
     </h1>
   </div>
 </div>

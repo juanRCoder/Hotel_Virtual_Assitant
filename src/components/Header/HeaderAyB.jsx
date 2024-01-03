@@ -19,7 +19,7 @@ import animation from "../../assets/back.json";
     text-green-800 
     shadow-black/100 
     text-shadow-sm">
-    RESERVA RESTAURANTE
+    RESERVACIÓN
   </h2>
   <div>
     <Link to={`/dashboard/restaurante/${id}`}>

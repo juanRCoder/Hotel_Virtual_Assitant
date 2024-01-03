@@ -224,7 +224,7 @@ const BodyRoomServices = () => {
     </div>
 
     <button className="flex ml-4 sm:ml-28 bg-green-600 hover:bg-green-800 text-white font-bold py-3 px-8 mr-2 rounded mt-2">
-      Enviar
+      Pedir
     </button>
   </form>
 </div>

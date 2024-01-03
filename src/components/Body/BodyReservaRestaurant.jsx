@@ -17,9 +17,7 @@ const BodyReservaRestaurant = () => {
   useEffect(() => {
     const fetchMesas = async () => {
       try {
-        const response = await fetch(
-         "/extraerMesas"
-        );
+        const response = await fetch("/extraerMesas");
         const data = await response.json();
         console.log("Mesas", data);
         setMesas(data);
@@ -52,189 +50,173 @@ const BodyReservaRestaurant = () => {
         minutes: reservaInfo.minutes || "00",
       };
 
-      const response = await fetch(
-        `/enviarReserva/${id}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(datosReserva),
-        }
-      );
-      if(response.ok) {
+      const response = await fetch(`/enviarReserva/${id}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(datosReserva),
+      });
+      if (response.ok) {
         const data = await response.json();
         console.log("ID de la reserva:", data);
         navigate(`/dashboard/restaurant/reserva/resultReserva/${data}`);
       }
-
     } catch (error) {
       console.error("Error al crear la reserva:", error);
     }
   };
 
   return (
-   
     <>
-      <div className="
+      <div
+        className="
   flex 
   justify-center 
   items-center 
   text-center 
-  flex-col">
-  <form 
-    onSubmit={handleCrearReserva}
-    className="
+  flex-col"
+      >
+        <form
+          onSubmit={handleCrearReserva}
+          className="
     w-full 
-    max-w-md">
-   
-    
-    <div className="
+    max-w-md"
+        >
+          <div
+            className="
       mx-4 
       my-8 border 
       border-black 
       p-4 sm:p-6 lg:p-8 
       rounded-2xl
-      bg-lime-100">
-      <div className="mb-4">
-        <label htmlFor="tipoMesa">Tipo de mesa</label>
-        <select
-          required
-          name="tipoMesa"
-          id="tipoMesa"
-          value={reservaInfo.tipoMesa}
-          onChange={handleChange}
-          className="
+      bg-lime-100"
+          >
+            <div className="mb-4">
+              <label htmlFor="tipoMesa">Tipo de mesa</label>
+              <select
+                required
+                name="tipoMesa"
+                id="tipoMesa"
+                value={reservaInfo.tipoMesa}
+                onChange={handleChange}
+                className="
             w-full 
             border 
             rounded 
             py-2 
             px-3
           "
-        >
-          <option>Selecciona el tipo de mesa</option>
-          {mesas ? (
-            mesas.map((mesa) => (
-              <option key={mesa.id} value={mesa.tipoMesa}>{mesa.tipoMesa}</option>
-            ))
-          ) : (
-            <option disabled>No hay datos disponibles</option>
-          )}
-        </select>
-      </div>
-      <div className="mb-4">
-        <label htmlFor="cantidadPersonas">Cantidad de Personas</label>
-        <input
-          required
-          type="number"
-          id="cantidadPersonas"
-          name="cantidadPersonas"
-          value={reservaInfo.cantidadPersonas}
-          onChange={handleChange}
-          className="
+              >
+                <option>Selecciona el tipo de mesa</option>
+                {mesas ? (
+                  mesas.map((mesa) => (
+                    <option key={mesa.id} value={mesa.tipoMesa}>
+                      {mesa.tipoMesa}
+                    </option>
+                  ))
+                ) : (
+                  <option disabled>No hay datos disponibles</option>
+                )}
+              </select>
+            </div>
+            <div className="mb-4">
+              <label htmlFor="cantidadPersonas">Cantidad de Personas</label>
+              <input
+                required
+                type="number"
+                id="cantidadPersonas"
+                name="cantidadPersonas"
+                value={reservaInfo.cantidadPersonas}
+                onChange={handleChange}
+                className="
             w-full 
             border 
             rounded 
             py-2 
             px-3
           "
-        />
-      </div>
-      {/* time to book a table in restaurant */}
-      <div className="flex flex-col sm:flex-row justify-center sm:justify-between">
-        <div className="mb-4 sm:mr-4">
-          <label htmlFor="hora">Hora</label>
-          <select
-            required
-            name="hora"
-            id="hora"
-            value={reservaInfo.hora}
-            onChange={handleChange}
-            className="
+              />
+            </div>
+            {/* time to book a table in restaurant */}
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-between">
+              <div className="mb-4 sm:mr-4">
+                <label htmlFor="hora">Hora</label>
+                <select
+                  required
+                  name="hora"
+                  id="hora"
+                  value={reservaInfo.hora}
+                  onChange={handleChange}
+                  className="
               w-full 
               border 
               rounded 
               py-2 
               px-3
             "
-          >
-            {/* Opciones de hora */}
-            <option value="">...</option>
-            <option value="08">08</option>
-            <option value="09">09</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-          </select>
-        </div>
-        <div className="mb-4">
-          <label htmlFor="minutes">Minutos</label>
-          <select
-            required
-            name="minutes"
-            id="minutes"
-            value={reservaInfo.minutes}
-            onChange={handleChange}
-            className="
+                >
+                  {/* Opciones de hora */}
+                  <option value="">...</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+              <div className="mb-4">
+                <label htmlFor="minutes">Minutos</label>
+                <select
+                  required
+                  name="minutes"
+                  id="minutes"
+                  value={reservaInfo.minutes}
+                  onChange={handleChange}
+                  className="
               w-full 
               border 
               rounded 
               py-2 
               px-3
             "
-          >
-            {/* Opciones para los minutos */}
-            <option value="">...</option>
-            <option value="00">00</option>
-            <option value="15">15</option>
-            <option value="30">30</option>
-            <option value="45">45</option>
-          </select>
-        </div>
-      </div>
-      <div className="mb-4">
-        <label htmlFor="fecha">Fecha</label>
-        <input
-          required
-          type="date"
-          id="fecha"
-          name="fecha"
-          value={reservaInfo.fecha}
-          onChange={handleChange}
-          className="
+                >
+                  {/* Opciones para los minutos */}
+                  <option value="">...</option>
+                  <option value="00">00</option>
+                  <option value="15">15</option>
+                  <option value="30">30</option>
+                  <option value="45">45</option>
+                </select>
+              </div>
+            </div>
+            <div className="mb-4">
+              <label htmlFor="fecha">Fecha</label>
+              <input
+                required
+                type="date"
+                id="fecha"
+                name="fecha"
+                value={reservaInfo.fecha}
+                onChange={handleChange}
+                className="
             w-full 
             border 
             rounded 
             py-2 
             px-3
           "
-        />
+              />
+            </div>
+            {/* Botones para enviar o cancelar la reserva */}
+            <button className="flex ml-4 sm:ml-28 bg-green-600 hover:bg-green-800 text-white font-bold py-3 px-8 mr-2 rounded mt-2">
+              Generar Reseva
+            </button>
+          </div>
+        </form>
       </div>
-      {/* Botones para enviar o cancelar la reserva */}
-      <button
-        className="
-          bg-blue-500 
-          hover:bg-blue-700 
-          text-white 
-          font-bold 
-          py-2 
-          px-4 
-          sm:px-6
-          lg:px-8 
-          mr-2 
-          rounded"
-      >
-        Enviar reserva
-      </button>
-      
-    </div>
-  </form>
-</div>
-
-    
     </>
   );
 };
 
 export default BodyReservaRestaurant;
-
