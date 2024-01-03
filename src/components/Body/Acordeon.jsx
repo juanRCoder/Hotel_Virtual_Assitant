@@ -4,19 +4,15 @@ function Acordeon({ question, response }) {
   const [accordionOpen, setAccordionOpen] = useState(false);
 
   return (
-    <>
-      <div className="
-      flex 
-      flex-col 
-      mb-1
-      justify-center
-      items-center">
-        <div className="">
-          <button
-            onClick={() => setAccordionOpen(!accordionOpen)}
-            className=" 
-            w-96 
-            h-auto 
+    <div className="flex flex-col mb-4 justify-center items-center w-full">
+      <div className="w-3/4">
+        {" "}
+        {/* Reducir el ancho al 75% del contenedor */}
+        <button
+          onClick={() => setAccordionOpen(!accordionOpen)}
+          className="
+            w-full 
+            h-14 
             border
             border-green-800
             border-l-8
@@ -24,20 +20,20 @@ function Acordeon({ question, response }) {
             rounded-lg  
             bg-gray-100 
             py-3
-            px-3
-            -mt-4
+            px-4
             flex
             justify-between
-            mb-1
+            items-center
             text-green-700
             text-xl
-             "
-          >
-            <span>{question}</span>
-            {accordionOpen ? <span>-</span> : <span>+</span>}
-          </button>
-          <div
-            className={`
+            mx-auto  /* Centrar horizontalmente */
+          "
+        >
+          <span>{question}</span>
+          {accordionOpen ? <span>-</span> : <span>+</span>}
+        </button>
+        <div
+          className={`
             grid 
             overflow-hidden 
             transition-all 
@@ -45,28 +41,30 @@ function Acordeon({ question, response }) {
             ease-in-out  
             text-green-800 
             text-sm  
-            justify-end
             ${
               accordionOpen
-                ? "grid-rows-[1fr] opacity-100 "
-                : "grid-rows-[0fr] opacity-0"
+                ? "h-auto py-3 px-4 opacity-100 mx-auto" /* Estilos para respuesta visible y centrada */
+                : "h-0 py-0 px-0 opacity-0"
             }`}
+        >
+          <div
+            className="
+              overflow-hidden
+              bg-green-100
+              border
+              border-green-800
+              w-full
+              py-3
+              px-4
+              rounded-md
+              mx-auto  /* Centrar horizontalmente */
+            "
           >
-            <div className="
-            overflow-hidden
-            bg-green-100
-            border
-            border-green-800
-            w-96
-            h-auto
-            py-3
-            px-3
-            rounded-md
-            "> {response} </div>
+            {response}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
