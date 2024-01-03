@@ -5,11 +5,10 @@ function BodyServicios() {
   const { id } = useParams();
   const [nombreServicio, setNombreServicio] = useState("");
   const [descripcion, setDescripcion] = useState("");
-  const [hora, setHora] = useState("");
-  const [minutes, setMinutes] = useState("");
+  const [hora, setHora] = useState("0");
+  const [minutes, setMinutes] = useState("0");
 
   const navigate = useNavigate();
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,21 +53,22 @@ function BodyServicios() {
       button.classList.remove("jello-vertical");
     }, 500);
   };
-
   return (
     <>
-  <div className="flex text-center justify-center">
-  <h1 className="
+      <div className="flex text-center justify-center">
+        <h1
+          className="
       text-5xl md:text-6xl font-Abril-Fatface text-green-800
-       text-shadow-lg shadow-black/100  pt-10 md:pt-4">
-        SERVICIO DE HOUSEKEEPING
-      </h1>
+       text-shadow-lg shadow-black/100  pt-10 md:pt-4"
+        >
+          SERVICIO DE HOUSEKEEPING
+        </h1>
       </div>
-  <div className="flex items-center justify-center mx-2 sm:mx-4 mt-20 md:mt-8 mr-4 md:mr-0">
-    <form
-      onSubmit={handleClick}
-      action=""
-      className="
+      <div className="flex items-center justify-center mx-2 sm:mx-4 mt-20 md:mt-8 mr-4 md:mr-0">
+        <form
+          onSubmit={handleClick}
+          action=""
+          className="
         flex 
         flex-col
         items-center
@@ -89,18 +89,21 @@ function BodyServicios() {
         p-4 md:p-8
         bg-gray-100
         "
-    >
-      <div>
-        <label htmlFor="descripcion" className="text-xl font-mono mb-2 md:text-lg">
-          Tipo de Servicio
-        </label>
-        <select
-          id="servicio"
-          name="nombreServicio"
-          value={nombreServicio}
-          onChange={handleChange}
-          required
-          className="
+        >
+          <div>
+            <label
+              htmlFor="descripcion"
+              className="text-xl font-mono mb-2 md:text-lg"
+            >
+              Tipo de Servicio
+            </label>
+            <select
+              id="servicio"
+              name="nombreServicio"
+              value={nombreServicio}
+              onChange={handleChange}
+              required
+              className="
             border 
             border-green-800
             p-2 
@@ -112,27 +115,30 @@ function BodyServicios() {
             border-x-2
             py-2 mb:px-0
             px-2 mb:py-0"
-        >
-          <option value="">Seleccione el servicio</option>
-          <option value="toallas">Toallas</option>
-          <option value="lavanderia">Lavandería</option>
-          <option value="limpieza">limpieza</option>
-          <option value="amenities">amenities</option>
-          <option value="no_limpieza">No limpieza</option>
-        </select>
-      </div>
+            >
+              <option value="">Seleccione el servicio</option>
+              <option value="toallas">Toallas</option>
+              <option value="lavanderia">Lavandería</option>
+              <option value="limpieza">limpieza</option>
+              <option value="amenities">amenities</option>
+              <option value="no_limpieza">No limpieza</option>
+            </select>
+          </div>
 
-      <div>
-        <label htmlFor="descripcion" className="text-xl md:text-lg font-mono mb-2">
-          Detalles del servicio.
-        </label>
-        <textarea
-          type="text"
-          id="descripcion"
-          name="descripcion"
-          value={descripcion}
-          placeholder="Descripción"
-          className="
+          <div>
+            <label
+              htmlFor="descripcion"
+              className="text-xl md:text-lg font-mono mb-2"
+            >
+              Detalles del servicio.
+            </label>
+            <textarea
+              type="text"
+              id="descripcion"
+              name="descripcion"
+              value={descripcion}
+              placeholder="Descripción"
+              className="
             rounded-xl
             border 
             border-green-800
@@ -142,11 +148,11 @@ function BodyServicios() {
             p-2 
             w-full
             h-40"
-          required
-          onChange={handleChange}
-        ></textarea>
-      </div>
-
+              required
+              onChange={handleChange}
+            ></textarea>
+          </div>
+          {/* 
       <div className="
         flex 
         items-center
@@ -208,11 +214,11 @@ function BodyServicios() {
           <option value="50">50</option>
           <option value="55">55</option>
         </select>
-      </div>
+      </div> */}
 
-      <button
-        type="submit"
-        className="
+          <button
+            type="submit"
+            className="
           border
           border-black 
           mt-4
@@ -229,14 +235,12 @@ function BodyServicios() {
           font-bold
           text-xl
           "
-      >
-        Enviar
-      </button>
-    </form>
-  </div>
-</>
-
- 
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
 

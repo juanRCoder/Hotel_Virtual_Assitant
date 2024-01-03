@@ -7,6 +7,7 @@ export const postServicio = async (req, res) => {
     const { nombreServicio, descripcion, hora, minutes } = req.body;
     const clienteId = req.params.id;
 
+  
     // Crear un nuevo servicio asociado al cliente encontrado
     const nuevoServicio = new Servicios({
       id_cliente: clienteId,
@@ -65,8 +66,8 @@ export const getServicio = async (req, res) => {
       Servicios: {
         nombreServicio: servicioEncontrado.nombreServicio,
         descripcion: servicioEncontrado.descripcion,
-        hora: servicioEncontrado.hora,
-        minutes: servicioEncontrado.minutes,
+        // hora: servicioEncontrado.hora,
+        // minutes: servicioEncontrado.minutes,
         created_at: servicioEncontrado.created_at,
       },
     };
