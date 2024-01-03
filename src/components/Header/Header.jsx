@@ -17,8 +17,8 @@ const Header = () => {
     text-center 
     text-green-500 
     opacity-90
-    mt-0
-    lg:mt-0
+    -mt-6
+    md:mt-2
     sm:mt-40
   "
 >

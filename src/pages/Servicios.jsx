@@ -1,6 +1,8 @@
 import BodyServicios from '../components/Body/BodyServicios'
-import AllHeaders from '../components/Header/AllHeaders'
+
 import backgroundImage from '../assets/images/background.jpg';
+import HeaderSerivicios from '../components/Header/HeaderSerivicios';
+import AllHeaders from '../components/Header/AllHeaders';
 
 function Servicios ()  {
   return (
@@ -14,7 +16,7 @@ function Servicios ()  {
           opacity: 1.0,
         }}
       ></div>
-    <AllHeaders/>
+    <AllHeaders></AllHeaders>
     <BodyServicios/>
 
     </>

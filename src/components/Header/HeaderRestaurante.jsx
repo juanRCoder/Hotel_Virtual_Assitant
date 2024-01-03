@@ -24,10 +24,15 @@ function HeaderRestaurante  () {
   </div>
     
   <div className="flex flex-col justify-center mt-6">
-    <h1 className="text-center text-green-800 text-shadow-sm shadow-green-600/100 font-Abril-Fatface text-2xl sm:text-3xl md:text-5xl mt-6">
+    <h1 className="
+    text-center
+     text-green-800 text-shadow-sm
+      shadow-green-600/100 font-Abril-Fatface text-5xl md:text-5xl mt-6">
       SERVICIOS DE ALIMENTOS Y BEBIDAS
     </h1>
-    <h1 className="text-center text-green-800 text-shadow-sm shadow-black/100 font-Abril-Fatface text-xl sm:text-2xl md:text-4xl mt-6">
+    <h1 className="text-center
+     text-green-800 text-shadow-sm
+      shadow-green-600/100 font-Abril-Fatface text-4xl sm:text-2xl md:text-4xl mt-6">
       ESCOGE EL SERVICIO QUE DESEE
     </h1>
   </div>

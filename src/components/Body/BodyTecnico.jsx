@@ -51,13 +51,15 @@ function BodyTecnico() {
 
   return (
     <>
-    <div className="flex justify-center text-center ml-16">
-      <h1 className="text-4xl md:text-6xl font-Abril-Fatface text-green-800 mr-8 text-shadow-lg shadow-black/100">
+    <div className="flex justify-center text-center ml-16 mt-8 md:mt-2">
+      <h1 className="
+      text-5xl md:text-6xl font-Abril-Fatface text-green-800 mr-8 text-shadow-lg
+      shadow-black/100 mb-6 md:mb-2 ">
         PROBLEMA TECNICO
       </h1>
     </div>
   
-    <div className="flex items-center justify-center mx-2 sm:mx-4 mt-4">
+    <div className="flex items-center justify-center mx-2 sm:mx-4 mt-8 py-1 md:py-0 px-1 md:px-0">
       <form
         onSubmit={handleClick}
         action=""
@@ -65,7 +67,7 @@ function BodyTecnico() {
       >
         {/* SELECCIONAR TIPO DE SERVICIO */}
         <div>
-          <label htmlFor="descripcion" className="text-lg font-mono mb-2">
+          <label htmlFor="descripcion" className=" text-2xl md:text-lg font-mono mb-2">
             Seleccione el problema
           </label>
           <select
@@ -92,7 +94,7 @@ function BodyTecnico() {
         {/* DETALLES DEL SERVICIO */}
         <div className="mb-4 w-full md:w-96">
   <label htmlFor="descripcion" className="text-lg font-mono mb-2">
-    <h1 className="font-mono text-xl">Detalles del problema</h1>
+    <h1 className="font-mono text-2xl md:text-lg">Detalles del problema</h1>
   </label>
   <textarea
     type="text"
@@ -107,7 +109,8 @@ function BodyTecnico() {
 </div>
   
         {/* HORARIO DEL SERVICIO */}
-        <div className="flex items-center border border-green-800 mt-4 px-2 py-1 rounded-md border-l-2 border-y-2 border-x-2">
+        <div className="
+        flex items-center border border-green-800 mt-4 px-3 py-3 md:mt-2 md:py-2 rounded-md border-l-2 border-y-2 border-x-2">
           <label htmlFor="horario" className="mr-2">
             Horario:
           </label>
@@ -144,7 +147,10 @@ function BodyTecnico() {
           </select>
         </div>
   
-        <button className="border border-black mt-4 shadow-xl shadow-green-400 bg-green-500 hover:bg-green-950 text-black w-24 h-12 rounded focus:outline-none focus:shadow-outline font-bold text-xl">
+        <button className="
+        border border-black mt-4 shadow-xl
+         shadow-green-400 bg-green-500 hover:bg-green-950 text-black w-40 md:w-24 h-20 md:h-12 
+         rounded focus:outline-none focus:shadow-outline font-bold text-3xl md:txt-xl">
           Enviar
         </button>
       </form>

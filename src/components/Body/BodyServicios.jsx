@@ -57,13 +57,14 @@ function BodyServicios() {
 
   return (
     <>
-  <div className="flex justify-center text-center md:ml-16">
-    <h1 className="text-4xl md:text-6xl font-Abril-Fatface text-green-800 text-shadow-lg  shadow-black/100">
-      SERVICIO DE HOUSEKEEPING
-    </h1>
-  </div>
-
-  <div className="flex items-center justify-center mx-2 sm:mx-4 mt-4 md:mt-8">
+  <div className="flex text-center justify-center">
+  <h1 className="
+      text-5xl md:text-6xl font-Abril-Fatface text-green-800
+       text-shadow-lg shadow-black/100  pt-10 md:pt-4">
+        SERVICIO DE HOUSEKEEPING
+      </h1>
+      </div>
+  <div className="flex items-center justify-center mx-2 sm:mx-4 mt-20 md:mt-8 mr-4 md:mr-0">
     <form
       onSubmit={handleClick}
       action=""
@@ -72,10 +73,11 @@ function BodyServicios() {
         flex-col
         items-center
         mx-2 sm:mx-4  
-        md:w-2/3
-        lg:w-3/5  // Ajuste para tabletas
-        xl:w-2/5  // Ajuste para dimensiones más grandes
-        h-3/5 
+        w-72
+        md:w-1/3
+        h-5/6
+        md:h-2/6
+        text-2xl md:text-sm
         rounded-3xl 
         shadow-2xl 
         shadow-green-900 
@@ -85,10 +87,11 @@ function BodyServicios() {
         border-l-8 
         border-y-2
         p-4 md:p-8
-        bg-gray-100"
+        bg-gray-100
+        "
     >
       <div>
-        <label htmlFor="descripcion" className="text-lg font-mono mb-2">
+        <label htmlFor="descripcion" className="text-xl font-mono mb-2 md:text-lg">
           Tipo de Servicio
         </label>
         <select
@@ -106,7 +109,9 @@ function BodyServicios() {
             rounded
             border-l-2
             border-y-2
-            border-x-2"
+            border-x-2
+            py-2 mb:px-0
+            px-2 mb:py-0"
         >
           <option value="">Seleccione el servicio</option>
           <option value="toallas">Toallas</option>
@@ -118,7 +123,7 @@ function BodyServicios() {
       </div>
 
       <div>
-        <label htmlFor="descripcion" className="text-lg font-mono mb-2">
+        <label htmlFor="descripcion" className="text-xl md:text-lg font-mono mb-2">
           Detalles del servicio.
         </label>
         <textarea
@@ -147,8 +152,8 @@ function BodyServicios() {
         items-center
         border border-green-800
         mt-4
-        px-2
-        py-1
+        px-1
+        
         rounded-md
         border-l-2
         border-y-2
@@ -162,9 +167,9 @@ function BodyServicios() {
           value={hora} 
           onChange={handleChange} 
           required 
-          className="appearance-none">
+          className="appearance-none py-3 px-3 mb:py-0 mb:px-0">
           <option value="" disabled>...</option>
-          <option value="06">06</option>
+          <option className="text-2" value="06">06</option>
           <option value="07">07</option>
           <option value="08">08</option>
           <option value="09">09</option>
@@ -189,7 +194,7 @@ function BodyServicios() {
           value={minutes} 
           onChange={handleChange} 
           required 
-          className="appearance-none">
+          className="appearance-none py-3 px-3 mb:py-0 mb:px-0">
           <option value="" disabled>...</option>
           <option value="00">00</option>
           <option value="10">10</option>
@@ -216,13 +221,14 @@ function BodyServicios() {
           bg-green-500
           hover:bg-green-950
           text-black 
-          w-24
-          h-12 
+          w-32 md:w-24
+          h-16 md:h-12
           rounded 
           focus:outline-none 
           focus:shadow-outline  
           font-bold
-          text-xl"
+          text-xl
+          "
       >
         Enviar
       </button>

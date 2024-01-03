@@ -15,7 +15,7 @@ import animation from "../../assets/back.json";
   <h2 className="
     text-xl sm:text-3xl lg:text-6xl 
     font-Abril-Fatface 
-    mt-8
+    md:mt-8
     text-green-800 
     shadow-black/100 
     text-shadow-sm">

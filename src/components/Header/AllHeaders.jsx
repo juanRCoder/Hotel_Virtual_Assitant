@@ -7,7 +7,8 @@ import animation from "../../assets/back.json";
 function AllHeaders() {
   const { id } = useParams();
   return (
-    <div className="flex flex-col items-center relative">
+    
+    <div className="flex flex-col items-center relative mt-4 mb:mt-0">
     <div className="absolute top-0 left-0 w-14 sm:w-20 md:w-28 mt-2 sm:mt-4 md:block">
       <img src={logo} alt="LOGO" />
     </div>
