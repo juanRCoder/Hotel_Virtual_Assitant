@@ -57,7 +57,7 @@ function BodyDashboard() {
     <button
       className="
         font-semibold 
-        text-2xl md:text-xl
+        text-1xl md:text-2xl
         rounded-2xl
         h-36 w-48
         md:h-20 md:w-52 
@@ -84,7 +84,7 @@ function BodyDashboard() {
     <button
       className="
         font-semibold 
-        text-2xl md:text-xl
+        md:text-2xl
         bg-white 
         rounded-2xl
         h-36 w-48
@@ -111,7 +111,7 @@ function BodyDashboard() {
     <button
       className="
         font-semibold 
-        text-2xl md:text-xl
+        text-1xl md:text-2xl
         bg-white 
         rounded-2xl
         h-36 w-48
@@ -138,7 +138,7 @@ function BodyDashboard() {
     <button
       className="
         font-semibold 
-        text-2xl md:text-xl
+        text-1xl md:text-2xl
         bg-white 
         rounded-2xl
         h-36 w-48

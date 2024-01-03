@@ -59,7 +59,7 @@ function ResponseRoomServices() {
         <h1 className="font-Abril-Fatface text-6xl text-green-800 text-shadow-lg shadow-black/100">SERVICIO ENVIADO !</h1>
       </div>
       <div className="flex justify-center text-center mt-4"> 
-        <h1 className="font-Abril-Fatface text-4xl text-green-800 text-shadow-lg shadow-black/100">Su pedido se genero con exito</h1>
+        <h1 className="font-Abril-Fatface text-4xl text-green-800 text-shadow-lg shadow-black/100">Su pedido se genero con exito!</h1>
       </div>
     <div className="flex justify-center items-center  min-h-screen -mt-20  ">
       {roomService ? (
