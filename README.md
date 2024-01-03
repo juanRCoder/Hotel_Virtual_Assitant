@@ -1,75 +1,95 @@
-<h1><em>HOTEL VIRTUAL ASSISTANT</em></h1> 
+<div align='center'>
+ <h1><em>HOTEL VIRTUAL ASSISTANT</em></h1>
+  <img src="./src//assets/images/LogoProject.png" alt="Logo" width="400" height="200" >
+ <p>  </p>
+ <p>  </p>
+<p align='justify'>
+Hotel Virtual Assistant, es una aplicación web que transforma la experiencia hotelera. Realiza pedidos, reserva en el restaurante, informa problemas y gestiona reservas sin necesidad de contacto con recepción. Con una interfaz más intuitiva, brinda privacidad y autonomía para una estancia cómoda y personalizada. Descubre un nuevo nivel de conveniencia y eficiencia en tu viaje con Hotel Virtual Assistant.
+</p>
+</div>
 
-<p>Hotel Virtual Assistant, es una aplicación web que transforma la experiencia hotelera. Realiza pedidos, reserva en el restaurante, informa problemas y gestiona reservas sin necesidad de contacto con recepción. Con una interfaz más intuitiva, brinda privacidad y autonomía para una estancia cómoda y personalizada. Descubre un nuevo nivel de conveniencia y eficiencia en tu viaje con Hotel Virtual Assistant.</p>
+URL: [http://localhost:3004](http://localhost:3004)
 
 ## Tecnologías
 
 Asegúrate de tener las siguientes tecnologías y dependencias antes de ejecutar el proyecto:
-- [MongoDB](https://mongodb.com/try/download/community) (Asegúrate que el servidor MongoDB se encuentre en ejecución)
-  
-- [Express](https://expressjs.com/)(v.4.18.2)(simplifica y agiliza el desarrollo de aplicaciones web mediante el manejo de rutas)
 
-- [Reactjs](https://react.dev)(Es la base de Vite) 
-  
-- [Node.js](https:/nodejs.org) (18 o superior)
+- <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
+- <img src="https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white"/>
+- <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+- <img src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+- <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" />
+- <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+- <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
 
-- [Vite](https://vitejs.dev/guide/)(El proyecto con Vite puede iniciarse con el comando '$ npm create vite@latest')
+## Instalación
 
-- [Tailwindcss](https://tailwindcss.com/)(El presente proyecto usa estilos tailwindcss, mayor productividad y flexibilidad)
+### Getting Started
 
-- [Lucidchart](https://www.lucidchart.com/)(Utilizado para realizar los diagramas)
+> To deploy your application on-premises, you must follow the steps below.
+>
+> > Clonar el repositorio
 
-- [figma](https://www.figma.com/)(Utilizado para diagramar el diseño del proyecto)
+```sh
+ git clone https://github.com/juanRCode/Project-FAQ-accordion.git
+```
 
-- [LottieFiles](https://lottiefiles.com/) (v18.2.0")
+> > Instalar el paquete de modules (npm)
 
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```sh
+ npm install
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for       Fast Refresh
+> > Visualizar la app
 
+```sh
+// mode development
+ npm run dev
+// final mode
+ npm run start
+```
 
+## Screenshots del proyecto
 
+Pagina del login y dashboard principal.
 
-## Clona el repositorio
+<div align="center">
+  <img src="./src/assets/Login.png" alt="Login" width="400" height="300" >
+  <img src="./src/assets/Dashboard.png" alt="Dashboard" width="400" height="300" > 
+</div>
 
-git clone https://github.com/juanRCoder/Hotel_Virtual_Assitant.git
+## Diagrama de flujo
 
-## Navega al directorio del proyecto
+<div align="center">
+  <img src="./src/assets/DatabaseDesign.png" alt="DatabaseDesign" width="550" height="400" >
+</div>
 
-cd tu_proyecto
+## Arbol del proyecto
 
-## Instala las dependencias necesarias usando npm o yarn
+<div align="center">
+  <img src="./src/assets/tree_project_1.png" alt="tree_project_1" width="400" height="400" >
+  <img src="./src/assets/tree_project_2.png" alt="tree_project_2" width="400" height="400" > 
+</div>
 
-npm install
+## Contactos
 
-## Iniciar el servidor de desarrollo
+Juan Ramirez
 
-npm run dev
+> Linkedin : [@juan Ramirez](https://www.linkedin.com/in/juan-ramirez-490b84271/)
+> Instagram : [@juanrcoder](https://www.instagram.com/juanrcoder/)
 
+Jhony Arana
 
-## Examples
+> Linkedin: [@Jhony Arana](https://www.linkedin.com/in/jhony-arana-carranza-a103b350/)
+> Github: [Jharanza](https://github.com/Jharanza)
 
-![Login](./src/assets/Login.png)
+Oscar Morales
 
-![Diseño de la base de datos](./src/assets/DatabaseDesign.png)
+> Linkedin: [@Oskar Morales](https://www.linkedin.com/in/oskarmorales/)
+> Github: [0skarmp](https://github.com/0skarmp)
 
-![Primera parte del árbol del proyecto](./src/assets/tree_project_1.png)
-
-![Segunda parte del árbol del proyecto](./src/assets/tree_project_2.png)
-
-## Contact
-- [JuanRcoder](https://github.com/juanRCoder)
-   - [Juan Ramirez](https://www.linkedin.com/in/juan-ramirez-490b84271/)
-     
-- [Jharanza](https://github.com/Jharanza)
-  -  [Jhony Arana](https://www.linkedin.com/in/jhony-arana-carranza-a103b350/)
- 
--  [0skarmp](https://github.com/0skarmp)
-    -  [Oskar Morales](https://www.linkedin.com/in/oskarmorales/)
-
-
+Link del proyecto: [http://localhost:3004](http://localhost:3004)
 
 ## Licence
 
--  Creacion del proyecto 11-12-2023
-
+- Creacion del proyecto 11-12-2023
