@@ -51,7 +51,10 @@ function ResponseTecnico() {
         }}
       ></div>
       <div className="flex justify-center text-center mt-8">
-        <h1 className="font-Abril-Fatface text-6xl text-green-800 text-shadow-lg shadow-black/100">SERVICIO ENVIADO !</h1>
+        <h1 className="font-Abril-Fatface text-6xl text-green-800 text-shadow-lg shadow-black/100">PROBLEMA REPORTADO !</h1>
+      </div>
+      <div className="flex justify-center text-center mt-4"> 
+        <h1 className="font-Abril-Fatface text-4xl text-green-800 text-shadow-lg shadow-black/100">Nuestro personal pronto se pondra en contacto!</h1>
       </div>
     <div className="flex justify-center items-center min-h-screen -mt-20">
   {serviceTecnico ? (
