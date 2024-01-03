@@ -117,11 +117,11 @@ function BodyServicios() {
             px-2 mb:py-0"
             >
               <option value="">Seleccione el servicio</option>
-              <option value="toallas">Toallas</option>
-              <option value="lavanderia">Lavandería</option>
-              <option value="limpieza">limpieza</option>
-              <option value="amenities">amenities</option>
-              <option value="no_limpieza">No limpieza</option>
+              <option value="toallas">TOALLAS</option>
+              <option value="lavanderia">LAVANDERIA</option>
+              <option value="limpieza">LIMPIEZA</option>
+              <option value="amenities">TRANSLADO</option>
+              <option value="no_limpieza">OTROS</option>
             </select>
           </div>
 

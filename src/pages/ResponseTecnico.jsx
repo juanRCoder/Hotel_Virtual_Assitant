@@ -27,14 +27,13 @@ function ResponseTecnico() {
     sendFetch();
   }, []);
 
-  const formatearFechaHora = (date, hora, minutes) => {
+  const formatearFechaHora = (date) => {
     const fechaHoraConvertida = moment(date).tz("America/Bogota");
     const fechaFormateada = fechaHoraConvertida.format("YYYY-MM-DD");
     const horarioFormateado = fechaHoraConvertida.format("HH:mm:ss");
     return (
       <>
-        <li className="font-bold text-sm text-green-600 ">{`Fecha Solicitada: ${hora}:${minutes}:00 hrs. - ${fechaFormateada}`}</li>
-        <li className="font-bold text-sm text-green-600 ">{`Fecha de envío: ${horarioFormateado} hrs. - ${fechaFormateada}`}</li>
+        <li className="font-bold text-sm text-green-600 ">{`Fecha de solicitud: ${horarioFormateado} hrs. - ${fechaFormateada}`}</li>
       </>
     );
   };
@@ -77,13 +76,11 @@ function ResponseTecnico() {
         <h1 className="text-2xl font-bold mt-4">Servicio Técnico:</h1>
         <div className="max-w-full overflow-hidden whitespace-pre-line">
           <ul>
-            <li className="font-bold text-sm text-green-600 ">Tipo de problema: {serviceTecnico?.Tecnico?.problema}</li>
+            <li className="font-bold text-sm text-green-600 ">Problema: {serviceTecnico?.Tecnico?.problema}</li>
             <li className="font-bold text-sm text-green-600 ">Detalle del problema: {serviceTecnico?.Tecnico?.descripcion}</li>
             <li>
               {formatearFechaHora(
                 serviceTecnico?.Tecnico?.created_at,
-                serviceTecnico?.Tecnico?.hora,
-                serviceTecnico?.Tecnico?.minutes
               )}
             </li>
           </ul>
