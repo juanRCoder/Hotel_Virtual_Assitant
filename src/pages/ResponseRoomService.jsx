@@ -36,8 +36,8 @@ function ResponseRoomServices() {
 
     return (
       <>
-        <li>{`Hora Solicitada: ${horarioFormateado} Hrs.`}</li>
-        <li>{`Fecha de envío: ${fechaHoraConvertida.format(
+        <li className="font-bold text-sm text-green-600 ">{`Hora Solicitada: ${horarioFormateado} Hrs.`}</li>
+        <li className="font-bold text-sm text-green-600 ">{`Fecha de envío: ${fechaHoraConvertida.format(
           "HH:mm:ss"
         )} Hrs. - ${fechaFormateada}`}</li>
       </>

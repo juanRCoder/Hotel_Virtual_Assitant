@@ -33,8 +33,8 @@ function ResponseTecnico() {
     const horarioFormateado = fechaHoraConvertida.format("HH:mm:ss");
     return (
       <>
-        <li>{`Fecha Solicitada: ${hora}:${minutes}:00 hrs. - ${fechaFormateada}`}</li>
-        <li>{`Fecha de envío: ${horarioFormateado} hrs. - ${fechaFormateada}`}</li>
+        <li className="font-bold text-sm text-green-600 ">{`Fecha Solicitada: ${hora}:${minutes}:00 hrs. - ${fechaFormateada}`}</li>
+        <li className="font-bold text-sm text-green-600 ">{`Fecha de envío: ${horarioFormateado} hrs. - ${fechaFormateada}`}</li>
       </>
     );
   };
