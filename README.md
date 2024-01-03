@@ -1,6 +1,6 @@
 <div align='center'>
  <h1><em>HOTEL VIRTUAL ASSISTANT</em></h1>
-  <img src="./src//assets/images/LogoProject.png" alt="Logo" width="600" height="200" >
+  <img src="./src//assets/images/LogoProject.png" alt="Logo" width="400" height="200" >
  <p>  </p>
  <p>  </p>
 <p align='justify'>
@@ -22,19 +22,19 @@ Asegúrate de tener las siguientes tecnologías y dependencias antes de ejecutar
 
 ### Installation
 
-> To deploy your application on-premises, you must follow the steps below.
->
->> Clone the repo
+Getting Started
 
+> To deploy your application on-premises, you must follow the steps below.
+>> Clone the repo
 ```sh
  git clone https://github.com/juanRCode/Project-FAQ-accordion.git
 ```
 
 >> Install NPM packages
-
 ```sh
  npm install
 ```
+
 >> View the app
 ```sh
 // mode development
@@ -43,29 +43,42 @@ Asegúrate de tener las siguientes tecnologías y dependencias antes de ejecutar
  npm run start
 ```
 
-## Examples
-![Login](./src/assets/Login.png)
+## Screenshots del proyecto
 
-![Diseño de la base de datos](./src/assets/DatabaseDesign.png)
+Pagina del login y dashboard principal.
+<div align="center">
+  <img src="./src/assets/Login.png" alt="Logo" width="500" height="400" >
+  <img src="./src/assets/Dashboard.png" alt="Logo" width="500" height="400" > 
+</div>
 
-![Primera parte del árbol del proyecto](./src/assets/tree_project_1.png)
+## Diagrama de flujo
+<div align="center">
+  <img src="./src/assets/DatabaseDesign.png" alt="Logo" width="500" height="400" >
+</div>
 
-![Segunda parte del árbol del proyecto](./src/assets/tree_project_2.png)
-
+## Arbol del proyecto
+<div align="center">
+  <img src="./src/assets/tree_project_1.png" alt="Logo" width="500" height="400" >
+  <img src="./src/assets/tree_project_2.png" alt="Logo" width="500" height="400" > 
+</div>
 
 ## Contact
+
 Juan Ramirez
+
 > Linkedin : [@juan Ramirez](https://www.linkedin.com/in/juan-ramirez-490b84271/)
-> Instagram : [@juanrcoder](https://www.instagram.com/juanrcoder/) 
+> Instagram : [@juanrcoder](https://www.instagram.com/juanrcoder/)
 
 Jhony Arana
+
 > Linkedin: [@Jhony Arana](https://www.linkedin.com/in/jhony-arana-carranza-a103b350/)
 > Github: [Jharanza](https://github.com/Jharanza)
 
 Oscar Morales
+
 > Linkedin: [@Oskar Morales](https://www.linkedin.com/in/oskarmorales/)
 > Github: [0skarmp](https://github.com/0skarmp)
 
-
 ## Licence
+
 - Creacion del proyecto 11-12-2023
