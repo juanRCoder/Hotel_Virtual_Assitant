@@ -46,8 +46,8 @@ Asegúrate de tener las siguientes tecnologías y dependencias antes de ejecutar
 
 Pagina del login y dashboard principal.
 <div align="center">
-  <img src="./src/assets/Login.png" alt="Login" width="400" height="400" >
-  <img src="./src/assets/Dashboard.png" alt="Dashboard" width="400" height="400" > 
+  <img src="./src/assets/Login.png" alt="Login" width="400" height="300" >
+  <img src="./src/assets/Dashboard.png" alt="Dashboard" width="400" height="300" > 
 </div>
 
 ## Diagrama de flujo
