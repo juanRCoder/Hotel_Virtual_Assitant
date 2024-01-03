@@ -6,8 +6,9 @@
 <p align='justify'>
 Hotel Virtual Assistant, es una aplicación web que transforma la experiencia hotelera. Realiza pedidos, reserva en el restaurante, informa problemas y gestiona reservas sin necesidad de contacto con recepción. Con una interfaz más intuitiva, brinda privacidad y autonomía para una estancia cómoda y personalizada. Descubre un nuevo nivel de conveniencia y eficiencia en tu viaje con Hotel Virtual Assistant.
 </p>
-URL: [http://localhost:3004](http://localhost:3004)
 </div>
+
+URL: [http://localhost:3004](http://localhost:3004)
 
 ## Tecnologías
 
