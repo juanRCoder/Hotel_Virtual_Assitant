@@ -1,8 +1,7 @@
 import BodyAyB from "../components/Body/BodyAyB"
-
 import backgroundImage from '../assets/images/background.jpg'
-import AllHeaders from "../components/Header/AllHeaders";
 import HeaderRestaurante from "../components/Header/HeaderRestaurante";
+
 
 function Restaurante  () {
   return (
@@ -17,20 +16,9 @@ function Restaurante  () {
           opacity: 0.9,
         }}
       ></div>
-     <HeaderRestaurante></HeaderRestaurante>
-      <BodyAyB/>   
+     <HeaderRestaurante/>
+     <BodyAyB></BodyAyB>
     </>
-
-// import React from 'react';
-// import BodyReservaRestaurant from '../Jhony/BodyReservaRestaurant.jsx';
-
-// function Restaurante  () {
-//   return (
-//     <BodyReservaRestaurant />
-
-// } 
-
-
 
 )}
 export default Restaurante;

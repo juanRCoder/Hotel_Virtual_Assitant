@@ -74,36 +74,29 @@ const BodyReservaRestaurant = () => {
   };
 
   return (
-    <div className="
-        flex 
-        justify-center 
-        items-center 
-        text-center 
-        flex-col">
+   
+    <>
+      <div className="
+  flex 
+  justify-center 
+  items-center 
+  text-center 
+  flex-col">
   <form 
-        onSubmit={handleCrearReserva}
-        className="
-        w-full 
-        max-w-md">
-    <h2 className="
-        text-6xl 
-        font-Abril-Fatface 
-        mt-4 
-        text-green-800 
-        shadow-black/100 
-        text-shadow-sm">
-      RESERVA RESTAURANTE
-    </h2>
+    onSubmit={handleCrearReserva}
+    className="
+    w-full 
+    max-w-md">
+   
     
     <div className="
-        mx-4 
-        my-8 border 
-        border-black 
-        p-6 
-        rounded-2xl
-        bg-lime-100">
-      <div className="
-      mb-4">
+      mx-4 
+      my-8 border 
+      border-black 
+      p-4 sm:p-6 lg:p-8 
+      rounded-2xl
+      bg-lime-100">
+      <div className="mb-4">
         <label htmlFor="tipoMesa">Tipo de mesa</label>
         <select
           required
@@ -112,20 +105,21 @@ const BodyReservaRestaurant = () => {
           value={reservaInfo.tipoMesa}
           onChange={handleChange}
           className="
-          w-full 
-          border 
-          rounded
-          py-2 
-          px-3"
+            w-full 
+            border 
+            rounded 
+            py-2 
+            px-3
+          "
         >
           <option>Selecciona el tipo de mesa</option>
           {mesas ? (
-              mesas.map((mesa) => (
-                <option key={mesa.id} value={mesa.tipoMesa}>{mesa.tipoMesa}</option>
-              ))
-            ) : (
-              <option disabled>No hay datos disponibles</option>
-            )}
+            mesas.map((mesa) => (
+              <option key={mesa.id} value={mesa.tipoMesa}>{mesa.tipoMesa}</option>
+            ))
+          ) : (
+            <option disabled>No hay datos disponibles</option>
+          )}
         </select>
       </div>
       <div className="mb-4">
@@ -138,16 +132,17 @@ const BodyReservaRestaurant = () => {
           value={reservaInfo.cantidadPersonas}
           onChange={handleChange}
           className="
-          w-full 
-          border 
-          rounded 
-          py-2 
-          px-3"
+            w-full 
+            border 
+            rounded 
+            py-2 
+            px-3
+          "
         />
       </div>
       {/* time to book a table in restaurant */}
-      <div className="flex justify-center">
-        <div className="mr-4">
+      <div className="flex flex-col sm:flex-row justify-center sm:justify-between">
+        <div className="mb-4 sm:mr-4">
           <label htmlFor="hora">Hora</label>
           <select
             required
@@ -156,11 +151,12 @@ const BodyReservaRestaurant = () => {
             value={reservaInfo.hora}
             onChange={handleChange}
             className="
-            w-full 
-            border 
-            rounded 
-            py-2 
-            px-3"
+              w-full 
+              border 
+              rounded 
+              py-2 
+              px-3
+            "
           >
             {/* Opciones de hora */}
             <option value="">...</option>
@@ -171,7 +167,7 @@ const BodyReservaRestaurant = () => {
             <option value="12">12</option>
           </select>
         </div>
-        <div>
+        <div className="mb-4">
           <label htmlFor="minutes">Minutos</label>
           <select
             required
@@ -180,11 +176,12 @@ const BodyReservaRestaurant = () => {
             value={reservaInfo.minutes}
             onChange={handleChange}
             className="
-            w-full 
-            border 
-            rounded 
-            py-2 
-            px-3"
+              w-full 
+              border 
+              rounded 
+              py-2 
+              px-3
+            "
           >
             {/* Opciones para los minutos */}
             <option value="">...</option>
@@ -205,24 +202,27 @@ const BodyReservaRestaurant = () => {
           value={reservaInfo.fecha}
           onChange={handleChange}
           className="
-          w-full 
-          border 
-          rounded 
-          py-2 
-          px-3"
+            w-full 
+            border 
+            rounded 
+            py-2 
+            px-3
+          "
         />
       </div>
       {/* Botones para enviar o cancelar la reserva */}
       <button
         className="
-        bg-blue-500 
-        hover:bg-blue-700 
-        text-white 
-        font-bold 
-        py-2 
-        px-4 
-        mr-2 
-        rounded"
+          bg-blue-500 
+          hover:bg-blue-700 
+          text-white 
+          font-bold 
+          py-2 
+          px-4 
+          sm:px-6
+          lg:px-8 
+          mr-2 
+          rounded"
       >
         Enviar reserva
       </button>
@@ -231,6 +231,8 @@ const BodyReservaRestaurant = () => {
   </form>
 </div>
 
+    
+    </>
   );
 };
 

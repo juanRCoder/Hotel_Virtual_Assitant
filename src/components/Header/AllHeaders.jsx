@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import logo from "../../assets/images/logo-removebg-preview.png";
+import logo from "../../assets/images/logo.png";
 import Lottie from "lottie-react";
 import animation from "../../assets/back.json";
 

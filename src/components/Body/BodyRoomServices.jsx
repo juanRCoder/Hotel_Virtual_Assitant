@@ -95,288 +95,141 @@ const BodyRoomServices = () => {
 
   return (
     <>
-      <div
-        className="
-      flex
-      text-center
-      justify-center"
-      >
-        <h1
-          className="
-        text-7xl
-        font-Abril-Fatface
-        text-green-800
-        text-shadow-lg
-        shadow-green-500/100 "
+     <div className="flex justify-center items-center h-screen -mt-10 rounded-3xl">
+  <form
+    onSubmit={handleSubmit}
+    className="w-full max-w-md bg-lime-100 p-8 rounded-green-600 rounded-2xl shadow-md border border-black px-6 py-4"
+  >
+    <label className="block text-gray-700 text-sm font-bold mb-2">
+      Fecha
+    </label>
+    <input
+      type="date"
+      name="fecha"
+      value={formData.fecha}
+      onChange={handleChange}
+      className="w-full border border-gray-300 p-2 mb-4"
+    />
+
+    <div className="flex justify-between mb-4">
+      <div className="w-full sm:w-1/2 pr-2">
+        <label className="block text-gray-700 text-sm font-bold">
+          Hora
+        </label>
+        <select
+          name="hora"
+          value={formData.hora}
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2"
         >
-          ROOMSERVICE
-        </h1>
+          {generateHoursOption()}
+        </select>
       </div>
-      <div
-        className="
-      flex 
-      justify-center 
-      items-center 
-      h-screen
-      -mt-10
-      rounded-3xl
+
+      <div className="w-full sm:w-1/2 pl-2">
+        <label className="block text-gray-700 text-sm font-bold">
+          Minutos
+        </label>
+        <select
+          name="minutes"
+          value={formData.minutes}
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2"
+        >
+          {generateMinutesOption()}
+        </select>
+      </div>
+    </div>
+
+    <div className="flex justify-between mb-4">
+      <div className="w-full sm:w-1/2 pr-2">
+        <label className="block text-gray-700 text-sm font-bold mb-1">
+          Bebidas
+        </label>
+        <select
+          name="bebidaOption"
+          value={formData.bebidaOption}
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2"
+        >
+          <option value="">Seleccionar Bebida</option>
+          {bebidasOptions &&
+            bebidasOptions.map((bebida) => (
+              <option key={bebida.id} value={bebida.nombres}>
+                {bebida.nombres}
+              </option>
+            ))}
+        </select>
+      </div>
+
+      <div className="w-full sm:w-1/2 pl-2">
+        <label className="block text-gray-700 text-sm font-bold mb-1">
+          Cantidad de bebidas
+        </label>
+        <input
+          type="number"
+          name="cant_beb"
+          value={formData.cant_beb}
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2"
+        />
+      </div>
+    </div>
+
+    <div className="flex justify-between">
+      <div className="w-full sm:w-1/2 pr-2">
+        <label className="block text-gray-700 text-sm font-bold">
+          Menu
+        </label>
+        <select
+          name="menuOption"
+          value={formData.menuOption}
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2"
+        >
+          <option value="">Seleccionar menu</option>
+          {menuOptions &&
+            menuOptions.map((menu) => (
+              <option key={menu.id} value={menu.nombres}>
+                {menu.nombres}
+              </option>
+            ))}
+        </select>
+      </div>
+
+      <div className="w-full sm:w-1/2 pl-2">
+        <label className="block text-gray-700 text-sm font-bold">
+          Cantidad de comida
+        </label>
+        <input
+          type="number"
+          name="cant_menu"
+          value={formData.cant_menu}
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2"
+        />
+      </div>
+    </div>
+
+    <div className="mb-4">
+      <label className="block text-gray-700 text-sm font-bold mb-1">
+        Información adicional
+      </label>
+      <textarea
+        name="otros_detalles"
+        value={formData.otros_detalles}
+        onChange={handleChange}
+        className="w-full border border-gray-300 p-2"
+      />
+    </div>
+
+    <button className="flex ml-4 sm:ml-28 bg-green-600 hover:bg-green-800 text-white font-bold py-3 px-8 mr-2 rounded mt-2">
+      Enviar
+    </button>
+  </form>
+</div>
+
       
-      "
-      >
-        <form
-          onSubmit={handleSubmit}
-          className="
-          w-full 
-          max-w-md 
-          bg-lime-100 
-          p-8
-          rounded-green-600 
-          rounded-2xl 
-          shadow-md
-          border
-        border-black
-          px-6
-          py-4  "
-          >
-          <label
-            className="
-          block 
-          text-gray-700 
-          text-sm 
-          font-bold 
-          mb-2"
-          >
-            Fecha
-          </label>
-          <input
-            type="date"
-            name="fecha"
-            value={formData.fecha}
-            onChange={handleChange}
-            className="
-            w-full border 
-            border-gray-300 
-            p-2 
-            mb-4"
-          />
-
-          <div
-            className="
-          flex 
-          justify-between 
-          mb-4
-          "
-          >
-            <div className="w-1/2 pr-2">
-              <label className="block  text-gray-700  text-sm  font-bold ">
-                Hora
-              </label>
-              <select
-                name="hora"
-                value={formData.hora}
-                onChange={handleChange}
-                className="
-                w-full border 
-                border-gray-300 
-                p-2
-                "
-              >
-                {generateHoursOption()}
-              </select>
-            </div>
-
-            <div
-              className="
-            w-1/2 
-            pl-2
-            "
-            >
-              <label
-                className="
-              block 
-              text-gray-700 
-              text-sm 
-              font-bold 
-              "
-              >
-                Minutos
-              </label>
-              <select
-                name="minutes"
-                value={formData.minutes}
-                onChange={handleChange}
-                className="
-                w-full 
-                border 
-                border-gray-300 
-                p-2"
-              >
-                {generateMinutesOption()}
-              </select>
-            </div>
-          </div>
-
-          <div
-            className="
-          flex 
-          justify-between 
-          mb-4"
-          >
-            <div
-              className="
-            w-1/2 
-            pr-2"
-            >
-              <label className=" block  text-gray-700  text-sm  font-bold  mb-1">
-                Bebidas
-              </label>
-              <select
-                name="bebidaOption"
-                value={formData.bebidaOption}
-                onChange={handleChange}
-                className="
-                w-full border 
-                border-gray-300 
-                p-2"
-              >
-                <option value="">Seleccionar Bebida</option>
-                {bebidasOptions &&
-                  bebidasOptions.map((bebida) => (
-                    <option key={bebida.id} value={bebida.nombres}>
-                      {bebida.nombres}
-                    </option>
-                  ))}
-              </select>
-            </div>
-
-            <div
-              className="
-            w-1/2 
-            pl-2"
-            >
-              <label
-                className="
-              block 
-              text-gray-700 
-              text-sm 
-              font-bold 
-              mb-1"
-              >
-                Cantidad de bebidas
-              </label>
-              <input
-                type="number"
-                name="cant_beb"
-                value={formData.cant_beb}
-                onChange={handleChange}
-                className="
-                w-full border 
-                border-gray-300 
-                p-2"
-              />
-            </div>
-          </div>
-
-          <div
-            className="
-          flex 
-          justify-between 
-          "
-          >
-            <div
-              className="
-            w-1/2 
-            pr-2"
-            >
-              <label
-                className="
-              block 
-              text-gray-700 
-              text-sm 
-              font-bold 
-              "
-              >
-                Menu
-              </label>
-              <select
-                name="menuOption"
-                value={formData.menuOption}
-                onChange={handleChange}
-                className="
-                w-full 
-                border 
-                border-gray-300 
-                p-2"
-              >
-                <option value="">Seleccionar menu</option>
-                {menuOptions &&
-                  menuOptions.map((menu) => (
-                    <option key={menu.id} value={menu.nombres}>
-                      {menu.nombres}
-                    </option>
-                  ))}
-              </select>
-            </div>
-
-            <div
-              className="
-            w-1/2 
-            pl-2"
-            >
-              <label
-                className="
-              block 
-              text-gray-700 
-              text-sm 
-              font-bold 
-              "
-              >
-                Cantidad de comida
-              </label>
-              <input
-                type="number"
-                name="cant_menu"
-                value={formData.cant_menu}
-                onChange={handleChange}
-                className="
-                w-full 
-                border 
-                border-gray-300 
-                p-2"
-              />
-            </div>
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-1">
-              Información adicional
-            </label>
-            <textarea
-              name="otros_detalles"
-              value={formData.otros_detalles}
-              onChange={handleChange}
-              className="w-full border border-gray-300 p-2"
-            />
-          </div>
-
-          {/* Resto del formulario ... */}
-
-          <button
-            className="
-            flex
-            ml-28
-            bg-green-600 
-            hover:bg-green-800
-            text-white font-bold 
-            py-3 
-            px-8 
-            mr-2 
-            rounded
-            mt-2"
-          >
-            Enviar
-          </button>
-        </form>
-      </div>
     </>
   );
 };

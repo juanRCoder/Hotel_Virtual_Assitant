@@ -2,6 +2,7 @@ import backgroundImage from '../assets/images/background.jpg'
 import BodyRoomServices from '../components/Body/BodyRoomServices';
 
 import HeaderAyB from '../components/Header/HeaderAyB';
+import HeaderRoomService from '../components/Header/HeaderRoomService';
 
 
 function Roomservice() {
@@ -24,7 +25,7 @@ function Roomservice() {
             opacity: 0.9,
           }}
         ></div>
-        <HeaderAyB></HeaderAyB>
+        <HeaderRoomService></HeaderRoomService>
         <BodyRoomServices></BodyRoomServices>
       </div>
     </>

@@ -49,7 +49,7 @@ function Body() {
       
       <img
         className="
-        // w-80
+        w-80
         md:w-3/5
         h-4/6
         shadow-2xl
@@ -70,8 +70,7 @@ function Body() {
       {/*  behind  the form */}
       <div className="
       bg-white
-      //  p-8 
-       -mt-5 
+       p-8  
         rounded-3xl 
         shadow-2xl
         shadow-black
@@ -88,7 +87,7 @@ function Body() {
         ">
         {/* Formulario de login */}
         <form className="w-full">
-          <div className="mb-6 formulario-login">
+          <div className=" formulario-login">
             <label
               className="
               block 
