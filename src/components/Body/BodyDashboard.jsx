@@ -24,9 +24,8 @@ function BodyDashboard() {
   }, [id]);
 
   return (
-    <>
- 
- <div className="flex justify-center items-center">
+  <>
+    <div className="flex justify-center items-center mt-20 md:mt-0">
   <img
     className="w-60 h-56 md:w-80 md:h-72 rounded-3xl"
     src={frontdesk}
@@ -34,7 +33,7 @@ function BodyDashboard() {
   />
 </div>
 
-<div className="text-center flex justify-center mt-2">
+<div className="text-center flex justify-center  mt-20 md:mt-0">
   <h1 className="
     text-3xl md:text-5xl
     font-Abril-Fatface
@@ -58,10 +57,12 @@ function BodyDashboard() {
     <button
       className="
         font-semibold 
-        text-lg md:text-xl
+        text-2xl md:text-xl
         rounded-2xl
-        h-16 md:h-20 
-        w-36 md:w-52 
+        h-36 w-48
+        md:h-20 md:w-52 
+        lg:h-24 lg:w-72
+        xl:h-22 xl:w-60
         border
         border-green-800
         shadow-2xl
@@ -69,7 +70,7 @@ function BodyDashboard() {
         from-white
         via-lime-200
         to-green-300 
-        animation  -ripple
+        animation -ripple
         border-y-2
         border-x-2
         text-green-950
@@ -83,11 +84,13 @@ function BodyDashboard() {
     <button
       className="
         font-semibold 
-        text-lg md:text-xl
+        text-2xl md:text-xl
         bg-white 
         rounded-2xl
-        h-16 md:h-20 
-        w-36 md:w-52 
+        h-36 w-48
+        md:h-20 md:w-52 
+        lg:h-24 lg:w-72
+        xl:h-22 xl:w-60
         border
         border-green-800
         bg-gradient-to-br
@@ -108,11 +111,13 @@ function BodyDashboard() {
     <button
       className="
         font-semibold 
-        text-lg md:text-xl
+        text-2xl md:text-xl
         bg-white 
         rounded-2xl
-        h-16 md:h-20 
-        w-36 md:w-52 
+        h-36 w-48
+        md:h-20 md:w-52 
+        lg:h-24 lg:w-72
+        xl:h-22 xl:w-60
         border
         border-green-800
         bg-gradient-to-br
@@ -133,11 +138,14 @@ function BodyDashboard() {
     <button
       className="
         font-semibold 
-        text-lg md:text-xl
+        text-2xl md:text-xl
         bg-white 
         rounded-2xl
-        h-16 md:h-20 
-        w-36 md:w-52 
+        h-36 w-48
+       
+        md:h-20 md:w-52 
+        lg:h-24 lg:w-72
+        xl:h-22 xl:w-60
         border
         border-green-800
         bg-gradient-to-br
