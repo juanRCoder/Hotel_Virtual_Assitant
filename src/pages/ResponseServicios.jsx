@@ -52,17 +52,23 @@ function ResponseServicios() {
         }}
       ></div>
 
-      <div className="flex justify-center text-center mt-8">
-        <h1 className="font-Abril-Fatface text-6xl text-green-800 text-shadow-lg shadow-black/100">
+      <div className="
+      flex justify-center text-center mt-12 md:mt-8">
+        <h1 className="
+        font-Abril-Fatface text-6xl md:text-6xl mt-8 md:mt-0 text-green-800 text-shadow-lg shadow-black/100">
           SERVICIO ENVIADO!
         </h1>
       </div>
-      <div className="flex justify-center text-center mt-4">
-        <h1 className="font-Abril-Fatface text-4xl text-green-800 text-shadow-lg shadow-black/100">
+      <div className="
+      flex justify-center text-center mt-4 mb:mt-8">
+        <h1 className="
+        font-Abril-Fatface text-5xl md:text-4xl 
+        text-green-800 text-shadow-lg shadow-black/100">
           Nuestro personal pronto se pondra en contacto!
         </h1>
       </div>
-      <div className="flex justify-center items-center min-h-screen -mt-20  ">
+      <div className="
+      flex justify-center items-center min-h-screen -mt-60 md:-mt-20  ">
         {servicio ? (
           <div
             class="max-w-2xl p-6 bg-white rounded-lg shadow-md bg-gradient-to-br
@@ -109,7 +115,7 @@ function ResponseServicios() {
         <Link to={`/dashboard/${servicio && servicio.Cliente.id}`}>
           <button>
             <Lottie
-              className="w-12 absolute top-4 right-8 mt-2"
+              className="w-12 absolute top-4 right-6 md:right-2 mt-2"
               animationData={animation}
             />
           </button>
