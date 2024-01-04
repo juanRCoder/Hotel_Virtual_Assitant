@@ -75,7 +75,9 @@ const BodyReservaRestaurant = () => {
   justify-center 
   items-center 
   text-center 
-  flex-col"
+  flex-col
+  py-4 md:py-0 px-4 md
+  "
       >
         <form
           onSubmit={handleCrearReserva}
@@ -90,6 +92,7 @@ const BodyReservaRestaurant = () => {
       border-black 
       p-4 sm:p-6 lg:p-8 
       rounded-2xl
+      pt-8 md:pt-0
       bg-lime-100"
           >
             <div className="mb-4">
@@ -205,11 +208,14 @@ const BodyReservaRestaurant = () => {
             rounded 
             py-2 
             px-3
+            mb-6  mb:mb-4
           "
               />
             </div>
             {/* Botones para enviar o cancelar la reserva */}
-            <button className="flex ml-4 sm:ml-28 bg-green-600 hover:bg-green-800 text-white font-bold py-3 px-8 mr-2 rounded mt-2">
+            <button className="
+            flex ml-20 md:ml-20  
+            bg-green-600 hover:bg-green-800 text-white font-bold py-3 px-8 mr-2 rounded ">
               Generar Reseva
             </button>
           </div>
