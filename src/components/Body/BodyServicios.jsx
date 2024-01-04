@@ -73,7 +73,7 @@ function BodyServicios() {
         flex-col
         items-center
         mx-2 sm:mx-4  
-        w-72
+        w-86
         md:w-1/3
         h-5/6
         md:h-2/6

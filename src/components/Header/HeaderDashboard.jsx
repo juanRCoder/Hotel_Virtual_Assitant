@@ -15,8 +15,8 @@ function HeaderDashboard({ serviceTecnico }) {
     </div>
   
     <div className="flex justify-center text-center">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-Abril-Fatface text-green-800 text-shadow-lg shadow-black/100">
-        HOTEL <br className="sm:hidden md:inline" /> VIRTUAL ASSISTANT
+      <h1 className="text-3xl sm:text-4xl md:text-4xl  mt-12 md:mt-0 lg:text-6xl font-Abril-Fatface text-green-800 text-shadow-lg shadow-black/100">
+        HOTEL  VIRTUAL ASSISTANT
       </h1>
     </div>
   

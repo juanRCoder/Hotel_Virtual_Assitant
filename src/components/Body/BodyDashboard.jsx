@@ -25,9 +25,9 @@ function BodyDashboard() {
 
   return (
   <>
-    <div className="flex justify-center items-center mt-20 md:mt-0">
+    <div className="flex justify-center items-center mt-10 md:mt-4 xl:mt-2">
   <img
-    className="w-60 h-56 md:w-80 md:h-72 rounded-3xl"
+    className="w-60 h-56 md:w-64 md:h-72 rounded-3xl"
     src={frontdesk}
     alt="frontdesk"
   />
