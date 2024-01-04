@@ -33,7 +33,7 @@ function BodyDashboard() {
   />
 </div>
 
-<div className="text-center flex justify-center  mt-20 md:mt-0">
+<div className="text-center flex justify-center  mt-20 md:mt-4">
   <h1 className="
     text-3xl md:text-5xl
     font-Abril-Fatface
@@ -62,7 +62,7 @@ function BodyDashboard() {
         h-36 w-48
         md:h-20 md:w-52 
         lg:h-24 lg:w-72
-        xl:h-22 xl:w-60
+        xl:h-20 xl:w-60
         border
         border-green-800
         shadow-2xl
@@ -90,7 +90,7 @@ function BodyDashboard() {
         h-36 w-48
         md:h-20 md:w-52 
         lg:h-24 lg:w-72
-        xl:h-22 xl:w-60
+        xl:h-20 xl:w-60
         border
         border-green-800
         bg-gradient-to-br
@@ -117,7 +117,7 @@ function BodyDashboard() {
         h-36 w-48
         md:h-20 md:w-52 
         lg:h-24 lg:w-72
-        xl:h-22 xl:w-60
+        xl:h-20 xl:w-60
         border
         border-green-800
         bg-gradient-to-br
@@ -145,7 +145,7 @@ function BodyDashboard() {
        
         md:h-20 md:w-52 
         lg:h-24 lg:w-72
-        xl:h-22 xl:w-60
+        xl:h-20 xl:w-60
         border
         border-green-800
         bg-gradient-to-br
