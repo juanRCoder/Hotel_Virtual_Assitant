@@ -8,7 +8,7 @@ Hotel Virtual Assistant, es una aplicación web que transforma la experiencia ho
 </p>
 </div>
 
-URL: [http://localhost:3004](http://localhost:3004)
+DEMO: [https://youtu.be/2-6Xt6ees0g?si=UvryPNYhz4kc5iN9](https://youtu.be/2-6Xt6ees0g?si=UvryPNYhz4kc5iN9)
 
 ## Tecnologías
 
