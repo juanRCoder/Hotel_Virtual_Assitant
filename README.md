@@ -91,5 +91,5 @@ Oscar Morales
 Link del proyecto: [http://localhost:3004](http://localhost:3004)
 
 ## Licence
-
+- Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 - Creacion del proyecto 11-12-2023
