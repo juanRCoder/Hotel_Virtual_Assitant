@@ -16,7 +16,6 @@ const roomServiceSchema = new mongoose.Schema({
   },
   cant_beb: Number,
   cant_menu: Number,
-  resumen_pedido: String,
   otros_detalles: String,
   fecha: Date,
   hora: Number,
