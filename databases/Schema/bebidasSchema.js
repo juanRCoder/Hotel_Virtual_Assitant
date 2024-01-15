@@ -1,4 +1,4 @@
-cdimport mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
 const bebidasSchema = new mongoose.Schema({
   nombres: String,
